@@ -1,0 +1,1480 @@
+****************************************************
+******************** EVENT RECEIVED ****************
+****************************************************
+CONFORMITY EVENT RECEIVED   -----  18.10.23_071359-502964
+
+
+ Number  : 8716
+ Session : 0
+ STATE : UNCONFORM       HORIZ : Conform    VERTI : CFL_Uncon  CFL   : Levelled   70
+ REAL POSITION => 
+ TIME: 071359 LEVEL:  104 GEODESIC: 483528N0113503E
+ PROJECTED POSITION => 
+ TIME: 071359 LEVEL:  144 GEODESIC: 483559N0113617E
+ PREV PROFILE POINT =>  OCCURRENCE NB    :  1 GEODESIC DEGREES : 483307N0113857E
+ LATITUDE :  4.85518385265486E+01
+ LONGITUDE :  1.16492422287798E+01 SEGMENT :  1
+
+
+****************************************************
+
+
+****************************************************
+******************** EVENT RECEIVED ****************
+****************************************************
+ATO EVENT RECEIVED   -----  18.10.23_071449-502497
+
+
+ Number  :  8716
+ Session :  0
+TRACK POSITION :   TIME: 071449 LEVEL:  116 GEODESIC: 483941N0113241E
+START POINT :   OCURRENCE:  1 GEODESIC: 483932N0113257E SEGMENT :  1
+FINAL POINT :   OCURRENCE:  1 GEODESIC: 483932N0113257E SEGMENT :  1
+ CONFORMITY :  STATE : UNCONFORM       HORIZ : Conform    VERTI : CFL_Uncon  CFL   : Levelled   70
+ REAL POSITION => 
+ TIME: 071449 LEVEL:  116 GEODESIC: 483941N0113241E
+ PROJECTED POSITION => 
+ TIME: 071449 LEVEL:  190 GEODESIC: 483943N0113247E
+ PREV PROFILE POINT =>  OCCURRENCE NB    :  1 GEODESIC DEGREES : 483932N0113257E
+ LATITUDE :  4.86588456072379E+01
+ LONGITUDE :  1.15492386068754E+01 SEGMENT :  1
+
+****************************************************
+
+
+****************************************************
+******************** EVENT RECEIVED ****************
+****************************************************
+ATO EVENT RECEIVED   -----  18.10.23_071454-502604
+
+
+ Number  :  8716
+ Session :  0
+TRACK POSITION :   TIME: 071454 LEVEL:  118 GEODESIC: 484008N0113226E
+START POINT :   OCURRENCE:  1 GEODESIC: 484002N0113229E SEGMENT :  1
+FINAL POINT :   OCURRENCE:  1 GEODESIC: 484004N0113228E SEGMENT :  1
+ CONFORMITY :  STATE : UNCONFORM       HORIZ : Conform    VERTI : CFL_Uncon  CFL   : Levelled   70
+ REAL POSITION => 
+ TIME: 071454 LEVEL:  118 GEODESIC: 484008N0113226E
+ PROJECTED POSITION => 
+ TIME: 071454 LEVEL:  190 GEODESIC: 484008N0113226E
+ PREV PROFILE POINT =>  OCCURRENCE NB    :  1 GEODESIC DEGREES : 484004N0113228E
+ LATITUDE :  4.86678945538562E+01
+ LONGITUDE :  1.15410003174235E+01 SEGMENT :  1
+
+****************************************************
+
+
+****************************************************
+******************** EVENT RECEIVED ****************
+****************************************************
+ATO EVENT RECEIVED   -----  18.10.23_071529-502674
+
+
+ Number  :  8716
+ Session :  0
+TRACK POSITION :   TIME: 071527 LEVEL:  131 GEODESIC: 484318N0113036E
+START POINT :   OCURRENCE:  1 GEODESIC: 484303N0113044E SEGMENT :  1
+FINAL POINT :   OCURRENCE:  1 GEODESIC: 484303N0113044E SEGMENT :  1
+ CONFORMITY :  STATE : UNCONFORM       HORIZ : Conform    VERTI : CFL_Uncon  CFL   : Levelled   70
+ REAL POSITION => 
+ TIME: 071529 LEVEL:  131 GEODESIC: 484318N0113036E
+ PROJECTED POSITION => 
+ TIME: 071529 LEVEL:  200 GEODESIC: 484318N0113036E
+ PREV PROFILE POINT =>  OCCURRENCE NB    :  1 GEODESIC DEGREES : 484303N0113044E
+ LATITUDE :  4.87175657900602E+01
+ LONGITUDE :  1.15122622089394E+01 SEGMENT :  1
+
+****************************************************
+
+
+****************************************************
+******************** EVENT RECEIVED ****************
+****************************************************
+VERTICAL PROFILE DEVIATION EVENT RECEIVED   -----  18.10.23_071840-002082
+
+
+-> VERTICAL PROFILE DEVIATION event sent : 
+__________________________________________
+FLIGHT_ID     :  8716
+EVENT SUBTYPE : E_VERTICAL_TRAJECTORY_RECALCULATION
+ STATE : CONFORM         HORIZ : Conform    VERTI : Conform    CFL   : Climbing   200
+ REAL POSITION => 
+ TIME: 071840 LEVEL:  191 GEODESIC: 490124N0112002E
+ PROJECTED POSITION => 
+ TIME: 071840 LEVEL:  193 GEODESIC: 490124N0112002E
+ PREV PROFILE POINT =>  OCCURRENCE NB    :  1 GEODESIC DEGREES : 485729N0112220E
+ LATITUDE :  4.89579285877237E+01
+ LONGITUDE :  1.13723303679231E+01 SEGMENT :  1
+CFL tendency : E_CLIMBING
+ ROCD:  1.63125000000000E+03HEADING : Mode-S :   3.39082031250000E+02 HSPEED:  3.78591162289578E+02 RELATIVE_LEVEL: E_UNKNOWN
+
+
+****************************************************
+
+
+****************************************************
+******************** EVENT RECEIVED ****************
+****************************************************
+ATO EVENT RECEIVED   -----  18.10.23_071910-002608
+
+
+ Number  :  8716
+ Session :  0
+TRACK POSITION :   TIME: 071910 LEVEL:  200 GEODESIC: 490423N0111817E
+START POINT :   OCURRENCE:  1 GEODESIC: 490423N0111817E SEGMENT :  1
+FINAL POINT :   OCURRENCE:  1 GEODESIC: 490423N0111817E SEGMENT :  1
+ CONFORMITY :  STATE : CONFORM         HORIZ : Conform    VERTI : Conform    CFL   : Levelled   200
+ REAL POSITION => 
+ TIME: 071910 LEVEL:  200 GEODESIC: 490423N0111817E
+ PROJECTED POSITION => 
+ TIME: 071910 LEVEL:  200 GEODESIC: 490423N0111817E
+ PREV PROFILE POINT =>  OCCURRENCE NB    :  1 GEODESIC DEGREES : 490423N0111817E
+ LATITUDE :  4.90730482573012E+01
+ LONGITUDE :  1.13047976925089E+01 SEGMENT :  1
+CFL tendency : E_LEVEL
+ ROCD:  1.40625000000000E+03HEADING : Mode-S :   3.39082031250000E+02 HSPEED:  3.82289588443056E+02 RELATIVE_LEVEL: E_UNKNOWN
+
+****************************************************
+
+
+****************************************************
+******************** EVENT RECEIVED ****************
+****************************************************
+ATO EVENT RECEIVED   -----  18.10.23_072030-002647
+
+
+ Number  :  8716
+ Session :  0
+TRACK POSITION :   TIME: 072030 LEVEL:  200 GEODESIC: 491252N0111317E
+START POINT :   OCURRENCE:  1 GEODESIC: 491232N0111329E SEGMENT :  1
+FINAL POINT :   OCURRENCE:  1 GEODESIC: 491252N0111317E SEGMENT :  1
+ CONFORMITY :  STATE : CONFORM         HORIZ : Conform    VERTI : Conform    CFL   : Levelled   200
+ REAL POSITION => 
+ TIME: 072030 LEVEL:  200 GEODESIC: 491252N0111317E
+ PROJECTED POSITION => 
+ TIME: 072030 LEVEL:  200 GEODESIC: 491252N0111317E
+ PREV PROFILE POINT =>  OCCURRENCE NB    :  1 GEODESIC DEGREES : 491252N0111317E
+ LATITUDE :  4.92144444444444E+01
+ LONGITUDE :  1.12213888888889E+01 SEGMENT :  1
+CFL tendency : E_LEVEL
+ ROCD:  0.00000000000000E+00HEADING : Mode-S :   3.45058593750000E+02 HSPEED:  4.12887967827974E+02 RELATIVE_LEVEL: E_UNKNOWN
+
+****************************************************
+
+
+****************************************************
+******************** EVENT RECEIVED ****************
+****************************************************
+ATO EVENT RECEIVED   -----  18.10.23_072230-504122
+
+
+ Number  :  8716
+ Session :  0
+TRACK POSITION :   TIME: 072230 LEVEL:  200 GEODESIC: 492630N0110945E
+START POINT :   OCURRENCE:  1 GEODESIC: 492602N0110950E SEGMENT :  1
+FINAL POINT :   OCURRENCE:  1 GEODESIC: 492626N0110944E SEGMENT :  1
+ CONFORMITY :  STATE : CONFORM         HORIZ : Conform    VERTI : Conform    CFL   : Levelled   200
+ REAL POSITION => 
+ TIME: 072230 LEVEL:  200 GEODESIC: 492630N0110945E
+ PROJECTED POSITION => 
+ TIME: 072230 LEVEL:  202 GEODESIC: 492629N0110943E
+ PREV PROFILE POINT =>  OCCURRENCE NB    :  1 GEODESIC DEGREES : 492626N0110944E
+ LATITUDE :  4.94405714097349E+01
+ LONGITUDE :  1.11622724753169E+01 SEGMENT :  1
+CFL tendency : E_LEVEL
+ ROCD:  0.00000000000000E+00HEADING : Mode-S :   3.51035156250000E+02 HSPEED:  4.12891113633436E+02 RELATIVE_LEVEL: E_UNKNOWN
+
+****************************************************
+
+
+****************************************************
+******************** EVENT RECEIVED ****************
+****************************************************
+VERTICAL PROFILE DEVIATION EVENT RECEIVED   -----  18.10.23_072240-503092
+
+
+-> VERTICAL PROFILE DEVIATION event sent : 
+__________________________________________
+FLIGHT_ID     :  8716
+EVENT SUBTYPE : E_CFL_APPLICATION
+ STATE : CONFORM         HORIZ : Conform    VERTI : Conform    CFL   : Levelled   200
+ REAL POSITION => 
+ TIME: 072240 LEVEL:  200 GEODESIC: 492737N0110927E
+ PROJECTED POSITION => 
+ TIME: 072240 LEVEL:  204 GEODESIC: 492737N0110926E
+ PREV PROFILE POINT =>  OCCURRENCE NB    :  1 GEODESIC DEGREES : 492626N0110944E
+ LATITUDE :  4.94405714097349E+01
+ LONGITUDE :  1.11622724753169E+01 SEGMENT :  1
+CFL tendency : E_LEVEL
+ ROCD:  0.00000000000000E+00HEADING : Mode-S :   3.51035156250000E+02 HSPEED:  4.12891113633436E+02 RELATIVE_LEVEL: E_UNKNOWN
+
+
+****************************************************
+
+
+****************************************************
+******************** EVENT RECEIVED ****************
+****************************************************
+ETO EVENT RECEIVED   -----  18.10.23_072245-502993
+
+
+
+-> ETO event sent : 
+____________________
+
+COMMON_REPORT_DATA: 
+FLIGHT_ID :  8716
+4D_TRACK_POSITION : 
+   TIME  :  7- 22- 45
+   LEVEL :  2.00000000000000E+02
+   R_2D  : 
+         Geodesic degrees latitude  :  4.94697491184683E+01
+         Geodesic degrees longitude :  1.11550456562586E+01
+APPLICATED_PROFILE_POINT : 
+   OCCURRENCE_NB :  1
+   POSITION      : 
+         Geodesic degrees latitude  :  4.94602881886625E+01
+         Geodesic degrees longitude :  1.11570915756204E+01
+   SEGMENT       :  1
+ PROJECTION IN PROFILE :  TIME: 072245 LEVEL:  200 GEODESIC: 492811N0110917E
+ GROUND SPEED :  4.13369854639313E+02
+
+****************************************************
+
+
+****************************************************
+******************** EVENT RECEIVED ****************
+****************************************************
+ATO EVENT RECEIVED   -----  18.10.23_072330-503749
+
+
+ Number  :  8716
+ Session :  0
+TRACK POSITION :   TIME: 072330 LEVEL:  200 GEODESIC: 493316N0110756E
+START POINT :   OCURRENCE:  1 GEODESIC: 493316N0110756E SEGMENT :  1
+FINAL POINT :   OCURRENCE:  1 GEODESIC: 493316N0110756E SEGMENT :  1
+ CONFORMITY :  STATE : CONFORM         HORIZ : Conform    VERTI : Conform    CFL   : Levelled   200
+ REAL POSITION => 
+ TIME: 072330 LEVEL:  200 GEODESIC: 493316N0110756E
+ PROJECTED POSITION => 
+ TIME: 072330 LEVEL:  200 GEODESIC: 493316N0110756E
+ PREV PROFILE POINT =>  OCCURRENCE NB    :  1 GEODESIC DEGREES : 493316N0110756E
+ LATITUDE :  4.95543740584744E+01
+ LONGITUDE :  1.11323113774492E+01 SEGMENT :  1
+CFL tendency : E_LEVEL
+ ROCD:  0.00000000000000E+00HEADING : Mode-S :   3.51035156250000E+02 HSPEED:  4.13453541623465E+02 RELATIVE_LEVEL: E_UNKNOWN
+
+****************************************************
+
+
+****************************************************
+******************** EVENT RECEIVED ****************
+****************************************************
+VERTICAL PROFILE DEVIATION EVENT RECEIVED   -----  18.10.23_072340-503406
+
+
+-> VERTICAL PROFILE DEVIATION event sent : 
+__________________________________________
+FLIGHT_ID     :  8716
+EVENT SUBTYPE : E_CFL_APPLICATION
+ STATE : CONFORM         HORIZ : Conform    VERTI : Conform    CFL   : Levelled   200
+ REAL POSITION => 
+ TIME: 072340 LEVEL:  200 GEODESIC: 493424N0110737E
+ PROJECTED POSITION => 
+ TIME: 072340 LEVEL:  204 GEODESIC: 493424N0110738E
+ PREV PROFILE POINT =>  OCCURRENCE NB    :  1 GEODESIC DEGREES : 493316N0110756E
+ LATITUDE :  4.95543740584744E+01
+ LONGITUDE :  1.11323113774492E+01 SEGMENT :  1
+CFL tendency : E_LEVEL
+ ROCD:  0.00000000000000E+00HEADING : Mode-S :   3.51035156250000E+02 HSPEED:  4.12974897631708E+02 RELATIVE_LEVEL: E_UNKNOWN
+
+
+****************************************************
+
+
+****************************************************
+******************** EVENT RECEIVED ****************
+****************************************************
+ATO EVENT RECEIVED   -----  18.10.23_072350-503294
+
+
+ Number  :  8716
+ Session :  0
+TRACK POSITION :   TIME: 072350 LEVEL:  200 GEODESIC: 493531N0110719E
+START POINT :   OCURRENCE:  1 GEODESIC: 493503N0110728E SEGMENT :  1
+FINAL POINT :   OCURRENCE:  1 GEODESIC: 493503N0110728E SEGMENT :  1
+ CONFORMITY :  STATE : CONFORM         HORIZ : Conform    VERTI : Conform    CFL   : Levelled   200
+ REAL POSITION => 
+ TIME: 072350 LEVEL:  200 GEODESIC: 493531N0110719E
+ PROJECTED POSITION => 
+ TIME: 072350 LEVEL:  200 GEODESIC: 493531N0110721E
+ PREV PROFILE POINT =>  OCCURRENCE NB    :  1 GEODESIC DEGREES : 493503N0110728E
+ LATITUDE :  4.95841666666667E+01
+ LONGITUDE :  1.11244444444444E+01 SEGMENT :  1
+CFL tendency : E_LEVEL
+ ROCD:  0.00000000000000E+00HEADING : Mode-S :   3.51035156250000E+02 HSPEED:  4.12974897631708E+02 RELATIVE_LEVEL: E_UNKNOWN
+
+****************************************************
+
+
+****************************************************
+******************** EVENT RECEIVED ****************
+****************************************************
+ATO EVENT RECEIVED   -----  18.10.23_072440-542807
+
+
+ Number  :  8716
+ Session :  0
+TRACK POSITION :   TIME: 072437 LEVEL:  200 GEODESIC: 494110N0110550E
+START POINT :   OCURRENCE:  1 GEODESIC: 494042N0110558E SEGMENT :  1
+FINAL POINT :   OCURRENCE:  1 GEODESIC: 494042N0110558E SEGMENT :  1
+ CONFORMITY :  STATE : CONFORM         HORIZ : Conform    VERTI : Conform    CFL   : Levelled   200
+ REAL POSITION => 
+ TIME: 072440 LEVEL:  200 GEODESIC: 494110N0110550E
+ PROJECTED POSITION => 
+ TIME: 072440 LEVEL:  201 GEODESIC: 494110N0110551E
+ PREV PROFILE POINT =>  OCCURRENCE NB    :  1 GEODESIC DEGREES : 494042N0110558E
+ LATITUDE :  4.96782441606719E+01
+ LONGITUDE :  1.10995507525440E+01 SEGMENT :  1
+CFL tendency : E_LEVEL
+ ROCD:  0.00000000000000E+00HEADING : Mode-S :   3.51035156250000E+02 HSPEED:  4.12643093419285E+02 RELATIVE_LEVEL: E_UNKNOWN
+
+****************************************************
+
+
+****************************************************
+******************** EVENT RECEIVED ****************
+****************************************************
+VERTICAL PROFILE DEVIATION EVENT RECEIVED   -----  18.10.23_072445-502662
+
+
+-> VERTICAL PROFILE DEVIATION event sent : 
+__________________________________________
+FLIGHT_ID     :  8716
+EVENT SUBTYPE : E_CFL_APPLICATION
+ STATE : CONFORM         HORIZ : Conform    VERTI : Conform    CFL   : Levelled   200
+ REAL POSITION => 
+ TIME: 072445 LEVEL:  200 GEODESIC: 494144N0110541E
+ PROJECTED POSITION => 
+ TIME: 072445 LEVEL:  203 GEODESIC: 494144N0110542E
+ PREV PROFILE POINT =>  OCCURRENCE NB    :  1 GEODESIC DEGREES : 494042N0110558E
+ LATITUDE :  4.96782441606719E+01
+ LONGITUDE :  1.10995507525440E+01 SEGMENT :  1
+CFL tendency : E_LEVEL
+ ROCD:  0.00000000000000E+00HEADING : Mode-S :   3.51035156250000E+02 HSPEED:  4.12643093419285E+02 RELATIVE_LEVEL: E_UNKNOWN
+
+
+****************************************************
+
+
+****************************************************
+******************** EVENT RECEIVED ****************
+****************************************************
+ETO EVENT RECEIVED   -----  18.10.23_072450-540895
+
+
+
+-> ETO event sent : 
+____________________
+
+COMMON_REPORT_DATA: 
+FLIGHT_ID :  8716
+4D_TRACK_POSITION : 
+   TIME  :  7- 24- 50
+   LEVEL :  2.00000000000000E+02
+   R_2D  : 
+         Geodesic degrees latitude  :  4.97048306286139E+01
+         Geodesic degrees longitude :  1.10922644907569E+01
+APPLICATED_PROFILE_POINT : 
+   OCCURRENCE_NB :  1
+   POSITION      : 
+         Geodesic degrees latitude  :  4.96954478990218E+01
+         Geodesic degrees longitude :  1.10949877539912E+01
+   SEGMENT       :  1
+ PROJECTION IN PROFILE :  TIME: 072450 LEVEL:  200 GEODESIC: 494217N0110533E
+ GROUND SPEED :  4.13122121840146E+02
+
+****************************************************
+
+
+****************************************************
+******************** EVENT RECEIVED ****************
+****************************************************
+ATO EVENT RECEIVED   -----  18.10.23_072540-503235
+
+
+ Number  :  8716
+ Session :  0
+TRACK POSITION :   TIME: 072536 LEVEL:  200 GEODESIC: 494756N0110403E
+START POINT :   OCURRENCE:  1 GEODESIC: 494722N0110412E SEGMENT :  1
+FINAL POINT :   OCURRENCE:  1 GEODESIC: 494722N0110412E SEGMENT :  1
+ CONFORMITY :  STATE : CONFORM         HORIZ : Conform    VERTI : Conform    CFL   : Levelled   200
+ REAL POSITION => 
+ TIME: 072540 LEVEL:  200 GEODESIC: 494756N0110403E
+ PROJECTED POSITION => 
+ TIME: 072540 LEVEL:  202 GEODESIC: 494756N0110403E
+ PREV PROFILE POINT =>  OCCURRENCE NB    :  1 GEODESIC DEGREES : 494722N0110412E
+ LATITUDE :  4.97895166381804E+01
+ LONGITUDE :  1.10699805663252E+01 SEGMENT :  1
+CFL tendency : E_LEVEL
+ ROCD:  0.00000000000000E+00HEADING : Mode-S :   3.51035156250000E+02 HSPEED:  4.13122121840146E+02 RELATIVE_LEVEL: E_UNKNOWN
+
+****************************************************
+
+
+****************************************************
+******************** EVENT RECEIVED ****************
+****************************************************
+VERTICAL PROFILE DEVIATION EVENT RECEIVED   -----  18.10.23_072545-502954
+
+
+-> VERTICAL PROFILE DEVIATION event sent : 
+__________________________________________
+FLIGHT_ID     :  8716
+EVENT SUBTYPE : E_CFL_APPLICATION
+ STATE : CONFORM         HORIZ : Conform    VERTI : Conform    CFL   : Levelled   200
+ REAL POSITION => 
+ TIME: 072545 LEVEL:  200 GEODESIC: 494830N0110354E
+ PROJECTED POSITION => 
+ TIME: 072545 LEVEL:  204 GEODESIC: 494830N0110354E
+ PREV PROFILE POINT =>  OCCURRENCE NB    :  1 GEODESIC DEGREES : 494722N0110412E
+ LATITUDE :  4.97895166381804E+01
+ LONGITUDE :  1.10699805663252E+01 SEGMENT :  1
+CFL tendency : E_LEVEL
+ ROCD:  0.00000000000000E+00HEADING : Mode-S :   3.51035156250000E+02 HSPEED:  4.13122121840146E+02 RELATIVE_LEVEL: E_UNKNOWN
+
+
+****************************************************
+
+
+****************************************************
+******************** EVENT RECEIVED ****************
+****************************************************
+ETO EVENT RECEIVED   -----  18.10.23_072550-503638
+
+
+
+-> ETO event sent : 
+____________________
+
+COMMON_REPORT_DATA: 
+FLIGHT_ID :  8716
+4D_TRACK_POSITION : 
+   TIME  :  7- 25- 50
+   LEVEL :  2.00000000000000E+02
+   R_2D  : 
+         Geodesic degrees latitude  :  4.98176692886849E+01
+         Geodesic degrees longitude :  1.10624138245487E+01
+APPLICATED_PROFILE_POINT : 
+   OCCURRENCE_NB :  1
+   POSITION      : 
+         Geodesic degrees latitude  :  4.98082766920015E+01
+         Geodesic degrees longitude :  1.10649815418904E+01
+   SEGMENT       :  1
+ PROJECTION IN PROFILE :  TIME: 072550 LEVEL:  200 GEODESIC: 494904N0110345E
+ GROUND SPEED :  4.13122121840146E+02
+
+****************************************************
+
+
+****************************************************
+******************** EVENT RECEIVED ****************
+****************************************************
+ATO EVENT RECEIVED   -----  18.10.23_072625-503797
+
+
+ Number  :  8716
+ Session :  0
+TRACK POSITION :   TIME: 072625 LEVEL:  200 GEODESIC: 495301N0110242E
+START POINT :   OCURRENCE:  1 GEODESIC: 495232N0110249E SEGMENT :  1
+FINAL POINT :   OCURRENCE:  1 GEODESIC: 495248N0110245E SEGMENT :  1
+ CONFORMITY :  STATE : CONFORM         HORIZ : Conform    VERTI : Conform    CFL   : Levelled   200
+ REAL POSITION => 
+ TIME: 072625 LEVEL:  200 GEODESIC: 495301N0110242E
+ PROJECTED POSITION => 
+ TIME: 072625 LEVEL:  200 GEODESIC: 495301N0110245E
+ PREV PROFILE POINT =>  OCCURRENCE NB    :  1 GEODESIC DEGREES : 495248N0110245E
+ LATITUDE :  4.98800000000000E+01
+ LONGITUDE :  1.10458333333333E+01 SEGMENT :  1
+CFL tendency : E_LEVEL
+ ROCD:  0.00000000000000E+00HEADING : Mode-S :   3.56132812500000E+02 HSPEED:  4.13122121840146E+02 RELATIVE_LEVEL: E_UNKNOWN
+
+****************************************************
+
+
+****************************************************
+******************** EVENT RECEIVED ****************
+****************************************************
+ATO EVENT RECEIVED   -----  18.10.23_072640-504884
+
+
+ Number  :  8716
+ Session :  0
+TRACK POSITION :   TIME: 072640 LEVEL:  200 GEODESIC: 495444N0110247E
+START POINT :   OCURRENCE:  1 GEODESIC: 495413N0110242E SEGMENT :  1
+FINAL POINT :   OCURRENCE:  1 GEODESIC: 495413N0110242E SEGMENT :  1
+ CONFORMITY :  STATE : CONFORM         HORIZ : Conform    VERTI : Conform    CFL   : Levelled   200
+ REAL POSITION => 
+ TIME: 072640 LEVEL:  200 GEODESIC: 495444N0110247E
+ PROJECTED POSITION => 
+ TIME: 072640 LEVEL:  202 GEODESIC: 495444N0110242E
+ PREV PROFILE POINT =>  OCCURRENCE NB    :  1 GEODESIC DEGREES : 495413N0110242E
+ LATITUDE :  4.99035741798718E+01
+ LONGITUDE :  1.10451316347052E+01 SEGMENT :  1
+CFL tendency : E_LEVEL
+ ROCD:  0.00000000000000E+00HEADING : Mode-S :   3.59121093750000E+02 HSPEED:  4.12233691371529E+02 RELATIVE_LEVEL: E_UNKNOWN
+
+****************************************************
+
+
+****************************************************
+******************** EVENT RECEIVED ****************
+****************************************************
+VERTICAL PROFILE DEVIATION EVENT RECEIVED   -----  18.10.23_072645-503244
+
+
+-> VERTICAL PROFILE DEVIATION event sent : 
+__________________________________________
+FLIGHT_ID     :  8716
+EVENT SUBTYPE : E_CFL_APPLICATION
+ STATE : CONFORM         HORIZ : Conform    VERTI : Conform    CFL   : Levelled   200
+ REAL POSITION => 
+ TIME: 072645 LEVEL:  200 GEODESIC: 495519N0110245E
+ PROJECTED POSITION => 
+ TIME: 072645 LEVEL:  204 GEODESIC: 495518N0110241E
+ PREV PROFILE POINT =>  OCCURRENCE NB    :  1 GEODESIC DEGREES : 495413N0110242E
+ LATITUDE :  4.99035741798718E+01
+ LONGITUDE :  1.10451316347052E+01 SEGMENT :  1
+CFL tendency : E_LEVEL
+ ROCD:  0.00000000000000E+00HEADING : Mode-S :   3.59121093750000E+02 HSPEED:  4.12588148363119E+02 RELATIVE_LEVEL: E_UNKNOWN
+
+
+****************************************************
+
+
+****************************************************
+******************** EVENT RECEIVED ****************
+****************************************************
+ETO EVENT RECEIVED   -----  18.10.23_072700-503228
+
+
+
+-> ETO event sent : 
+____________________
+
+COMMON_REPORT_DATA: 
+FLIGHT_ID :  8716
+4D_TRACK_POSITION : 
+   TIME  :  7- 27- 0
+   LEVEL :  2.00000000000000E+02
+   R_2D  : 
+         Geodesic degrees latitude  :  4.99504364418041E+01
+         Geodesic degrees longitude :  1.10445232082988E+01
+APPLICATED_PROFILE_POINT : 
+   OCCURRENCE_NB :  1
+   POSITION      : 
+         Geodesic degrees latitude  :  4.99217912683618E+01
+         Geodesic degrees longitude :  1.10445888487167E+01
+   SEGMENT       :  1
+ PROJECTION IN PROFILE :  TIME: 072700 LEVEL:  200 GEODESIC: 495702N0110237E
+ GROUND SPEED :  4.13159562735307E+02
+
+****************************************************
+
+
+****************************************************
+******************** EVENT RECEIVED ****************
+****************************************************
+ATO EVENT RECEIVED   -----  18.10.23_072736-005394
+
+
+ Number  :  8716
+ Session :  0
+TRACK POSITION :   TIME: 072736 LEVEL:  200 GEODESIC: 500105N0110231E
+START POINT :   OCURRENCE:  1 GEODESIC: 500102N0110230E SEGMENT :  1
+FINAL POINT :   OCURRENCE:  1 GEODESIC: 500102N0110230E SEGMENT :  1
+ CONFORMITY :  STATE : CONFORM         HORIZ : Conform    VERTI : Conform    CFL   : Levelled   200
+ REAL POSITION => 
+ TIME: 072736 LEVEL:  200 GEODESIC: 500105N0110231E
+ PROJECTED POSITION => 
+ TIME: 072736 LEVEL:  200 GEODESIC: 500105N0110230E
+ PREV PROFILE POINT =>  OCCURRENCE NB    :  1 GEODESIC DEGREES : 500102N0110230E
+ LATITUDE :  5.00172230263682E+01
+ LONGITUDE :  1.10417391339821E+01 SEGMENT :  1
+CFL tendency : E_LEVEL
+ ROCD:  0.00000000000000E+00HEADING : Mode-S :   3.59121093750000E+02 HSPEED:  4.12695456117035E+02 RELATIVE_LEVEL: E_UNKNOWN
+
+****************************************************
+
+
+****************************************************
+******************** EVENT RECEIVED ****************
+****************************************************
+VERTICAL PROFILE DEVIATION EVENT RECEIVED   -----  18.10.23_072746-002143
+
+
+-> VERTICAL PROFILE DEVIATION event sent : 
+__________________________________________
+FLIGHT_ID     :  8716
+EVENT SUBTYPE : E_CFL_APPLICATION
+ STATE : CONFORM         HORIZ : Conform    VERTI : Conform    CFL   : Levelled   200
+ REAL POSITION => 
+ TIME: 072746 LEVEL:  200 GEODESIC: 500214N0110229E
+ PROJECTED POSITION => 
+ TIME: 072746 LEVEL:  204 GEODESIC: 500214N0110228E
+ PREV PROFILE POINT =>  OCCURRENCE NB    :  1 GEODESIC DEGREES : 500102N0110230E
+ LATITUDE :  5.00172230263682E+01
+ LONGITUDE :  1.10417391339821E+01 SEGMENT :  1
+CFL tendency : E_LEVEL
+ ROCD:  0.00000000000000E+00HEADING : Mode-S :   3.59121093750000E+02 HSPEED:  4.13181282615550E+02 RELATIVE_LEVEL: E_UNKNOWN
+
+
+****************************************************
+
+
+****************************************************
+******************** EVENT RECEIVED ****************
+****************************************************
+ATO EVENT RECEIVED   -----  18.10.23_072806-003887
+
+
+ Number  :  8716
+ Session :  0
+TRACK POSITION :   TIME: 072806 LEVEL:  200 GEODESIC: 500431N0110224E
+START POINT :   OCURRENCE:  1 GEODESIC: 500431N0110224E SEGMENT :  1
+FINAL POINT :   OCURRENCE:  1 GEODESIC: 500431N0110224E SEGMENT :  1
+ CONFORMITY :  STATE : CONFORM         HORIZ : Conform    VERTI : Conform    CFL   : Levelled   200
+ REAL POSITION => 
+ TIME: 072806 LEVEL:  200 GEODESIC: 500431N0110224E
+ PROJECTED POSITION => 
+ TIME: 072806 LEVEL:  200 GEODESIC: 500431N0110224E
+ PREV PROFILE POINT =>  OCCURRENCE NB    :  1 GEODESIC DEGREES : 500431N0110224E
+ LATITUDE :  5.00752777777778E+01
+ LONGITUDE :  1.10400000000000E+01 SEGMENT :  1
+CFL tendency : E_LEVEL
+ ROCD:  0.00000000000000E+00HEADING : Mode-S :   3.59121093750000E+02 HSPEED:  4.13181282615550E+02 RELATIVE_LEVEL: E_UNKNOWN
+
+****************************************************
+
+
+****************************************************
+******************** EVENT RECEIVED ****************
+****************************************************
+ATO EVENT RECEIVED   -----  18.10.23_072846-003781
+
+
+ Number  :  8716
+ Session :  0
+TRACK POSITION :   TIME: 072846 LEVEL:  200 GEODESIC: 500906N0110215E
+START POINT :   OCURRENCE:  1 GEODESIC: 500906N0110216E SEGMENT :  1
+FINAL POINT :   OCURRENCE:  1 GEODESIC: 500906N0110216E SEGMENT :  1
+ CONFORMITY :  STATE : CONFORM         HORIZ : Conform    VERTI : Conform    CFL   : Levelled   200
+ REAL POSITION => 
+ TIME: 072846 LEVEL:  200 GEODESIC: 500906N0110215E
+ PROJECTED POSITION => 
+ TIME: 072846 LEVEL:  200 GEODESIC: 500906N0110216E
+ PREV PROFILE POINT =>  OCCURRENCE NB    :  1 GEODESIC DEGREES : 500906N0110216E
+ LATITUDE :  5.01516197586279E+01
+ LONGITUDE :  1.10376429839646E+01 SEGMENT :  1
+CFL tendency : E_LEVEL
+ ROCD:  0.00000000000000E+00HEADING : Mode-S :   3.59121093750000E+02 HSPEED:  4.13159562735307E+02 RELATIVE_LEVEL: E_UNKNOWN
+
+****************************************************
+
+
+****************************************************
+******************** EVENT RECEIVED ****************
+****************************************************
+VERTICAL PROFILE DEVIATION EVENT RECEIVED   -----  18.10.23_072856-002493
+
+
+-> VERTICAL PROFILE DEVIATION event sent : 
+__________________________________________
+FLIGHT_ID     :  8716
+EVENT SUBTYPE : E_CFL_APPLICATION
+ STATE : CONFORM         HORIZ : Conform    VERTI : Conform    CFL   : Levelled   200
+ REAL POSITION => 
+ TIME: 072856 LEVEL:  200 GEODESIC: 501015N0110213E
+ PROJECTED POSITION => 
+ TIME: 072856 LEVEL:  204 GEODESIC: 501015N0110213E
+ PREV PROFILE POINT =>  OCCURRENCE NB    :  1 GEODESIC DEGREES : 500906N0110216E
+ LATITUDE :  5.01516197586279E+01
+ LONGITUDE :  1.10376429839646E+01 SEGMENT :  1
+CFL tendency : E_LEVEL
+ ROCD:  0.00000000000000E+00HEADING : Mode-S :   3.59121093750000E+02 HSPEED:  4.13159562735307E+02 RELATIVE_LEVEL: E_UNKNOWN
+
+
+****************************************************
+
+
+****************************************************
+******************** EVENT RECEIVED ****************
+****************************************************
+ETO EVENT RECEIVED   -----  18.10.23_072901-004316
+
+
+
+-> ETO event sent : 
+____________________
+
+COMMON_REPORT_DATA: 
+FLIGHT_ID :  8716
+4D_TRACK_POSITION : 
+   TIME  :  7- 29- 1
+   LEVEL :  2.00000000000000E+02
+   R_2D  : 
+         Geodesic degrees latitude  :  5.01803222637552E+01
+         Geodesic degrees longitude :  1.10367022775054E+01
+APPLICATED_PROFILE_POINT : 
+   OCCURRENCE_NB :  1
+   POSITION      : 
+         Geodesic degrees latitude  :  5.01707856963909E+01
+         Geodesic degrees longitude :  1.10370499068896E+01
+   SEGMENT       :  1
+ PROJECTION IN PROFILE :  TIME: 072901 LEVEL:  200 GEODESIC: 501049N0110212E
+ GROUND SPEED :  4.13149559774870E+02
+
+****************************************************
+
+
+****************************************************
+******************** EVENT RECEIVED ****************
+****************************************************
+ATO EVENT RECEIVED   -----  18.10.23_072951-004586
+
+
+ Number  :  8716
+ Session :  0
+TRACK POSITION :   TIME: 072946 LEVEL:  200 GEODESIC: 501633N0110202E
+START POINT :   OCURRENCE:  1 GEODESIC: 501558N0110203E SEGMENT :  1
+FINAL POINT :   OCURRENCE:  1 GEODESIC: 501558N0110203E SEGMENT :  1
+ CONFORMITY :  STATE : CONFORM         HORIZ : Conform    VERTI : Conform    CFL   : Levelled   200
+ REAL POSITION => 
+ TIME: 072951 LEVEL:  200 GEODESIC: 501633N0110202E
+ PROJECTED POSITION => 
+ TIME: 072951 LEVEL:  202 GEODESIC: 501633N0110202E
+ PREV PROFILE POINT =>  OCCURRENCE NB    :  1 GEODESIC DEGREES : 501558N0110203E
+ LATITUDE :  5.02662107759516E+01
+ LONGITUDE :  1.10340907960620E+01 SEGMENT :  1
+CFL tendency : E_LEVEL
+ ROCD:  0.00000000000000E+00HEADING : Mode-S :   3.59121093750000E+02 HSPEED:  4.13149559774870E+02 RELATIVE_LEVEL: E_UNKNOWN
+
+****************************************************
+
+
+****************************************************
+******************** EVENT RECEIVED ****************
+****************************************************
+VERTICAL PROFILE DEVIATION EVENT RECEIVED   -----  18.10.23_072956-004746
+
+
+-> VERTICAL PROFILE DEVIATION event sent : 
+__________________________________________
+FLIGHT_ID     :  8716
+EVENT SUBTYPE : E_CFL_APPLICATION
+ STATE : CONFORM         HORIZ : Conform    VERTI : Conform    CFL   : Levelled   200
+ REAL POSITION => 
+ TIME: 072956 LEVEL:  200 GEODESIC: 501707N0110201E
+ PROJECTED POSITION => 
+ TIME: 072956 LEVEL:  204 GEODESIC: 501707N0110201E
+ PREV PROFILE POINT =>  OCCURRENCE NB    :  1 GEODESIC DEGREES : 501703N0110201E
+ LATITUDE :  5.02840919130206E+01
+ LONGITUDE :  1.10335349864485E+01 SEGMENT :  1
+CFL tendency : E_LEVEL
+ ROCD:  0.00000000000000E+00HEADING : Mode-S :   3.59121093750000E+02 HSPEED:  4.13149559774870E+02 RELATIVE_LEVEL: E_UNKNOWN
+
+
+****************************************************
+
+
+****************************************************
+******************** EVENT RECEIVED ****************
+****************************************************
+ETO EVENT RECEIVED   -----  18.10.23_073001-004609
+
+
+
+-> ETO event sent : 
+____________________
+
+COMMON_REPORT_DATA: 
+FLIGHT_ID :  8716
+4D_TRACK_POSITION : 
+   TIME  :  7- 30- 1
+   LEVEL :  2.00000000000000E+02
+   R_2D  : 
+         Geodesic degrees latitude  :  5.02948007550834E+01
+         Geodesic degrees longitude :  1.10331951560585E+01
+APPLICATED_PROFILE_POINT : 
+   OCCURRENCE_NB :  1
+   POSITION      : 
+         Geodesic degrees latitude  :  5.02852590914387E+01
+         Geodesic degrees longitude :  1.10334986838854E+01
+   SEGMENT       :  1
+ PROJECTION IN PROFILE :  TIME: 073001 LEVEL:  200 GEODESIC: 501741N0110200E
+ GROUND SPEED :  4.13149559774870E+02
+
+****************************************************
+
+
+****************************************************
+******************** EVENT RECEIVED ****************
+****************************************************
+ATO EVENT RECEIVED   -----  18.10.23_073051-002629
+
+
+ Number  :  8716
+ Session :  0
+TRACK POSITION :   TIME: 073051 LEVEL:  200 GEODESIC: 502325N0110149E
+START POINT :   OCURRENCE:  1 GEODESIC: 502250N0110150E SEGMENT :  1
+FINAL POINT :   OCURRENCE:  1 GEODESIC: 502319N0110149E SEGMENT :  1
+ CONFORMITY :  STATE : CONFORM         HORIZ : Conform    VERTI : Conform    CFL   : Levelled   200
+ REAL POSITION => 
+ TIME: 073051 LEVEL:  200 GEODESIC: 502325N0110149E
+ PROJECTED POSITION => 
+ TIME: 073051 LEVEL:  202 GEODESIC: 502325N0110149E
+ PREV PROFILE POINT =>  OCCURRENCE NB    :  1 GEODESIC DEGREES : 502319N0110149E
+ LATITUDE :  5.03886111111111E+01
+ LONGITUDE :  1.10302777777778E+01 SEGMENT :  1
+CFL tendency : E_LEVEL
+ ROCD:  0.00000000000000E+00HEADING : Mode-S :   3.59121093750000E+02 HSPEED:  4.13149559774870E+02 RELATIVE_LEVEL: E_UNKNOWN
+
+****************************************************
+
+
+****************************************************
+******************** EVENT RECEIVED ****************
+****************************************************
+VERTICAL PROFILE DEVIATION EVENT RECEIVED   -----  18.10.23_073056-002525
+
+
+-> VERTICAL PROFILE DEVIATION event sent : 
+__________________________________________
+FLIGHT_ID     :  8716
+EVENT SUBTYPE : E_CFL_APPLICATION
+ STATE : CONFORM         HORIZ : Conform    VERTI : Conform    CFL   : Levelled   200
+ REAL POSITION => 
+ TIME: 073056 LEVEL:  200 GEODESIC: 502359N0110148E
+ PROJECTED POSITION => 
+ TIME: 073056 LEVEL:  204 GEODESIC: 502359N0110148E
+ PREV PROFILE POINT =>  OCCURRENCE NB    :  1 GEODESIC DEGREES : 502319N0110149E
+ LATITUDE :  5.03886111111111E+01
+ LONGITUDE :  1.10302777777778E+01 SEGMENT :  1
+CFL tendency : E_LEVEL
+ ROCD:  0.00000000000000E+00HEADING : Mode-S :   0.00000000000000E+00 HSPEED:  4.13149559774870E+02 RELATIVE_LEVEL: E_UNKNOWN
+
+
+****************************************************
+
+
+****************************************************
+******************** EVENT RECEIVED ****************
+****************************************************
+ATO EVENT RECEIVED   -----  18.10.23_073056-502111
+
+
+ Number  :  8716
+ Session :  0
+TRACK POSITION :   TIME: 073056 LEVEL:  200 GEODESIC: 502359N0110148E
+START POINT :   OCURRENCE:  1 GEODESIC: 502359N0110148E SEGMENT :  1
+FINAL POINT :   OCURRENCE:  1 GEODESIC: 502359N0110148E SEGMENT :  1
+ CONFORMITY :  STATE : CONFORM         HORIZ : Conform    VERTI : Conform    CFL   : Levelled   200
+ REAL POSITION => 
+ TIME: 073056 LEVEL:  200 GEODESIC: 502359N0110148E
+ PROJECTED POSITION => 
+ TIME: 073056 LEVEL:  200 GEODESIC: 502359N0110148E
+ PREV PROFILE POINT =>  OCCURRENCE NB    :  1 GEODESIC DEGREES : 502359N0110148E
+ LATITUDE :  5.03997097227295E+01
+ LONGITUDE :  1.10299430880987E+01 SEGMENT :  1
+CFL tendency : E_LEVEL
+ ROCD:  0.00000000000000E+00HEADING : Mode-S :   0.00000000000000E+00 HSPEED:  4.13149559774870E+02 RELATIVE_LEVEL: E_UNKNOWN
+
+****************************************************
+
+
+****************************************************
+******************** EVENT RECEIVED ****************
+****************************************************
+ETO EVENT RECEIVED   -----  18.10.23_073111-002798
+
+
+
+-> ETO event sent : 
+____________________
+
+COMMON_REPORT_DATA: 
+FLIGHT_ID :  8716
+4D_TRACK_POSITION : 
+   TIME  :  7- 31- 11
+   LEVEL :  2.00000000000000E+02
+   R_2D  : 
+         Geodesic degrees latitude  :  5.04283294472894E+01
+         Geodesic degrees longitude :  1.10290524465324E+01
+APPLICATED_PROFILE_POINT : 
+   OCCURRENCE_NB :  1
+   POSITION      : 
+         Geodesic degrees latitude  :  5.03997097227295E+01
+         Geodesic degrees longitude :  1.10299430880987E+01
+   SEGMENT       :  1
+ PROJECTION IN PROFILE :  TIME: 073111 LEVEL:  200 GEODESIC: 502542N0110145E
+ GROUND SPEED :  4.13149559774870E+02
+
+****************************************************
+
+
+****************************************************
+******************** EVENT RECEIVED ****************
+****************************************************
+ATO EVENT RECEIVED   -----  18.10.23_073151-002629
+
+
+ Number  :  8716
+ Session :  0
+TRACK POSITION :   TIME: 073146 LEVEL:  200 GEODESIC: 503017N0110136E
+START POINT :   OCURRENCE:  1 GEODESIC: 502942N0110137E SEGMENT :  1
+FINAL POINT :   OCURRENCE:  1 GEODESIC: 502942N0110137E SEGMENT :  1
+ CONFORMITY :  STATE : CONFORM         HORIZ : Conform    VERTI : Conform    CFL   : Levelled   200
+ REAL POSITION => 
+ TIME: 073151 LEVEL:  200 GEODESIC: 503017N0110136E
+ PROJECTED POSITION => 
+ TIME: 073151 LEVEL:  202 GEODESIC: 503017N0110136E
+ PREV PROFILE POINT =>  OCCURRENCE NB    :  1 GEODESIC DEGREES : 502942N0110137E
+ LATITUDE :  5.04951308880654E+01
+ LONGITUDE :  1.10270596848168E+01 SEGMENT :  1
+CFL tendency : E_LEVEL
+ ROCD:  0.00000000000000E+00HEADING : Mode-S :   0.00000000000000E+00 HSPEED:  4.13140128190344E+02 RELATIVE_LEVEL: E_UNKNOWN
+
+****************************************************
+
+
+****************************************************
+******************** EVENT RECEIVED ****************
+****************************************************
+VERTICAL PROFILE DEVIATION EVENT RECEIVED   -----  18.10.23_073156-002762
+
+
+-> VERTICAL PROFILE DEVIATION event sent : 
+__________________________________________
+FLIGHT_ID     :  8716
+EVENT SUBTYPE : E_CFL_APPLICATION
+ STATE : CONFORM         HORIZ : Conform    VERTI : Conform    CFL   : Levelled   200
+ REAL POSITION => 
+ TIME: 073156 LEVEL:  200 GEODESIC: 503051N0110135E
+ PROJECTED POSITION => 
+ TIME: 073156 LEVEL:  204 GEODESIC: 503051N0110135E
+ PREV PROFILE POINT =>  OCCURRENCE NB    :  1 GEODESIC DEGREES : 502942N0110137E
+ LATITUDE :  5.04951308880654E+01
+ LONGITUDE :  1.10270596848168E+01 SEGMENT :  1
+CFL tendency : E_LEVEL
+ ROCD:  0.00000000000000E+00HEADING : Mode-S :   0.00000000000000E+00 HSPEED:  4.13140128190344E+02 RELATIVE_LEVEL: E_UNKNOWN
+
+
+****************************************************
+
+
+****************************************************
+******************** EVENT RECEIVED ****************
+****************************************************
+ATO EVENT RECEIVED   -----  18.10.23_073301-002413
+
+
+ Number  :  8716
+ Session :  0
+TRACK POSITION :   TIME: 073256 LEVEL:  200 GEODESIC: 503817N0110122E
+START POINT :   OCURRENCE:  1 GEODESIC: 503743N0110123E SEGMENT :  1
+FINAL POINT :   OCURRENCE:  1 GEODESIC: 503743N0110123E SEGMENT :  1
+ CONFORMITY :  STATE : CONFORM         HORIZ : Conform    VERTI : Conform    CFL   : Levelled   200
+ REAL POSITION => 
+ TIME: 073301 LEVEL:  200 GEODESIC: 503817N0110122E
+ PROJECTED POSITION => 
+ TIME: 073301 LEVEL:  202 GEODESIC: 503817N0110122E
+ PREV PROFILE POINT =>  OCCURRENCE NB    :  1 GEODESIC DEGREES : 503743N0110123E
+ LATITUDE :  5.06286723641214E+01
+ LONGITUDE :  1.10230046986984E+01 SEGMENT :  1
+CFL tendency : E_LEVEL
+ ROCD:  0.00000000000000E+00HEADING : Mode-S :   0.00000000000000E+00 HSPEED:  4.13140128190344E+02 RELATIVE_LEVEL: E_UNKNOWN
+
+****************************************************
+
+
+****************************************************
+******************** EVENT RECEIVED ****************
+****************************************************
+VERTICAL PROFILE DEVIATION EVENT RECEIVED   -----  18.10.23_073306-502624
+
+
+-> VERTICAL PROFILE DEVIATION event sent : 
+__________________________________________
+FLIGHT_ID     :  8716
+EVENT SUBTYPE : E_CFL_APPLICATION
+ STATE : CONFORM         HORIZ : Conform    VERTI : Conform    CFL   : Levelled   200
+ REAL POSITION => 
+ TIME: 073306 LEVEL:  200 GEODESIC: 503855N0110121E
+ PROJECTED POSITION => 
+ TIME: 073306 LEVEL:  204 GEODESIC: 503855N0110121E
+ PREV PROFILE POINT =>  OCCURRENCE NB    :  1 GEODESIC DEGREES : 503743N0110123E
+ LATITUDE :  5.06286723641214E+01
+ LONGITUDE :  1.10230046986984E+01 SEGMENT :  1
+CFL tendency : E_LEVEL
+ ROCD:  0.00000000000000E+00HEADING : Mode-S :   0.00000000000000E+00 HSPEED:  4.13140128190344E+02 RELATIVE_LEVEL: E_UNKNOWN
+
+
+****************************************************
+
+
+****************************************************
+******************** EVENT RECEIVED ****************
+****************************************************
+ETO EVENT RECEIVED   -----  18.10.23_073311-502355
+
+
+
+-> ETO event sent : 
+____________________
+
+COMMON_REPORT_DATA: 
+FLIGHT_ID :  8716
+4D_TRACK_POSITION : 
+   TIME  :  7- 33- 11
+   LEVEL :  2.00000000000000E+02
+   R_2D  : 
+         Geodesic degrees latitude  :  5.06581741786811E+01
+         Geodesic degrees longitude :  1.10221119612861E+01
+APPLICATED_PROFILE_POINT : 
+   OCCURRENCE_NB :  1
+   POSITION      : 
+         Geodesic degrees latitude  :  5.06486374034831E+01
+         Geodesic degrees longitude :  1.10223964908557E+01
+   SEGMENT       :  1
+ PROJECTION IN PROFILE :  TIME: 073311 LEVEL:  200 GEODESIC: 503929N0110120E
+ GROUND SPEED :  4.13140128190344E+02
+
+****************************************************
+
+
+****************************************************
+******************** EVENT RECEIVED ****************
+****************************************************
+ATO EVENT RECEIVED   -----  18.10.23_073316-503078
+
+
+ Number  :  8716
+ Session :  0
+TRACK POSITION :   TIME: 073316 LEVEL:  200 GEODESIC: 504004N0110119E
+START POINT :   OCURRENCE:  1 GEODESIC: 504000N0110119E SEGMENT :  1
+FINAL POINT :   OCURRENCE:  1 GEODESIC: 504000N0110119E SEGMENT :  1
+ CONFORMITY :  STATE : CONFORM         HORIZ : Conform    VERTI : Conform    CFL   : Levelled   200
+ REAL POSITION => 
+ TIME: 073316 LEVEL:  200 GEODESIC: 504004N0110119E
+ PROJECTED POSITION => 
+ TIME: 073316 LEVEL:  200 GEODESIC: 504004N0110119E
+ PREV PROFILE POINT =>  OCCURRENCE NB    :  1 GEODESIC DEGREES : 504000N0110119E
+ LATITUDE :  5.06665566024771E+01
+ LONGITUDE :  1.10218502184149E+01 SEGMENT :  1
+CFL tendency : E_LEVEL
+ ROCD:  0.00000000000000E+00HEADING : Mode-S :   0.00000000000000E+00 HSPEED:  4.13140128190344E+02 RELATIVE_LEVEL: E_UNKNOWN
+
+****************************************************
+
+
+****************************************************
+******************** EVENT RECEIVED ****************
+****************************************************
+ATO EVENT RECEIVED   -----  18.10.23_073347-004052
+
+
+ Number  :  8716
+ Session :  0
+TRACK POSITION :   TIME: 073347 LEVEL:  200 GEODESIC: 504333N0110112E
+START POINT :   OCURRENCE:  1 GEODESIC: 504305N0110113E SEGMENT :  1
+FINAL POINT :   OCURRENCE:  1 GEODESIC: 504305N0110113E SEGMENT :  1
+ CONFORMITY :  STATE : CONFORM         HORIZ : Conform    VERTI : Conform    CFL   : Levelled   200
+ REAL POSITION => 
+ TIME: 073347 LEVEL:  200 GEODESIC: 504333N0110112E
+ PROJECTED POSITION => 
+ TIME: 073347 LEVEL:  200 GEODESIC: 504333N0110109E
+ PREV PROFILE POINT =>  OCCURRENCE NB    :  1 GEODESIC DEGREES : 504305N0110113E
+ LATITUDE :  5.07180555555556E+01
+ LONGITUDE :  1.10202777777778E+01 SEGMENT :  1
+CFL tendency : E_LEVEL
+ ROCD:  0.00000000000000E+00HEADING : Mode-S :   3.53144531250000E+02 HSPEED:  4.12663695929246E+02 RELATIVE_LEVEL: E_UNKNOWN
+
+****************************************************
+
+
+****************************************************
+******************** EVENT RECEIVED ****************
+****************************************************
+ATO EVENT RECEIVED   -----  18.10.23_073357-003315
+
+
+ Number  :  8716
+ Session :  0
+TRACK POSITION :   TIME: 073357 LEVEL:  200 GEODESIC: 504442N0110104E
+START POINT :   OCURRENCE:  1 GEODESIC: 504413N0110104E SEGMENT :  1
+FINAL POINT :   OCURRENCE:  1 GEODESIC: 504413N0110104E SEGMENT :  1
+ CONFORMITY :  STATE : CONFORM         HORIZ : Conform    VERTI : Conform    CFL   : Levelled   200
+ REAL POSITION => 
+ TIME: 073357 LEVEL:  200 GEODESIC: 504442N0110104E
+ PROJECTED POSITION => 
+ TIME: 073357 LEVEL:  202 GEODESIC: 504441N0110100E
+ PREV PROFILE POINT =>  OCCURRENCE NB    :  1 GEODESIC DEGREES : 504413N0110104E
+ LATITUDE :  5.07370753411735E+01
+ LONGITUDE :  1.10177647356638E+01 SEGMENT :  1
+CFL tendency : E_LEVEL
+ ROCD:  0.00000000000000E+00HEADING : Mode-S :   3.56132812500000E+02 HSPEED:  4.12782426462722E+02 RELATIVE_LEVEL: E_UNKNOWN
+
+****************************************************
+
+
+****************************************************
+******************** EVENT RECEIVED ****************
+****************************************************
+VERTICAL PROFILE DEVIATION EVENT RECEIVED   -----  18.10.23_073401-502704
+
+
+-> VERTICAL PROFILE DEVIATION event sent : 
+__________________________________________
+FLIGHT_ID     :  8716
+EVENT SUBTYPE : E_CFL_APPLICATION
+ STATE : CONFORM         HORIZ : Conform    VERTI : Conform    CFL   : Levelled   200
+ REAL POSITION => 
+ TIME: 073401 LEVEL:  200 GEODESIC: 504512N0110055E
+ PROJECTED POSITION => 
+ TIME: 073401 LEVEL:  203 GEODESIC: 504512N0110056E
+ PREV PROFILE POINT =>  OCCURRENCE NB    :  1 GEODESIC DEGREES : 504413N0110104E
+ LATITUDE :  5.07370753411735E+01
+ LONGITUDE :  1.10177647356638E+01 SEGMENT :  1
+CFL tendency : E_LEVEL
+ ROCD:  0.00000000000000E+00HEADING : Mode-S :   3.56132812500000E+02 HSPEED:  4.13442974577026E+02 RELATIVE_LEVEL: E_UNKNOWN
+
+
+****************************************************
+
+
+****************************************************
+******************** EVENT RECEIVED ****************
+****************************************************
+VERTICAL PROFILE DEVIATION EVENT RECEIVED   -----  18.10.23_073406-502729
+
+
+-> VERTICAL PROFILE DEVIATION event sent : 
+__________________________________________
+FLIGHT_ID     :  8716
+EVENT SUBTYPE : E_CFL_APPLICATION
+ STATE : CONFORM         HORIZ : Conform    VERTI : Conform    CFL   : Levelled   200
+ REAL POSITION => 
+ TIME: 073406 LEVEL:  200 GEODESIC: 504547N0110050E
+ PROJECTED POSITION => 
+ TIME: 073406 LEVEL:  205 GEODESIC: 504547N0110052E
+ PREV PROFILE POINT =>  OCCURRENCE NB    :  1 GEODESIC DEGREES : 504413N0110104E
+ LATITUDE :  5.07370753411735E+01
+ LONGITUDE :  1.10177647356638E+01 SEGMENT :  1
+CFL tendency : E_LEVEL
+ ROCD:  0.00000000000000E+00HEADING : Mode-S :   3.56132812500000E+02 HSPEED:  4.12911703768261E+02 RELATIVE_LEVEL: E_UNKNOWN
+
+
+****************************************************
+
+
+****************************************************
+******************** EVENT RECEIVED ****************
+****************************************************
+VERTICAL PROFILE DEVIATION EVENT RECEIVED   -----  18.10.23_073411-502704
+
+
+-> VERTICAL PROFILE DEVIATION event sent : 
+__________________________________________
+FLIGHT_ID     :  8716
+EVENT SUBTYPE : E_CFL_APPLICATION
+ STATE : CONFORM         HORIZ : Conform    VERTI : Conform    CFL   : Levelled   200
+ REAL POSITION => 
+ TIME: 073411 LEVEL:  200 GEODESIC: 504621N0110045E
+ PROJECTED POSITION => 
+ TIME: 073411 LEVEL:  207 GEODESIC: 504621N0110047E
+ PREV PROFILE POINT =>  OCCURRENCE NB    :  1 GEODESIC DEGREES : 504413N0110104E
+ LATITUDE :  5.07370753411735E+01
+ LONGITUDE :  1.10177647356638E+01 SEGMENT :  1
+CFL tendency : E_LEVEL
+ ROCD:  0.00000000000000E+00HEADING : Mode-S :   3.56132812500000E+02 HSPEED:  4.12866804513683E+02 RELATIVE_LEVEL: E_UNKNOWN
+
+
+****************************************************
+
+
+****************************************************
+******************** EVENT RECEIVED ****************
+****************************************************
+VERTICAL PROFILE DEVIATION EVENT RECEIVED   -----  18.10.23_073416-503180
+
+
+-> VERTICAL PROFILE DEVIATION event sent : 
+__________________________________________
+FLIGHT_ID     :  8716
+EVENT SUBTYPE : E_CFL_APPLICATION
+ STATE : CONFORM         HORIZ : Conform    VERTI : Conform    CFL   : Levelled   200
+ REAL POSITION => 
+ TIME: 073416 LEVEL:  200 GEODESIC: 504655N0110041E
+ PROJECTED POSITION => 
+ TIME: 073416 LEVEL:  209 GEODESIC: 504655N0110043E
+ PREV PROFILE POINT =>  OCCURRENCE NB    :  1 GEODESIC DEGREES : 504413N0110104E
+ LATITUDE :  5.07370753411735E+01
+ LONGITUDE :  1.10177647356638E+01 SEGMENT :  1
+CFL tendency : E_LEVEL
+ ROCD:  0.00000000000000E+00HEADING : Mode-S :   3.56132812500000E+02 HSPEED:  4.12822472433729E+02 RELATIVE_LEVEL: E_UNKNOWN
+
+
+****************************************************
+
+
+****************************************************
+******************** EVENT RECEIVED ****************
+****************************************************
+VERTICAL PROFILE DEVIATION EVENT RECEIVED   -----  18.10.23_073421-503509
+
+
+-> VERTICAL PROFILE DEVIATION event sent : 
+__________________________________________
+FLIGHT_ID     :  8716
+EVENT SUBTYPE : E_CFL_APPLICATION
+ STATE : CONFORM         HORIZ : Conform    VERTI : Conform    CFL   : Levelled   200
+ REAL POSITION => 
+ TIME: 073421 LEVEL:  200 GEODESIC: 504729N0110036E
+ PROJECTED POSITION => 
+ TIME: 073421 LEVEL:  211 GEODESIC: 504729N0110038E
+ PREV PROFILE POINT =>  OCCURRENCE NB    :  1 GEODESIC DEGREES : 504727N0110038E
+ LATITUDE :  5.07908435195655E+01
+ LONGITUDE :  1.10106493709792E+01 SEGMENT :  1
+CFL tendency : E_LEVEL
+ ROCD:  0.00000000000000E+00HEADING : Mode-S :   3.56132812500000E+02 HSPEED:  4.12822472433729E+02 RELATIVE_LEVEL: E_UNKNOWN
+
+
+****************************************************
+
+
+****************************************************
+******************** EVENT RECEIVED ****************
+****************************************************
+VERTICAL PROFILE DEVIATION EVENT RECEIVED   -----  18.10.23_073426-502909
+
+
+-> VERTICAL PROFILE DEVIATION event sent : 
+__________________________________________
+FLIGHT_ID     :  8716
+EVENT SUBTYPE : E_CFL_APPLICATION
+ STATE : CONFORM         HORIZ : Conform    VERTI : Conform    CFL   : Levelled   200
+ REAL POSITION => 
+ TIME: 073426 LEVEL:  200 GEODESIC: 504803N0110031E
+ PROJECTED POSITION => 
+ TIME: 073426 LEVEL:  213 GEODESIC: 504803N0110034E
+ PREV PROFILE POINT =>  OCCURRENCE NB    :  1 GEODESIC DEGREES : 504727N0110038E
+ LATITUDE :  5.07908435195655E+01
+ LONGITUDE :  1.10106493709792E+01 SEGMENT :  1
+CFL tendency : E_LEVEL
+ ROCD:  0.00000000000000E+00HEADING : Mode-S :   3.56132812500000E+02 HSPEED:  4.12778707711143E+02 RELATIVE_LEVEL: E_UNKNOWN
+
+
+****************************************************
+
+
+****************************************************
+******************** EVENT RECEIVED ****************
+****************************************************
+VERTICAL PROFILE DEVIATION EVENT RECEIVED   -----  18.10.23_073431-502526
+
+
+-> VERTICAL PROFILE DEVIATION event sent : 
+__________________________________________
+FLIGHT_ID     :  8716
+EVENT SUBTYPE : E_CFL_APPLICATION
+ STATE : CONFORM         HORIZ : Conform    VERTI : Conform    CFL   : Levelled   200
+ REAL POSITION => 
+ TIME: 073431 LEVEL:  200 GEODESIC: 504838N0110027E
+ PROJECTED POSITION => 
+ TIME: 073431 LEVEL:  215 GEODESIC: 504838N0110029E
+ PREV PROFILE POINT =>  OCCURRENCE NB    :  1 GEODESIC DEGREES : 504727N0110038E
+ LATITUDE :  5.07908435195655E+01
+ LONGITUDE :  1.10106493709792E+01 SEGMENT :  1
+CFL tendency : E_LEVEL
+ ROCD:  0.00000000000000E+00HEADING : Mode-S :   3.56132812500000E+02 HSPEED:  4.12692881057729E+02 RELATIVE_LEVEL: E_UNKNOWN
+
+
+****************************************************
+
+
+****************************************************
+******************** EVENT RECEIVED ****************
+****************************************************
+VERTICAL PROFILE DEVIATION EVENT RECEIVED   -----  18.10.23_073436-503521
+
+
+-> VERTICAL PROFILE DEVIATION event sent : 
+__________________________________________
+FLIGHT_ID     :  8716
+EVENT SUBTYPE : E_CFL_APPLICATION
+ STATE : CONFORM         HORIZ : Conform    VERTI : Conform    CFL   : Levelled   200
+ REAL POSITION => 
+ TIME: 073436 LEVEL:  200 GEODESIC: 504912N0110023E
+ PROJECTED POSITION => 
+ TIME: 073436 LEVEL:  217 GEODESIC: 504912N0110024E
+ PREV PROFILE POINT =>  OCCURRENCE NB    :  1 GEODESIC DEGREES : 504727N0110038E
+ LATITUDE :  5.07908435195655E+01
+ LONGITUDE :  1.10106493709792E+01 SEGMENT :  1
+CFL tendency : E_LEVEL
+ ROCD:  0.00000000000000E+00HEADING : Mode-S :   3.56132812500000E+02 HSPEED:  4.13176995887518E+02 RELATIVE_LEVEL: E_UNKNOWN
+
+
+****************************************************
+
+
+****************************************************
+******************** EVENT RECEIVED ****************
+****************************************************
+VERTICAL PROFILE DEVIATION EVENT RECEIVED   -----  18.10.23_073441-503398
+
+
+-> VERTICAL PROFILE DEVIATION event sent : 
+__________________________________________
+FLIGHT_ID     :  8716
+EVENT SUBTYPE : E_CFL_APPLICATION
+ STATE : CONFORM         HORIZ : Conform    VERTI : Conform    CFL   : Levelled   200
+ REAL POSITION => 
+ TIME: 073441 LEVEL:  200 GEODESIC: 504946N0110018E
+ PROJECTED POSITION => 
+ TIME: 073441 LEVEL:  219 GEODESIC: 504946N0110020E
+ PREV PROFILE POINT =>  OCCURRENCE NB    :  1 GEODESIC DEGREES : 504727N0110038E
+ LATITUDE :  5.07908435195655E+01
+ LONGITUDE :  1.10106493709792E+01 SEGMENT :  1
+CFL tendency : E_LEVEL
+ ROCD:  0.00000000000000E+00HEADING : Mode-S :   3.56132812500000E+02 HSPEED:  4.13134983598941E+02 RELATIVE_LEVEL: E_UNKNOWN
+
+
+****************************************************
+
+
+****************************************************
+******************** EVENT RECEIVED ****************
+****************************************************
+VERTICAL PROFILE DEVIATION EVENT RECEIVED   -----  18.10.23_073446-503172
+
+
+-> VERTICAL PROFILE DEVIATION event sent : 
+__________________________________________
+FLIGHT_ID     :  8716
+EVENT SUBTYPE : E_CFL_APPLICATION
+ STATE : CONFORM         HORIZ : Conform    VERTI : Conform    CFL   : Levelled   200
+ REAL POSITION => 
+ TIME: 073446 LEVEL:  200 GEODESIC: 505020N0110014E
+ PROJECTED POSITION => 
+ TIME: 073446 LEVEL:  221 GEODESIC: 505020N0110015E
+ PREV PROFILE POINT =>  OCCURRENCE NB    :  1 GEODESIC DEGREES : 504727N0110038E
+ LATITUDE :  5.07908435195655E+01
+ LONGITUDE :  1.10106493709792E+01 SEGMENT :  1
+CFL tendency : E_LEVEL
+ ROCD:  0.00000000000000E+00HEADING : Mode-S :   3.56132812500000E+02 HSPEED:  4.13134983598941E+02 RELATIVE_LEVEL: E_UNKNOWN
+
+
+****************************************************
+
+
+****************************************************
+******************** EVENT RECEIVED ****************
+****************************************************
+VERTICAL PROFILE DEVIATION EVENT RECEIVED   -----  18.10.23_073451-503096
+
+
+-> VERTICAL PROFILE DEVIATION event sent : 
+__________________________________________
+FLIGHT_ID     :  8716
+EVENT SUBTYPE : E_CFL_APPLICATION
+ STATE : CONFORM         HORIZ : Conform    VERTI : Conform    CFL   : Levelled   200
+ REAL POSITION => 
+ TIME: 073451 LEVEL:  200 GEODESIC: 505054N0110009E
+ PROJECTED POSITION => 
+ TIME: 073451 LEVEL:  222 GEODESIC: 505055N0110011E
+ PREV PROFILE POINT =>  OCCURRENCE NB    :  1 GEODESIC DEGREES : 505044N0110012E
+ LATITUDE :  5.08455227879875E+01
+ LONGITUDE :  1.10033965718620E+01 SEGMENT :  1
+CFL tendency : E_LEVEL
+ ROCD:  0.00000000000000E+00HEADING : Mode-S :   3.56132812500000E+02 HSPEED:  4.13093538720211E+02 RELATIVE_LEVEL: E_UNKNOWN
+
+
+****************************************************
+
+
+****************************************************
+******************** EVENT RECEIVED ****************
+****************************************************
+VERTICAL PROFILE DEVIATION EVENT RECEIVED   -----  18.10.23_073456-503391
+
+
+-> VERTICAL PROFILE DEVIATION event sent : 
+__________________________________________
+FLIGHT_ID     :  8716
+EVENT SUBTYPE : E_CFL_APPLICATION
+ STATE : CONFORM         HORIZ : Conform    VERTI : Conform    CFL   : Levelled   200
+ REAL POSITION => 
+ TIME: 073456 LEVEL:  200 GEODESIC: 505129N0110005E
+ PROJECTED POSITION => 
+ TIME: 073456 LEVEL:  224 GEODESIC: 505129N0110006E
+ PREV PROFILE POINT =>  OCCURRENCE NB    :  1 GEODESIC DEGREES : 505044N0110012E
+ LATITUDE :  5.08455227879875E+01
+ LONGITUDE :  1.10033965718620E+01 SEGMENT :  1
+CFL tendency : E_LEVEL
+ ROCD:  0.00000000000000E+00HEADING : Mode-S :   3.56132812500000E+02 HSPEED:  4.13093538720211E+02 RELATIVE_LEVEL: E_UNKNOWN
+
+
+****************************************************
+
+
+****************************************************
+******************** EVENT RECEIVED ****************
+****************************************************
+VERTICAL PROFILE DEVIATION EVENT RECEIVED   -----  18.10.23_073501-503026
+
+
+-> VERTICAL PROFILE DEVIATION event sent : 
+__________________________________________
+FLIGHT_ID     :  8716
+EVENT SUBTYPE : E_CFL_APPLICATION
+ STATE : CONFORM         HORIZ : Conform    VERTI : Conform    CFL   : Levelled   200
+ REAL POSITION => 
+ TIME: 073501 LEVEL:  200 GEODESIC: 505203N0110000E
+ PROJECTED POSITION => 
+ TIME: 073501 LEVEL:  226 GEODESIC: 505203N0110002E
+ PREV PROFILE POINT =>  OCCURRENCE NB    :  1 GEODESIC DEGREES : 505044N0110012E
+ LATITUDE :  5.08455227879875E+01
+ LONGITUDE :  1.10033965718620E+01 SEGMENT :  1
+CFL tendency : E_LEVEL
+ ROCD:  0.00000000000000E+00HEADING : Mode-S :   3.56132812500000E+02 HSPEED:  4.13093538720211E+02 RELATIVE_LEVEL: E_UNKNOWN
+
+
+****************************************************
+
+
+****************************************************
+******************** EVENT RECEIVED ****************
+****************************************************
+VERTICAL PROFILE DEVIATION EVENT RECEIVED   -----  18.10.23_073506-503225
+
+
+-> VERTICAL PROFILE DEVIATION event sent : 
+__________________________________________
+FLIGHT_ID     :  8716
+EVENT SUBTYPE : E_CFL_APPLICATION
+ STATE : CONFORM         HORIZ : Conform    VERTI : Conform    CFL   : Levelled   200
+ REAL POSITION => 
+ TIME: 073506 LEVEL:  200 GEODESIC: 505237N0105956E
+ PROJECTED POSITION => 
+ TIME: 073506 LEVEL:  227 GEODESIC: 505237N0105957E
+ PREV PROFILE POINT =>  OCCURRENCE NB    :  1 GEODESIC DEGREES : 505044N0110012E
+ LATITUDE :  5.08455227879875E+01
+ LONGITUDE :  1.10033965718620E+01 SEGMENT :  1
+CFL tendency : E_LEVEL
+ ROCD:  0.00000000000000E+00HEADING : Mode-S :   3.56132812500000E+02 HSPEED:  4.13052661422128E+02 RELATIVE_LEVEL: E_UNKNOWN
+
+
+****************************************************
+
+

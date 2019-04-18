@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Class-Path: . lib/log4j2.properties lib/gdal.jar lib/gluegen-rt.jar lib/jogl-all.jar lib/worldwind.jar 
+ lib/worldwindx.jar lib/gluegen-rt-natives-linux-amd64.jar lib/gluegen-rt-natives-linux-i586.jar
+ lib/gluegen-rt-natives-macosx-universal.jar lib/gluegen-rt-natives-windows-amd64.jar
+ lib/gluegen-rt-natives-windows-i586.jar lib/jogl-all-natives-linux-amd64.jar 
+ lib/jogl-all-natives-linux-i586.jar lib/jogl-all-natives-macosx-universal.jar 
+ lib/jogl-all-natives-windows-amd64.jar lib/jogl-all-natives-windows-i586.jar
+ lib/log4j-core-2.11.2.jar lib/log4j-api-2.11.2.jar
+Main-Class: iDIOT.iDIOT
+
