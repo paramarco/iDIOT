@@ -4,12 +4,14 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -121,17 +123,20 @@ public class SDD_DISTRIBUTION_Parser {
 	        		Pattern regExTimeStamp = Pattern.compile("[0-9]{1,2} \\w{3} 20[0-9]{2} [0-9]{1,2}:[0-9]{1,2}:[0-9]{1,2}");
 	                Matcher matcherTimeStamp;
 	                
-	            	Date dateEvent = new Date();
+	            	Date dateEvent = null;
+	            	SimpleDateFormat formatter = new SimpleDateFormat("d MMM yyyy H:m:s", Locale.ENGLISH);
 	            	matcherTimeStamp = regExTimeStamp.matcher( sblock );    			
 	    			if ( matcherTimeStamp.find()) {
 	    				if ( matcherTimeStamp.group(0) != null) {	    					
 	    					try {
 	    						String sDate = matcherTimeStamp.group(0);
-								dateEvent = new SimpleDateFormat("dd MMM yyyy HH:mm:ss").parse(sDate);
+								dateEvent = formatter.parse(sDate);
 							} catch (ParseException e) {
 								// TODO Auto-generated catch block
 								e.printStackTrace();
 							}	    					
+	    				}else {
+	    					System.out.println("DEBUG ::: hey ...");
 	    				}
 	    			} 
 	    			

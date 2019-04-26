@@ -26,7 +26,9 @@ public class SectorizationParser {
 			wideSectors = null;
 			fileSectorization = null;			
 			return;			
-		}					
+		}
+		this.fileSectorization = fileSectorization;
+		
 		try {
 			JAXBContext jaxbContext = JAXBContext.newInstance(OPERATION.class);
 			Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
@@ -69,6 +71,23 @@ public class SectorizationParser {
 		
 		return wideSectorFound;		
 	}
+	
+	public BASICWIDE getBasicSectorByRefNum (String RefNum )
+    {
+		BASICWIDE basicSectorFound = null;
+		
+		if ( basicSectors != null || wideSectors != null ) {
+			
+			Integer index = Integer.parseInt(RefNum);
+			index = index - 1;
+
+			basicSectorFound = basicSectors.get(index);		
+		
+		}
+		
+		return basicSectorFound ;		
+	}
+
 	
 	public String getWideSectorLabelbyBasicSectorRefNum (String RefNum ) {
 		String labelWideSector = "";

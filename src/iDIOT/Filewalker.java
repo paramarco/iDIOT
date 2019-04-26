@@ -50,8 +50,10 @@ public class Filewalker {
             		walk( f.getAbsolutePath() );
             }
             if ( f.isFile()  ) {
-            	String extension = f.getName().substring(f.getName().lastIndexOf("."));
+            	
             	String fileName = f.getName();
+            	if ( fileName.lastIndexOf(".") == -1) return; 
+            	String extension = fileName.substring(fileName.lastIndexOf("."));
             	
             	if ( extension.equals(".txt") && fileName.contains("DISTRIBUTION_") ) {
             		listFileSDD_DISTRIBUTION.add(f);

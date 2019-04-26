@@ -1,10 +1,16 @@
 package iDIOT;
 
+import java.io.File;
+import java.net.URISyntaxException;
+
+import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import gov.nasa.worldwind.Configuration;
 import gov.nasa.worldwind.avlist.AVKey;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.core.LoggerContext;
+
 
 /**
  * @author mvereda
@@ -12,8 +18,8 @@ import org.apache.logging.log4j.Logger;
  */
 
 public class iDIOT {
-
 	
+
     static
     {
         System.setProperty("java.net.useSystemProxies", "true");
@@ -79,17 +85,34 @@ public class iDIOT {
         Configuration.setValue(AVKey.INITIAL_PITCH, VIEW_PITCH);
     }
     
-    private static Logger logger;
+    static Logger logger;
 	
-
+    private static void openFileDialog ( App myApp ) {
+    	
+    	JFileChooser fc;
+    	fc = new JFileChooser();        
+        fc.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);     
+              
+    	int returnVal = fc.showOpenDialog(myApp.myFrame.controlPanel);
+		if (returnVal == JFileChooser.APPROVE_OPTION) {
+			File file = fc.getSelectedFile();
+			if (file != null) {
+				myApp.targetPath = file.getAbsolutePath();
+				myApp.start();
+	       }
+		}  
+    }
+    
+    private static void loadLogger() {
+    	System.setProperty("log4j.configurationFile", "./lib/log4j2.properties");
+    	logger = LogManager.getLogger(iDIOT.class);
+    	logger.info("launching application  ...");
+    }
 
     public static void main(String[] args)
-    {
-    	System.setProperty("log4j.configurationFile", "./lib/log4j2.properties");
-    	
-    	logger = LogManager.getLogger(iDIOT.class);
-    	logger.info("launching application ...");
-    	
+    {    	
+    	// Logger's settings
+    	loadLogger();
 		// set-up the viewer's perspective
     	loadInitialWWConfig();
     		
@@ -98,7 +121,14 @@ public class iDIOT {
     	
     	// start-up the Application objects
     	App myApp = new App(myFrame);
-    	myApp.start();
+    	
+    	if (args.length > 0) {
+    		myApp.targetPath = args[0];
+    		myApp.start();
     		
+    	}else {
+    		openFileDialog ( myApp );
+    	}
+
     }
 }

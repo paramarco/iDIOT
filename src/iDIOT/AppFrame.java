@@ -6,6 +6,17 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
+import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
+import javax.swing.JFrame;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+import java.awt.EventQueue;
+import java.awt.event.KeyEvent;
+import java.io.Console;
+import java.io.File;
+
 import gov.nasa.worldwind.WorldWindow;
 import gov.nasa.worldwind.avlist.AVKey;
 import gov.nasa.worldwind.event.RenderingExceptionListener;
@@ -68,6 +79,34 @@ public class AppFrame extends JFrame
         // Create the WorldWindow.
         this.wwjPanel = this.createAppPanel(this.canvasSize, includeStatusBar);
         this.wwjPanel.setPreferredSize(canvasSize);
+        
+        /*ImageIcon iconOpen = new ImageIcon("src/resources/open.png");
+        JMenuItem openMenuItem = new JMenuItem("Open");
+        fc.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+        
+        openMenuItem.addActionListener((e) -> {
+        	        	
+    		System.out.println("DEBUG ::: aqui te pille");
+    		int returnVal = fc.showOpenDialog(controlPanel);
+    		if (returnVal == JFileChooser.APPROVE_OPTION) {
+                File file = fc.getSelectedFile();
+                //This is where a real application would open the file.
+                System.out.println("Opening: " + file.getAbsolutePath() );
+            } 
+
+        
+        });
+        
+         
+        JMenuBar menubar = new JMenuBar();
+        JMenu fileMenu = new JMenu("File");
+        fileMenu.add(openMenuItem);
+        menubar.add(fileMenu);
+        setJMenuBar(menubar);
+        */
+       
+ 
+
 
         // Put the pieces together.
         this.getContentPane().add(wwjPanel, BorderLayout.CENTER);

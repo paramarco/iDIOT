@@ -9,6 +9,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+import javax.swing.JDialog;
+import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
+
 import gov.nasa.worldwind.WorldWind;
 import gov.nasa.worldwind.WorldWindow;
 import gov.nasa.worldwind.avlist.AVKey;
@@ -42,6 +46,7 @@ import iDIOT.AdaptationParser.SITUATION_LINES_GUIDE;
 import iDIOT.AdaptationParser.SITUATION_LINE_CONDITIONS;
 import iDIOT.AdaptationParser.SITUATION_LINE_POINTS;
 import iDIOT.OPERATION.SECTORIZATION;
+import iDIOT.OPERATION.SECTORIZATION.BASICWIDEDELIVERY.BASICWIDE;
 import iDIOT.SDD_DISTRIBUTION_Parser.ProgressionEntry;
 import iDIOT.SDD_DISTRIBUTION_Parser.SDD_DISTRIBUTION_Event;
 import iDIOT.SDD_DISTRIBUTION_Parser.VolumeSequence;
@@ -58,6 +63,7 @@ public class App implements TimeLineListener{
 		
 	}
 
+	public String targetPath;
 	public AdaptationParser adapParser;
 	
 	public List<AIRSPACE_VOLUME> listVolumes;	
@@ -273,18 +279,35 @@ public class App implements TimeLineListener{
     
     public Layer makeLayerforBasicSector( Object object)
     {
-    	String RefNum = "";
+    	String RefNum = ""; String  SECTOR_VOLUMEID = ""; String  BASIC_SECTORID  = "";
     	Integer index = null;
     	
     	if (object instanceof String ) {
     		RefNum = (String) object; 
     		index = Integer.parseInt(RefNum);
-    		index = index - 1;	
+    		index = index - 1;
+    		
+    		//String targetSECTOR_VOLUMEID = sectorizationParser.getWideSectorbyBasicSectorRefNum(RefNum).getWIDESECTOR();
+    		BASICWIDE basicWideSector = sectorizationParser.getBasicSectorByRefNum(RefNum);
+    		BASIC_SECTORS targetBasicSector = null;
+    	    for (BASIC_SECTORS bs : listSectors) {
+    	        if (basicWideSector.getBASICSECTOR().equals(bs.BASIC_SECTORID)) {
+    	        	targetBasicSector = bs;
+    	            break;
+    	        }
+    	    }
+    		
+    		SECTOR_VOLUMEID = targetBasicSector.SECTOR_VOLUMEID;  
+    		BASIC_SECTORID = targetBasicSector.BASIC_SECTORID;
+    		
     	}else if ( object instanceof BASIC_SECTORS ) {
     		BASIC_SECTORS basicSector = (BASIC_SECTORS) object;
     		index = listSectors.indexOf(basicSector);
     		Integer index_aux = index + 1;
     		RefNum = index_aux.toString();
+    		SECTOR_VOLUMEID = listSectors.get( index ).SECTOR_VOLUMEID;  
+    		BASIC_SECTORID = listSectors.get( index ).BASIC_SECTORID;	
+        	
     	}else {
     		System.out.println("ERROR ::: coudn't find this basicSector:" + object.toString() );
     		return null;
@@ -292,9 +315,7 @@ public class App implements TimeLineListener{
     	
     	List<AIRSPACE_VOLUME> listVolumes2Display = new ArrayList<AIRSPACE_VOLUME>();    	
 		    	
-		String SECTOR_VOLUMEID = listSectors.get( index ).SECTOR_VOLUMEID;  
-		String BASIC_SECTORID = listSectors.get( index ).BASIC_SECTORID;	
-    	String labelWideSector = sectorizationParser.getWideSectorLabelbyBasicSectorRefNum(RefNum);
+		String labelWideSector = sectorizationParser.getWideSectorLabelbyBasicSectorRefNum(RefNum);
 		String label = "Basic Sector: " + BASIC_SECTORID.trim() + " ("+RefNum+")" + "\n" + labelWideSector;
 				
     	for ( RESPONSIBILITY_VOLUMES sector : listRESPONSIBILITY_VOLUMES) {
@@ -822,31 +843,49 @@ public class App implements TimeLineListener{
             return this.colors[2];
         }
     }
+    
+    public void showErrors() {
+    	
+    	List<String> listErrors = new ArrayList();
+    	
+    	if ( sectorizationParser.fileSectorization == null ) listErrors.add("ERROR ::: couldn't find any SECTORIZATION_DUMP_*.xml ");
+    	if ( adapParser.fileAdaptationPath.contains("lib") && adapParser.fileAdaptationPath.contains("adap")) {
+    		listErrors.add("ERROR ::: couldn't find any \"iTAP adaptation\" directory having .csv files ");
+    		listErrors.add("WARNING ::: it's loading the ./lib/adap ( R4.2.2-09A VarAv1 ) ");
+    	}
+    	if ( mapSSD_DISTRIBUTION.isEmpty() ) listErrors.add("ERROR ::: couldn't find any DISTRIBUTION_*.txt file inside \"lrids\" folder ");
+    	if ( mapSSD_DISTRIBUTION.isEmpty() ) listErrors.add("WARNING ::: couldn't find any TRACKS_*.txt file inside \"lrids\" folder  ");
+    	    	
+    	String message = "In the specified folder, some files are missing: \n";
+    	
+    	for ( String error : listErrors) {
+    		message +=  "  " + error + "\n";
+    	}   	
+	
+    	if ( ! listErrors.isEmpty() ) {
+    		JOptionPane optionPane = new JOptionPane(message,JOptionPane.WARNING_MESSAGE);
+            JDialog dialog = optionPane.createDialog(null,"  Warning!");
+            dialog.setIconImage(null);
+            dialog.setAlwaysOnTop(true);
+            dialog.setVisible(true);            	
+    	}
+    	
+    }
         
     
     public void start () {
     	
-    	initTreeLayerOnAppFrame();
     	
-    	//TODO search adaptation on save_data
-    	//TODO discover from the soda    	
-    	String targetPath = "./tst/DLH5KF,DLH66T_CATCH_UP_20_NM_DEPARTURES";
+    	initTreeLayerOnAppFrame();  
+
     	Filewalker fileWalker = new Filewalker(targetPath);
     
-    	File fileSectorization  = fileWalker.getFileSectorization();
-    	if ( fileSectorization == null )
-    		System.out.println("ERROR ::: coudn't find any sectorization file, it won't display the sectorization");
-    	File fileAdaptation  = fileWalker.getFileAdaptation();
-    	if ( fileAdaptation == null )
-    		System.out.println("ERROR ::: coudn't find any Adaptation file, it won't display the sectorization");
-    		 
     	// it loads the Sector Plan
-    	sectorizationParser = new SectorizationParser( fileSectorization );
+    	sectorizationParser = new SectorizationParser( fileWalker.getFileSectorization() );
     	
     	// it loads the Adaptation 
-    	adapParser = new AdaptationParser( fileAdaptation );    	
+    	adapParser = new AdaptationParser( fileWalker.getFileAdaptation() );    	
     	loadStaticAdaptation();
-    	   
     	
     	// load and display all SDD_DISTRIBUTION
     	mapSSD_DISTRIBUTION = SDD_DISTRIBUTION_Parser.loadSDD_DISTRIBUTION( fileWalker.getListFileSDD_DISTRIBUTION() ); 
@@ -861,7 +900,9 @@ public class App implements TimeLineListener{
     	    	
     	computeFirstLastEvent();
 
-    	showTimeline();   	  	
+    	showTimeline();
+    	
+    	showErrors();
     	
     }
 }
