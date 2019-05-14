@@ -41,6 +41,7 @@ import iDIOT.AdaptationParser.HOLDING_VOLUME;
 import iDIOT.AdaptationParser.INTEREST_VOLUMES;
 import iDIOT.AdaptationParser.RESPONSIBILITY_VOLUMES;
 import iDIOT.AdaptationParser.ROUTE_CONDITIONS_GUIDE;
+import iDIOT.AdaptationParser.ROUTE_CONDITION_AERODROMES;
 import iDIOT.AdaptationParser.SECTOR_VOLUME;
 import iDIOT.AdaptationParser.SITUATION_LINES_GUIDE;
 import iDIOT.AdaptationParser.SITUATION_LINE_CONDITIONS;
@@ -78,6 +79,7 @@ public class App implements TimeLineListener{
 	public List<SITUATION_LINES_GUIDE> listSITUATION_LINES_GUIDE;
 	public List<SITUATION_LINE_CONDITIONS>listSITUATION_LINE_CONDITIONS;
 	public List<ROUTE_CONDITIONS_GUIDE>listROUTE_CONDITIONS_GUIDE;
+	public List<ROUTE_CONDITION_AERODROMES>listROUTE_CONDITION_AERODROMES;
 	
 	
 	public SECTORIZATION sectorization;
@@ -168,6 +170,10 @@ public class App implements TimeLineListener{
     	List<SITUATION_LINE_POINTS> listPoints = listSITUATION_LINE_POINTS.stream()
     			.filter(x -> situationLine.SITUATION_LINEID.equals(x.SITUATION_LINEID)).collect(Collectors.toList());
     	
+    	List<ROUTE_CONDITION_AERODROMES> listRCA = listROUTE_CONDITION_AERODROMES.stream()
+    			.filter(x -> routeCondition.CONDITIONID.equals(x.CONDITIONID)).collect(Collectors.toList());
+    	
+    	
     	Collections.sort(listPoints);
     	
     	AirspaceAttributes attr = new BasicAirspaceAttributes();
@@ -181,8 +187,8 @@ public class App implements TimeLineListener{
 
         RenderableLayer layer = new RenderableLayer();
         layer.setName(routeCondition.CONDITIONID);
-    	
-    	String displayName = routeCondition.toString();
+        
+    	String displayName = situationLine_condition.toString() + "\n" + routeCondition.toString() + "\n" + listRCA.toString();
   	
     	//TODO this conversion is shit and you know it
 		double sampleAltitude = (Integer.parseInt(routeCondition.MINIMUM_RFL)*100 ) /3.2808;
@@ -207,14 +213,9 @@ public class App implements TimeLineListener{
 	   	
     }
 
-    
-
-    //TODO adapt to INTEREST VOLUME
     public  Layer makeLayerforINTEREST_VOLUME( INTEREST_VOLUMES interestVolume )
-    {
-		
+    {		
     	List<AIRSPACE_VOLUME> listVolumes2Display = new ArrayList<AIRSPACE_VOLUME>();
-
    			
 		for (AIRSPACE_VOLUME airspaceVolume :listVolumes) {
 			if (airspaceVolume.AIRSPACE_VOLUMEID.equals(interestVolume.AIRSPACE_VOLUMEID) ){
@@ -257,10 +258,10 @@ public class App implements TimeLineListener{
 	
 		String 	label = "Holding: " + holding.HOLDING_VOLUMEID.trim() + "\n";
 				label += "HOLDING_FIXID: " + holding.HOLDING_FIXID.trim() + "\n";
-				label += "INBOUND_COURSE: " + holding.INBOUND_COURSE.trim() + "\n";
-				label += "TURN_DIRECTION: " + holding.TURN_DIRECTION.trim() + "\n";
-				label += "LEG_DURATION: " + holding.LEG_DURATION.trim() + "\n";
-				label += "PATTERN_TIME: " + holding.PATTERN_TIME.trim() + "\n";
+				label += "INBOUND_COURSE: " + (holding.INBOUND_COURSE != null ? holding.INBOUND_COURSE.trim() : "" ) + "\n";
+				label += "TURN_DIRECTION: " + (holding.TURN_DIRECTION != null ? holding.TURN_DIRECTION.trim() : "" )+ "\n";
+				label += "LEG_DURATION: " + (holding.LEG_DURATION !=null ? holding.LEG_DURATION.trim() : "" ) + "\n";
+				label += "PATTERN_TIME: " + (holding.PATTERN_TIME !=null ? holding.PATTERN_TIME.trim() : "" ) + "\n";
 				
 		AirspaceAttributes attr = new BasicAirspaceAttributes();
 
@@ -525,10 +526,10 @@ public class App implements TimeLineListener{
     	listSECTOR_VOLUMES = adapParser.getSECTOR_VOLUMES();
     	
     	listSITUATION_LINE_POINTS = adapParser.getSITUATION_LINE_POINTS();
-    	listSITUATION_LINES_GUIDE = adapParser.getSITUATION_LINES_GUIDEs();
-    	listSITUATION_LINE_CONDITIONS = adapParser.getSITUATION_LINE_CONDITIONS();
-    	listROUTE_CONDITIONS_GUIDE = adapParser.getROUTE_CONDITIONS_GUIDE();    	
-    	
+    	listSITUATION_LINES_GUIDE = adapParser.getSITUATION_LINES_GUIDEs();    	
+    	listSITUATION_LINE_CONDITIONS = adapParser.getSITUATION_LINE_CONDITIONS();    	
+    	listROUTE_CONDITIONS_GUIDE = adapParser.getROUTE_CONDITIONS_GUIDE();
+    	listROUTE_CONDITION_AERODROMES = adapParser.getROUTE_CONDITION_AERODROMES();
     	    	
     	// HOLDINGs 
      	for ( HOLDING_VOLUME holding : listHoldings) {     		    				
@@ -575,7 +576,7 @@ public class App implements TimeLineListener{
     		      		
         	myFrame.getWwd().getModel().getLayers().add(myAoILayer);
     	}
-     	
+
      	for (  SITUATION_LINE_CONDITIONS situationLine_condition : listSITUATION_LINE_CONDITIONS) {
      		Layer myCSTlayer = makeLayerforCSTLine(situationLine_condition);
      		myCSTlayer.setEnabled(false);
@@ -766,7 +767,7 @@ public class App implements TimeLineListener{
 	       layerTreeNode4AoIs.addChild(layerTreeNode4AoIsExternal);
 	       
         RenderableLayer layer4CSTs = new RenderableLayer();
-        layer4CSTs.setName("Constraint lines");
+        layer4CSTs.setName("Route Constraints");
         
         layerTreeNode4CST = new LayerTreeNode(layer4CSTs) ;
         layerTreeNode4CST.setImageSource(null); 
@@ -849,14 +850,24 @@ public class App implements TimeLineListener{
     	List<String> listErrors = new ArrayList();
     	
     	if ( sectorizationParser.fileSectorization == null ) listErrors.add("ERROR ::: couldn't find any SECTORIZATION_DUMP_*.xml ");
-    	if ( adapParser.fileAdaptationPath.contains("lib") && adapParser.fileAdaptationPath.contains("adap")) {
-    		listErrors.add("ERROR ::: couldn't find any \"iTAP adaptation\" directory having .csv files ");
-    		listErrors.add("WARNING ::: it's loading the ./lib/adap ( R4.2.2-09A VarAv1 ) ");
+    	
+    	switch (adapParser.AdaptationSource) {
+    		case "iTAP_CSVs": break;
+    		case "environment.tcl":
+    			listErrors.add("ERROR ::: couldn't find any dataset.tgz(\"iTAP adaptation\") ");
+        		listErrors.add("WARNING ::: it's loading the legacy environment.tcl located in Builds_Info_For_soda.tgz to load the adaptation");
+    			break;
+    		case "libiTAP_CSVs": 
+    			listErrors.add("ERROR ::: couldn't find any dataset.tgz (\"iTAP adaptation\") ");
+    			listErrors.add("ERROR ::: couldn't find any Builds_Info_For_soda.tgz (\"environment.tcl\") ");
+        		listErrors.add("WARNING ::: it's loading the ./lib/dataset.tgz ( R4.2.2-09A VarAv1 )  ");
+    			break;    		
     	}
-    	if ( mapSSD_DISTRIBUTION.isEmpty() ) listErrors.add("ERROR ::: couldn't find any DISTRIBUTION_*.txt file inside \"lrids\" folder ");
-    	if ( mapSSD_DISTRIBUTION.isEmpty() ) listErrors.add("WARNING ::: couldn't find any TRACKS_*.txt file inside \"lrids\" folder  ");
+    	
+    	if ( mapSSD_DISTRIBUTION.isEmpty() ) listErrors.add("ERROR ::: couldn't load any DISTRIBUTION_*.txt file inside \"lrids\" folder ");
+    	if ( mapSSD_DISTRIBUTION.isEmpty() ) listErrors.add("WARNING ::: couldn't load any TRACKS_*.txt file inside \"lrids\" folder  ");
     	    	
-    	String message = "In the specified folder, some files are missing: \n";
+    	String message = "In the specified soda folder, some files are missing: \n";
     	
     	for ( String error : listErrors) {
     		message +=  "  " + error + "\n";
@@ -884,7 +895,7 @@ public class App implements TimeLineListener{
     	sectorizationParser = new SectorizationParser( fileWalker.getFileSectorization() );
     	
     	// it loads the Adaptation 
-    	adapParser = new AdaptationParser( fileWalker.getFileAdaptation() );    	
+    	adapParser = new AdaptationParser( fileWalker.getFileAdaptation(), fileWalker.getAdaptationSource() );    	
     	loadStaticAdaptation();
     	
     	// load and display all SDD_DISTRIBUTION

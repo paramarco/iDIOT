@@ -1,0 +1,1904 @@
+                                
+                                
+                                
+                                
+********************************
+                                
+       BASIC SECTOR LIST        
+                                
+********************************
+                                
+
+Reference:         1
+Identity:          ALB     
+Class Indicator :  MAIN
+Wide Sector :      A        ( 1 )
+
+Reference:         2
+Identity:          BBG     
+Class Indicator :  MAIN
+Wide Sector :      B        ( 6 )
+
+Reference:         3
+Identity:          DEF     
+Class Indicator :  MAIN
+Wide Sector :      AOI      ( 4 )
+
+Reference:         4
+Identity:          DMN     
+Class Indicator :  MAIN
+Wide Sector :      AAA      ( 2 )
+
+Reference:         5
+Identity:          DMNAT   
+Class Indicator :  AUXILIARY
+Wide Sector :      NF       ( 101 )
+
+Reference:         6
+Identity:          DMND    
+Class Indicator :  AUXILIARY
+Wide Sector :      ND       ( 100 )
+
+Reference:         7
+Identity:          DMNH    
+Class Indicator :  AUXILIARY
+Wide Sector :      N2       ( 98 )
+
+Reference:         8
+Identity:          DMNL    
+Class Indicator :  AUXILIARY
+Wide Sector :      N1       ( 97 )
+
+Reference:         9
+Identity:          DMSAT   
+Class Indicator :  AUXILIARY
+Wide Sector :      SF       ( 134 )
+
+Reference:         10
+Identity:          DMSD    
+Class Indicator :  AUXILIARY
+Wide Sector :      SD       ( 133 )
+
+Reference:         11
+Identity:          DMSH    
+Class Indicator :  AUXILIARY
+Wide Sector :      S2       ( 132 )
+
+Reference:         12
+Identity:          DMSL    
+Class Indicator :  AUXILIARY
+Wide Sector :      S1       ( 131 )
+
+Reference:         13
+Identity:          EGG     
+Class Indicator :  MAIN
+Wide Sector :      E        ( 10 )
+
+Reference:         14
+Identity:          FRKL    
+Class Indicator :  MAIN
+Wide Sector :      N        ( 96 )
+
+Reference:         15
+Identity:          FUE     
+Class Indicator :  MAIN
+Wide Sector :      F        ( 74 )
+
+Reference:         16
+Identity:          HOF     
+Class Indicator :  MAIN
+Wide Sector :      H        ( 78 )
+
+Reference:         17
+Identity:          LCHL    
+Class Indicator :  MAIN
+Wide Sector :      AAA      ( 2 )
+
+Reference:         18
+Identity:          NDG     
+Class Indicator :  MAIN
+Wide Sector :      G        ( 76 )
+
+Reference:         19
+Identity:          RDG     
+Class Indicator :  MAIN
+Wide Sector :      R        ( 128 )
+
+Reference:         20
+Identity:          SASH    
+Class Indicator :  MAIN
+Wide Sector :      X        ( 181 )
+
+Reference:         21
+Identity:          SASL    
+Class Indicator :  MAIN
+Wide Sector :      D        ( 8 )
+
+Reference:         22
+Identity:          STA     
+Class Indicator :  MAIN
+Wide Sector :      S        ( 130 )
+
+Reference:         23
+Identity:          TEG     
+Class Indicator :  MAIN
+Wide Sector :      T        ( 138 )
+
+Reference:         24
+Identity:          TRGL    
+Class Indicator :  MAIN
+Wide Sector :      LP       ( 87 )
+
+Reference:         25
+Identity:          TRN     
+Class Indicator :  MAIN
+Wide Sector :      U        ( 142 )
+
+Reference:         26
+Identity:          TRS     
+Class Indicator :  MAIN
+Wide Sector :      V        ( 144 )
+
+Reference:         27
+Identity:          WLD     
+Class Indicator :  MAIN
+Wide Sector :      W        ( 180 )
+
+Reference:         28
+Identity:          ZUG     
+Class Indicator :  MAIN
+Wide Sector :      Z        ( 192 )
+                                
+                                
+                                
+                                
+********************************
+                                
+       WIDE SECTOR LIST         
+                                
+********************************
+                                
+
+Reference:          1
+Identity:           A       
+Class Indicator:    INTERNAL
+Voice Frequency:    (129.100,0.000)
+Control Center:     EDMM   ( 2 )
+Operator Position: UUE1A  ( 100 )
+Executive Position: T_2P   ( 95 )
+Planner Position:   T_1P   ( 93 )
+
+Reference:          2
+Identity:           AAA     
+Class Indicator:    INTERNAL
+Voice Frequency:    (120.775,0.000)
+Control Center:     EDMM   ( 2 )
+Operator Position: UUE1A  ( 100 )
+Executive Position: F_4E   ( 24 )
+Planner Position:   A_2E   ( 3 )
+
+Reference:          3
+Identity:           AAL     
+Class Indicator:    INTERNAL
+Voice Frequency:    (120.775,0.000)
+
+Reference:          4
+Identity:           AOI     
+Class Indicator:    INTERNAL
+Voice Frequency:    (123.450,0.000)
+Control Center:     EDMM   ( 2 )
+Operator Position: UUE1A  ( 100 )
+Executive Position: L_2E   ( 52 )
+Planner Position:   L_2E   ( 52 )
+
+Reference:          5
+Identity:           ARE     
+Class Indicator:    INTERNAL
+Voice Frequency:    (129.100,0.000)
+
+Reference:          6
+Identity:           B       
+Class Indicator:    INTERNAL
+Voice Frequency:    (122.680,0.000)
+Control Center:     EDMM   ( 2 )
+Operator Position: UUE1A  ( 100 )
+Executive Position: L_1P   ( 51 )
+Planner Position:   H_1E   ( 26 )
+
+Reference:          7
+Identity:           BH      
+Class Indicator:    INTERNAL
+Voice Frequency:    (122.680,0.000)
+
+Reference:          8
+Identity:           D       
+Class Indicator:    INTERNAL
+Voice Frequency:    (125.875,0.000)
+Control Center:     EDMM   ( 2 )
+Operator Position: UUE1A  ( 100 )
+Executive Position: F_3P   ( 23 )
+Planner Position:   F_3P   ( 23 )
+
+Reference:          9
+Identity:           DX      
+Class Indicator:    INTERNAL
+Voice Frequency:    (125.875,0.000)
+
+Reference:          10
+Identity:           E       
+Class Indicator:    INTERNAL
+Voice Frequency:    (129.550,0.000)
+Control Center:     EDMM   ( 2 )
+Operator Position: UUE1A  ( 100 )
+Executive Position: A_1P   ( 2 )
+Planner Position:   D_3P   ( 16 )
+
+Reference:          11
+Identity:           EDGGBAD 
+Class Indicator:    EXTERNAL
+Voice Frequency:    (127.050,279.050)
+Control Center:     EDGG   ( 1 )
+
+Reference:          12
+Identity:           EDGGDKB 
+Class Indicator:    EXTERNAL
+Voice Frequency:    (125.200,398.650)
+Control Center:     EDGG   ( 1 )
+
+Reference:          13
+Identity:           EDGGDLDN
+Class Indicator:    EXTERNAL
+Voice Frequency:    (128.500,337.850)
+Control Center:     EDGG   ( 1 )
+
+Reference:          14
+Identity:           EDGGDLDS
+Class Indicator:    EXTERNAL
+Voice Frequency:    (121.350,275.800)
+Control Center:     EDGG   ( 1 )
+
+Reference:          15
+Identity:           EDGGGED 
+Class Indicator:    EXTERNAL
+Voice Frequency:    (124.425,281.750)
+Control Center:     EDGG   ( 1 )
+
+Reference:          16
+Identity:           EDGGGIN 
+Class Indicator:    EXTERNAL
+Voice Frequency:    (124.725,264.800)
+Control Center:     EDGG   ( 1 )
+
+Reference:          17
+Identity:           EDGGHAB 
+Class Indicator:    EXTERNAL
+Voice Frequency:    (134.800,297.900)
+Control Center:     EDGG   ( 1 )
+
+Reference:          18
+Identity:           EDGGHEF 
+Class Indicator:    EXTERNAL
+Voice Frequency:    (127.725,379.900)
+Control Center:     EDGG   ( 1 )
+
+Reference:          19
+Identity:           EDGGKIR 
+Class Indicator:    EXTERNAL
+Voice Frequency:    (123.330,379.350)
+Control Center:     EDGG   ( 1 )
+
+Reference:          20
+Identity:           EDGGKNG 
+Class Indicator:    EXTERNAL
+Voice Frequency:    (125.675,398.650)
+Control Center:     EDGG   ( 1 )
+
+Reference:          21
+Identity:           EDGGKTG 
+Class Indicator:    EXTERNAL
+Voice Frequency:    (123.275,363.650)
+Control Center:     EDGG   ( 1 )
+
+Reference:          22
+Identity:           EDGGLBU 
+Class Indicator:    EXTERNAL
+Voice Frequency:    (131.300,278.450)
+Control Center:     EDGG   ( 1 )
+
+Reference:          23
+Identity:           EDGGMANH
+Class Indicator:    EXTERNAL
+Voice Frequency:    (119.675,279.050)
+Control Center:     EDGG   ( 1 )
+
+Reference:          24
+Identity:           EDGGMOS 
+Class Indicator:    EXTERNAL
+Voice Frequency:    (126.325,0.000)
+Control Center:     EDGG   ( 1 )
+
+Reference:          25
+Identity:           EDGGNKRH
+Class Indicator:    EXTERNAL
+Voice Frequency:    (127.500,279.050)
+Control Center:     EDGG   ( 1 )
+
+Reference:          26
+Identity:           EDGGNOR 
+Class Indicator:    EXTERNAL
+Voice Frequency:    (127.365,371.325)
+Control Center:     EDGG   ( 1 )
+
+Reference:          27
+Identity:           EDGGPADH
+Class Indicator:    EXTERNAL
+Voice Frequency:    (135.650,375.100)
+Control Center:     EDGG   ( 1 )
+
+Reference:          28
+Identity:           EDGGPFA 
+Class Indicator:    EXTERNAL
+Voice Frequency:    (129.675,256.675)
+Control Center:     EDGG   ( 1 )
+
+Reference:          29
+Identity:           EDGGREU 
+Class Indicator:    EXTERNAL
+Voice Frequency:    (125.050,0.000)
+Control Center:     EDGG   ( 1 )
+
+Reference:          30
+Identity:           EDGGRUD 
+Class Indicator:    EXTERNAL
+Voice Frequency:    (124.480,361.000)
+Control Center:     EDGG   ( 1 )
+
+Reference:          31
+Identity:           EDGGSIG 
+Class Indicator:    EXTERNAL
+Voice Frequency:    (124.900,258.900)
+Control Center:     EDGG   ( 1 )
+
+Reference:          32
+Identity:           EDGGTAU 
+Class Indicator:    EXTERNAL
+Voice Frequency:    (127.625,285.100)
+Control Center:     EDGG   ( 1 )
+
+Reference:          33
+Identity:           EDUUALP 
+Class Indicator:    EXTERNAL
+Voice Frequency:    (132.140,0.000)
+Control Center:     EDUU   ( 3 )
+
+Reference:          34
+Identity:           EDUUCHI 
+Class Indicator:    EXTERNAL
+Voice Frequency:    (128.815,0.000)
+Control Center:     EDUU   ( 3 )
+
+Reference:          35
+Identity:           EDUUDON 
+Class Indicator:    EXTERNAL
+Voice Frequency:    (132.730,0.000)
+Control Center:     EDUU   ( 3 )
+
+Reference:          36
+Identity:           EDUUERL 
+Class Indicator:    EXTERNAL
+Voice Frequency:    (136.405,0.000)
+Control Center:     EDUU   ( 3 )
+
+Reference:          37
+Identity:           EDUUFFM 
+Class Indicator:    EXTERNAL
+Voice Frequency:    (132.330,0.000)
+Control Center:     EDUU   ( 3 )
+
+Reference:          38
+Identity:           EDUUFUL 
+Class Indicator:    EXTERNAL
+Voice Frequency:    (133.655,0.000)
+Control Center:     EDUU   ( 3 )
+
+Reference:          39
+Identity:           EDUUHVL 
+Class Indicator:    EXTERNAL
+Voice Frequency:    (128.235,0.000)
+Control Center:     EDUU   ( 3 )
+
+Reference:          40
+Identity:           EDUUISA 
+Class Indicator:    EXTERNAL
+Voice Frequency:    (136.335,0.000)
+Control Center:     EDUU   ( 3 )
+
+Reference:          41
+Identity:           EDUUNTM 
+Class Indicator:    EXTERNAL
+Voice Frequency:    (123.450,0.000)
+Control Center:     EDUU   ( 3 )
+
+Reference:          42
+Identity:           EDUUOSE 
+Class Indicator:    EXTERNAL
+Voice Frequency:    (132.330,0.000)
+Control Center:     EDUU   ( 3 )
+
+Reference:          43
+Identity:           EDUUSAL 
+Class Indicator:    EXTERNAL
+Voice Frequency:    (133.860,0.000)
+Control Center:     EDUU   ( 3 )
+
+Reference:          44
+Identity:           EDUUSLN 
+Class Indicator:    EXTERNAL
+Voice Frequency:    (123.450,0.000)
+Control Center:     EDUU   ( 3 )
+
+Reference:          45
+Identity:           EDUUSPE 
+Class Indicator:    EXTERNAL
+Voice Frequency:    (123.450,0.000)
+Control Center:     EDUU   ( 3 )
+
+Reference:          46
+Identity:           EDUUTGO 
+Class Indicator:    EXTERNAL
+Voice Frequency:    (132.405,0.000)
+Control Center:     EDUU   ( 3 )
+
+Reference:          47
+Identity:           EDUUWUR 
+Class Indicator:    EXTERNAL
+Voice Frequency:    (134.085,0.000)
+Control Center:     EDUU   ( 3 )
+
+Reference:          48
+Identity:           EDWWBOR 
+Class Indicator:    EXTERNAL
+Voice Frequency:    (123.225,397.475)
+Control Center:     EDWW   ( 4 )
+
+Reference:          49
+Identity:           EDWWFLG 
+Class Indicator:    EXTERNAL
+Voice Frequency:    (136.450,369.300)
+Control Center:     EDWW   ( 4 )
+
+Reference:          50
+Identity:           EDWWLOW 
+Class Indicator:    EXTERNAL
+Voice Frequency:    (450.000,450.000)
+Control Center:     EDWW   ( 4 )
+
+Reference:          51
+Identity:           EDWWMAR 
+Class Indicator:    EXTERNAL
+Voice Frequency:    (136.050,396.975)
+Control Center:     EDWW   ( 4 )
+
+Reference:          52
+Identity:           EDWWMRZ 
+Class Indicator:    EXTERNAL
+Voice Frequency:    (124.175,259.825)
+Control Center:     EDWW   ( 4 )
+
+Reference:          53
+Identity:           EDYYCC  
+Class Indicator:    EXTERNAL
+Voice Frequency:    (133.955,312.350)
+
+Reference:          54
+Identity:           EDYYCH  
+Class Indicator:    EXTERNAL
+Voice Frequency:    (132.865,312.350)
+Control Center:     EDYY   ( 5 )
+
+Reference:          55
+Identity:           EDYYHC  
+Class Indicator:    EXTERNAL
+Voice Frequency:    (120.935,371.775)
+
+Reference:          56
+Identity:           EDYYHH  
+Class Indicator:    EXTERNAL
+Voice Frequency:    (132.780,371.775)
+Control Center:     EDYY   ( 5 )
+
+Reference:          57
+Identity:           EDYYLC  
+Class Indicator:    EXTERNAL
+Voice Frequency:    (133.355,284.650)
+Control Center:     EDYY   ( 5 )
+
+Reference:          58
+Identity:           EDYYLH  
+Class Indicator:    EXTERNAL
+Voice Frequency:    (132.315,284.650)
+Control Center:     EDYY   ( 5 )
+
+Reference:          59
+Identity:           EDYYLOW 
+Class Indicator:    EXTERNAL
+Voice Frequency:    (450.000,450.000)
+Control Center:     EDYY   ( 5 )
+
+Reference:          60
+Identity:           EDYYMC  
+Class Indicator:    EXTERNAL
+Voice Frequency:    (133.855,336.950)
+Control Center:     EDYY   ( 5 )
+
+Reference:          61
+Identity:           EDYYMH  
+Class Indicator:    EXTERNAL
+Voice Frequency:    (133.215,336.950)
+Control Center:     EDYY   ( 5 )
+
+Reference:          62
+Identity:           EDYYMVDL
+Class Indicator:    EXTERNAL
+Voice Frequency:    (133.230,0.000)
+Control Center:     EDYY   ( 5 )
+
+Reference:          63
+Identity:           EDYYOC  
+Class Indicator:    EXTERNAL
+Voice Frequency:    (132.855,275.600)
+Control Center:     EDYY   ( 5 )
+
+Reference:          64
+Identity:           EDYYOH  
+Class Indicator:    EXTERNAL
+Voice Frequency:    (125.980,275.600)
+Control Center:     EDYY   ( 5 )
+
+Reference:          65
+Identity:           EDYYRC  
+Class Indicator:    EXTERNAL
+Voice Frequency:    (132.515,336.950)
+
+Reference:          66
+Identity:           EDYYRH  
+Class Indicator:    EXTERNAL
+Voice Frequency:    (135.490,336.950)
+Control Center:     EDYY   ( 5 )
+
+Reference:          67
+Identity:           EDYYSC  
+Class Indicator:    EXTERNAL
+Voice Frequency:    (134.710,312.350)
+
+Reference:          68
+Identity:           EDYYSH  
+Class Indicator:    EXTERNAL
+Voice Frequency:    (131.380,312.350)
+Control Center:     EDYY   ( 5 )
+
+Reference:          69
+Identity:           EEE     
+Class Indicator:    INTERNAL
+Voice Frequency:    (129.525,0.000)
+
+Reference:          70
+Identity:           EPWWB   
+Class Indicator:    EXTERNAL
+Voice Frequency:    (450.000,450.000)
+Control Center:     EPWW   ( 7 )
+
+Reference:          71
+Identity:           EPWWD   
+Class Indicator:    EXTERNAL
+Voice Frequency:    (450.000,0.000)
+Control Center:     EPWW   ( 7 )
+
+Reference:          72
+Identity:           EPWWLOW 
+Class Indicator:    EXTERNAL
+Voice Frequency:    (450.000,450.000)
+Control Center:     EPWW   ( 7 )
+
+Reference:          73
+Identity:           EPWWT   
+Class Indicator:    EXTERNAL
+Voice Frequency:    (450.000,450.000)
+Control Center:     EPWW   ( 7 )
+
+Reference:          74
+Identity:           F       
+Class Indicator:    INTERNAL
+Voice Frequency:    (133.550,0.000)
+Control Center:     EDMM   ( 2 )
+Operator Position: UUE1A  ( 100 )
+Executive Position: F_1E   ( 18 )
+Planner Position:   CAS    ( 5 )
+
+Reference:          75
+Identity:           FZ      
+Class Indicator:    INTERNAL
+Voice Frequency:    (133.550,0.000)
+
+Reference:          76
+Identity:           G       
+Class Indicator:    INTERNAL
+Voice Frequency:    (124.825,0.000)
+Control Center:     EDMM   ( 2 )
+Operator Position: UUE1A  ( 100 )
+Executive Position: D_1E   ( 11 )
+Planner Position:   CDS    ( 6 )
+
+Reference:          77
+Identity:           GW      
+Class Indicator:    INTERNAL
+Voice Frequency:    (124.825,0.000)
+
+Reference:          78
+Identity:           H       
+Class Indicator:    INTERNAL
+Voice Frequency:    (133.565,0.000)
+Control Center:     EDMM   ( 2 )
+Operator Position: UUE1A  ( 100 )
+Executive Position: T_2E   ( 94 )
+Planner Position:   F_3P   ( 23 )
+
+Reference:          79
+Identity:           L       
+Class Indicator:    INTERNAL
+Voice Frequency:    (126.175,0.000)
+
+Reference:          80
+Identity:           LKAALOW 
+Class Indicator:    EXTERNAL
+Voice Frequency:    (450.000,450.000)
+Control Center:     LKAA   ( 11 )
+
+Reference:          81
+Identity:           LKAANH  
+Class Indicator:    EXTERNAL
+Voice Frequency:    (133.390,278.975)
+Control Center:     LKAA   ( 11 )
+
+Reference:          82
+Identity:           LKAANM  
+Class Indicator:    EXTERNAL
+Voice Frequency:    (128.230,278.975)
+Control Center:     LKAA   ( 11 )
+
+Reference:          83
+Identity:           LKAANT  
+Class Indicator:    EXTERNAL
+Voice Frequency:    (132.805,278.975)
+Control Center:     LKAA   ( 11 )
+
+Reference:          84
+Identity:           LKAAWH  
+Class Indicator:    EXTERNAL
+Voice Frequency:    (132.065,387.775)
+Control Center:     LKAA   ( 11 )
+
+Reference:          85
+Identity:           LKAAWM  
+Class Indicator:    EXTERNAL
+Voice Frequency:    (135.135,387.775)
+Control Center:     LKAA   ( 11 )
+
+Reference:          86
+Identity:           LKAAWT  
+Class Indicator:    EXTERNAL
+Voice Frequency:    (133.530,387.775)
+Control Center:     LKAA   ( 11 )
+
+Reference:          87
+Identity:           LP      
+Class Indicator:    INTERNAL
+Voice Frequency:    (126.175,0.000)
+Control Center:     EDMM   ( 2 )
+Operator Position: UUE1A  ( 100 )
+Executive Position: F_3P   ( 23 )
+Planner Position:   F_3E   ( 22 )
+
+Reference:          88
+Identity:           LSAZLOW 
+Class Indicator:    EXTERNAL
+Voice Frequency:    (450.000,450.000)
+Control Center:     LSAZ   ( 13 )
+
+Reference:          89
+Identity:           LSAZM2  
+Class Indicator:    EXTERNAL
+Voice Frequency:    (133.405,278.025)
+Control Center:     LSAZ   ( 13 )
+
+Reference:          90
+Identity:           LSAZM3  
+Class Indicator:    EXTERNAL
+Voice Frequency:    (132.815,278.025)
+Control Center:     LSAZ   ( 13 )
+
+Reference:          91
+Identity:           LSAZM4  
+Class Indicator:    EXTERNAL
+Voice Frequency:    (134.605,278.025)
+Control Center:     LSAZ   ( 13 )
+
+Reference:          92
+Identity:           LSAZM5  
+Class Indicator:    EXTERNAL
+Voice Frequency:    (132.835,297.900)
+Control Center:     LSAZ   ( 13 )
+
+Reference:          93
+Identity:           LSAZM6  
+Class Indicator:    EXTERNAL
+Voice Frequency:    (133.690,297.900)
+Control Center:     LSAZ   ( 13 )
+
+Reference:          94
+Identity:           LSAZNITE
+Class Indicator:    EXTERNAL
+Voice Frequency:    (133.050,278.025)
+
+Reference:          95
+Identity:           M       
+Class Indicator:    INTERNAL
+Voice Frequency:    (129.450,0.000)
+
+Reference:          96
+Identity:           N       
+Class Indicator:    INTERNAL
+Voice Frequency:    (129.525,0.000)
+Control Center:     EDMM   ( 2 )
+Operator Position: UUE1A  ( 100 )
+Executive Position: A_1E   ( 1 )
+Planner Position:   F_3P   ( 23 )
+
+Reference:          97
+Identity:           N1      
+Class Indicator:    INTERNAL
+Voice Frequency:    (129.525,0.000)
+Control Center:     EDMM   ( 2 )
+Operator Position: UUE1A  ( 100 )
+Executive Position: CWSP   ( 9 )
+Planner Position:   CWSP   ( 9 )
+
+Reference:          98
+Identity:           N2      
+Class Indicator:    INTERNAL
+Voice Frequency:    (129.525,0.000)
+Control Center:     EDMM   ( 2 )
+Operator Position: UUE1A  ( 100 )
+Executive Position: D_1P   ( 12 )
+Planner Position:   D_1P   ( 12 )
+
+Reference:          99
+Identity:           NBH     
+Class Indicator:    INTERNAL
+Voice Frequency:    (129.525,0.000)
+
+Reference:          100
+Identity:           ND      
+Class Indicator:    INTERNAL
+Voice Frequency:    (129.525,0.000)
+Control Center:     EDMM   ( 2 )
+Operator Position: UUE1A  ( 100 )
+Executive Position: S_3P   ( 91 )
+Planner Position:   CLS    ( 7 )
+
+Reference:          101
+Identity:           NF      
+Class Indicator:    INTERNAL
+Voice Frequency:    (129.525,0.000)
+Control Center:     EDMM   ( 2 )
+Operator Position: UUE1A  ( 100 )
+Executive Position: D_2E   ( 13 )
+Planner Position:   CLS    ( 7 )
+
+Reference:          102
+Identity:           NNN     
+Class Indicator:    INTERNAL
+Voice Frequency:    (124.825,0.000)
+
+Reference:          103
+Identity:           PPCW2A  
+Class Indicator:    EXTERNAL
+Voice Frequency:    (128.575,232.875)
+
+Reference:          104
+Identity:           PPCW4A  
+Class Indicator:    EXTERNAL
+Voice Frequency:    (125.485,232.875)
+
+Reference:          105
+Identity:           PPCW4B  
+Class Indicator:    EXTERNAL
+Voice Frequency:    (125.485,232.875)
+
+Reference:          106
+Identity:           PPCW4C  
+Class Indicator:    EXTERNAL
+Voice Frequency:    (125.485,232.875)
+
+Reference:          107
+Identity:           PPCW6A  
+Class Indicator:    EXTERNAL
+Voice Frequency:    (122.735,398.575)
+
+Reference:          108
+Identity:           PPNE2A  
+Class Indicator:    EXTERNAL
+Voice Frequency:    (120.725,232.875)
+
+Reference:          109
+Identity:           PPNE2B  
+Class Indicator:    EXTERNAL
+Voice Frequency:    (120.725,232.875)
+
+Reference:          110
+Identity:           PPNE2C  
+Class Indicator:    EXTERNAL
+Voice Frequency:    (120.725,232.875)
+
+Reference:          111
+Identity:           PPNE4A  
+Class Indicator:    EXTERNAL
+Voice Frequency:    (132.860,234.300)
+Control Center:     LIPP   ( 10 )
+
+Reference:          112
+Identity:           PPNE4B  
+Class Indicator:    EXTERNAL
+Voice Frequency:    (132.860,234.300)
+
+Reference:          113
+Identity:           PPNE4C  
+Class Indicator:    EXTERNAL
+Voice Frequency:    (132.860,234.300)
+
+Reference:          114
+Identity:           PPNE4D  
+Class Indicator:    EXTERNAL
+Voice Frequency:    (132.860,234.300)
+
+Reference:          115
+Identity:           PPNE4E  
+Class Indicator:    EXTERNAL
+Voice Frequency:    (132.860,234.300)
+
+Reference:          116
+Identity:           PPNE5A  
+Class Indicator:    EXTERNAL
+Voice Frequency:    (134.390,231.825)
+
+Reference:          117
+Identity:           PPNE5B  
+Class Indicator:    EXTERNAL
+Voice Frequency:    (134.390,231.825)
+
+Reference:          118
+Identity:           PPNE5C  
+Class Indicator:    EXTERNAL
+Voice Frequency:    (134.390,231.825)
+
+Reference:          119
+Identity:           PPNE5D  
+Class Indicator:    EXTERNAL
+Voice Frequency:    (134.390,231.825)
+
+Reference:          120
+Identity:           PPNE5E  
+Class Indicator:    EXTERNAL
+Voice Frequency:    (134.390,231.825)
+
+Reference:          121
+Identity:           PPNE6A  
+Class Indicator:    EXTERNAL
+Voice Frequency:    (127.380,231.825)
+
+Reference:          122
+Identity:           PPNE6B  
+Class Indicator:    EXTERNAL
+Voice Frequency:    (127.380,231.825)
+
+Reference:          123
+Identity:           PPNE6C  
+Class Indicator:    EXTERNAL
+Voice Frequency:    (127.380,231.825)
+
+Reference:          124
+Identity:           PPNW5A  
+Class Indicator:    EXTERNAL
+Voice Frequency:    (135.940,231.825)
+
+Reference:          125
+Identity:           PPNW5B  
+Class Indicator:    EXTERNAL
+Voice Frequency:    (135.940,231.825)
+
+Reference:          126
+Identity:           PPNW5C  
+Class Indicator:    EXTERNAL
+Voice Frequency:    (135.940,231.825)
+
+Reference:          127
+Identity:           PPNW6A  
+Class Indicator:    EXTERNAL
+Voice Frequency:    (133.705,232.875)
+
+Reference:          128
+Identity:           R       
+Class Indicator:    INTERNAL
+Voice Frequency:    (132.550,0.000)
+Control Center:     EDMM   ( 2 )
+Operator Position: UUE1A  ( 100 )
+Executive Position: T_1E   ( 92 )
+Planner Position:   D_3E   ( 15 )
+
+Reference:          129
+Identity:           RE      
+Class Indicator:    INTERNAL
+Voice Frequency:    (132.550,0.000)
+
+Reference:          130
+Identity:           S       
+Class Indicator:    INTERNAL
+Voice Frequency:    (132.450,0.000)
+Control Center:     EDMM   ( 2 )
+Operator Position: UUE1A  ( 100 )
+Executive Position: F_3P   ( 23 )
+Planner Position:   CXS    ( 10 )
+
+Reference:          131
+Identity:           S1      
+Class Indicator:    INTERNAL
+Voice Frequency:    (132.450,0.000)
+Control Center:     EDMM   ( 2 )
+Operator Position: UUE1A  ( 100 )
+Executive Position: S_3P   ( 91 )
+Planner Position:   CLS    ( 7 )
+
+Reference:          132
+Identity:           S2      
+Class Indicator:    INTERNAL
+Voice Frequency:    (132.450,0.000)
+Control Center:     EDMM   ( 2 )
+Operator Position: UUE1A  ( 100 )
+Executive Position: D_2P   ( 14 )
+Planner Position:   CLS    ( 7 )
+
+Reference:          133
+Identity:           SD      
+Class Indicator:    INTERNAL
+Voice Frequency:    (132.450,0.000)
+Control Center:     EDMM   ( 2 )
+Operator Position: UUE1A  ( 100 )
+Executive Position: S_3P   ( 91 )
+Planner Position:   CLS    ( 7 )
+
+Reference:          134
+Identity:           SF      
+Class Indicator:    INTERNAL
+Voice Frequency:    (132.450,0.000)
+Control Center:     EDMM   ( 2 )
+Operator Position: UUE1A  ( 100 )
+Executive Position: S_3P   ( 91 )
+Planner Position:   CLS    ( 7 )
+
+Reference:          135
+Identity:           SSS     
+Class Indicator:    INTERNAL
+Voice Frequency:    (133.675,0.000)
+
+Reference:          136
+Identity:           SZ      
+Class Indicator:    INTERNAL
+Voice Frequency:    (132.450,0.000)
+
+Reference:          137
+Identity:           SZF     
+Class Indicator:    INTERNAL
+Voice Frequency:    (132.450,0.000)
+
+Reference:          138
+Identity:           T       
+Class Indicator:    INTERNAL
+Voice Frequency:    (133.675,0.000)
+Control Center:     EDMM   ( 2 )
+Operator Position: UUE1A  ( 100 )
+Executive Position: EOD    ( 17 )
+Planner Position:   F_2E   ( 20 )
+
+Reference:          139
+Identity:           TS      
+Class Indicator:    INTERNAL
+Voice Frequency:    (133.675,0.000)
+
+Reference:          140
+Identity:           TSZ     
+Class Indicator:    INTERNAL
+Voice Frequency:    (133.675,0.000)
+
+Reference:          141
+Identity:           TTT     
+Class Indicator:    INTERNAL
+Voice Frequency:    (126.175,0.000)
+
+Reference:          142
+Identity:           U       
+Class Indicator:    INTERNAL
+Voice Frequency:    (118.235,0.000)
+Control Center:     EDMM   ( 2 )
+Operator Position: UUE1A  ( 100 )
+Executive Position: F_3P   ( 23 )
+Planner Position:   F_3P   ( 23 )
+
+Reference:          143
+Identity:           UV      
+Class Indicator:    INTERNAL
+Voice Frequency:    (118.235,0.000)
+
+Reference:          144
+Identity:           V       
+Class Indicator:    INTERNAL
+Voice Frequency:    (133.230,0.000)
+Control Center:     EDMM   ( 2 )
+Operator Position: UUE1A  ( 100 )
+Executive Position: F_2P   ( 21 )
+Planner Position:   IS2E   ( 34 )
+
+Reference:          145
+Identity:           VVB23   
+Class Indicator:    EXTERNAL
+Voice Frequency:    (132.950,0.000)
+
+Reference:          146
+Identity:           VVB2345A
+Class Indicator:    EXTERNAL
+Voice Frequency:    (132.950,0.000)
+Control Center:     LOVV   ( 12 )
+
+Reference:          147
+Identity:           VVB2345B
+Class Indicator:    EXTERNAL
+Voice Frequency:    (132.190,0.000)
+
+Reference:          148
+Identity:           VVB2A   
+Class Indicator:    EXTERNAL
+Voice Frequency:    (132.950,0.000)
+
+Reference:          149
+Identity:           VVB2B   
+Class Indicator:    EXTERNAL
+Voice Frequency:    (133.600,0.000)
+
+Reference:          150
+Identity:           VVB3    
+Class Indicator:    EXTERNAL
+Voice Frequency:    (132.190,0.000)
+
+Reference:          151
+Identity:           VVB34   
+Class Indicator:    EXTERNAL
+Voice Frequency:    (132.190,0.000)
+
+Reference:          152
+Identity:           VVB345  
+Class Indicator:    EXTERNAL
+Voice Frequency:    (132.190,0.000)
+
+Reference:          153
+Identity:           VVB4    
+Class Indicator:    EXTERNAL
+Voice Frequency:    (136.390,0.000)
+
+Reference:          154
+Identity:           VVB45A  
+Class Indicator:    EXTERNAL
+Voice Frequency:    (132.190,0.000)
+
+Reference:          155
+Identity:           VVB45B  
+Class Indicator:    EXTERNAL
+Voice Frequency:    (136.390,0.000)
+
+Reference:          156
+Identity:           VVB5    
+Class Indicator:    EXTERNAL
+Voice Frequency:    (126.280,0.000)
+
+Reference:          157
+Identity:           VVLOWI  
+Class Indicator:    EXTERNAL
+Voice Frequency:    (129.625,0.000)
+Control Center:     LOVV   ( 12 )
+
+Reference:          158
+Identity:           VVN23   
+Class Indicator:    EXTERNAL
+Voice Frequency:    (131.350,0.000)
+
+Reference:          159
+Identity:           VVN2345 
+Class Indicator:    EXTERNAL
+Voice Frequency:    (131.350,0.000)
+Control Center:     LOVV   ( 12 )
+
+Reference:          160
+Identity:           VVN2A   
+Class Indicator:    EXTERNAL
+Voice Frequency:    (131.350,0.000)
+
+Reference:          161
+Identity:           VVN2B   
+Class Indicator:    EXTERNAL
+Voice Frequency:    (128.700,0.000)
+
+Reference:          162
+Identity:           VVN34   
+Class Indicator:    EXTERNAL
+Voice Frequency:    (134.350,0.000)
+
+Reference:          163
+Identity:           VVN345  
+Class Indicator:    EXTERNAL
+Voice Frequency:    (134.350,0.000)
+
+Reference:          164
+Identity:           VVN3A   
+Class Indicator:    EXTERNAL
+Voice Frequency:    (134.350,0.000)
+
+Reference:          165
+Identity:           VVN3B   
+Class Indicator:    EXTERNAL
+Voice Frequency:    (131.350,0.000)
+
+Reference:          166
+Identity:           VVN4    
+Class Indicator:    EXTERNAL
+Voice Frequency:    (134.350,0.000)
+
+Reference:          167
+Identity:           VVN45   
+Class Indicator:    EXTERNAL
+Voice Frequency:    (119.880,0.000)
+
+Reference:          168
+Identity:           VVN5    
+Class Indicator:    EXTERNAL
+Voice Frequency:    (119.880,0.000)
+
+Reference:          169
+Identity:           VVS     
+Class Indicator:    EXTERNAL
+Voice Frequency:    (450.000,0.000)
+Control Center:     LOVV   ( 12 )
+
+Reference:          170
+Identity:           VVW2    
+Class Indicator:    EXTERNAL
+Voice Frequency:    (133.600,0.000)
+
+Reference:          171
+Identity:           VVW23   
+Class Indicator:    EXTERNAL
+Voice Frequency:    (133.600,0.000)
+
+Reference:          172
+Identity:           VVW2345 
+Class Indicator:    EXTERNAL
+Voice Frequency:    (133.600,0.000)
+Control Center:     LOVV   ( 12 )
+
+Reference:          173
+Identity:           VVW3    
+Class Indicator:    EXTERNAL
+Voice Frequency:    (129.125,0.000)
+
+Reference:          174
+Identity:           VVW34   
+Class Indicator:    EXTERNAL
+Voice Frequency:    (129.125,0.000)
+
+Reference:          175
+Identity:           VVW345  
+Class Indicator:    EXTERNAL
+Voice Frequency:    (129.125,0.000)
+
+Reference:          176
+Identity:           VVW45   
+Class Indicator:    EXTERNAL
+Voice Frequency:    (126.280,0.000)
+
+Reference:          177
+Identity:           VVW4A   
+Class Indicator:    EXTERNAL
+Voice Frequency:    (129.125,0.000)
+
+Reference:          178
+Identity:           VVW4B   
+Class Indicator:    EXTERNAL
+Voice Frequency:    (132.765,0.000)
+
+Reference:          179
+Identity:           VVW5    
+Class Indicator:    EXTERNAL
+Voice Frequency:    (126.280,0.000)
+
+Reference:          180
+Identity:           W       
+Class Indicator:    INTERNAL
+Voice Frequency:    (136.225,0.000)
+Control Center:     EDMM   ( 2 )
+Operator Position: UUE1A  ( 100 )
+Executive Position: D_1E   ( 11 )
+Planner Position:   CDS    ( 6 )
+
+Reference:          181
+Identity:           X       
+Class Indicator:    INTERNAL
+Voice Frequency:    (131.055,0.000)
+Control Center:     EDMM   ( 2 )
+Operator Position: UUE1A  ( 100 )
+Executive Position: CWSE   ( 8 )
+Planner Position:   F_1P   ( 19 )
+
+Reference:          182
+Identity:           YYCEL335
+Class Indicator:    EXTERNAL
+Voice Frequency:    (132.865,0.000)
+
+Reference:          183
+Identity:           YYCEL355
+Class Indicator:    EXTERNAL
+Voice Frequency:    (133.955,0.000)
+Control Center:     EDYY   ( 5 )
+
+Reference:          184
+Identity:           YYHOL345
+Class Indicator:    EXTERNAL
+Voice Frequency:    (132.780,0.000)
+
+Reference:          185
+Identity:           YYHOL355
+Class Indicator:    EXTERNAL
+Voice Frequency:    (120.935,0.000)
+Control Center:     EDYY   ( 5 )
+
+Reference:          186
+Identity:           YYMUN335
+Class Indicator:    EXTERNAL
+Voice Frequency:    (133.215,0.000)
+
+Reference:          187
+Identity:           YYMUN355
+Class Indicator:    EXTERNAL
+Voice Frequency:    (133.855,0.000)
+
+Reference:          188
+Identity:           YYRUH335
+Class Indicator:    EXTERNAL
+Voice Frequency:    (135.490,0.000)
+
+Reference:          189
+Identity:           YYRUH355
+Class Indicator:    EXTERNAL
+Voice Frequency:    (132.515,0.000)
+Control Center:     EDYY   ( 5 )
+
+Reference:          190
+Identity:           YYSOL335
+Class Indicator:    EXTERNAL
+Voice Frequency:    (131.380,0.000)
+
+Reference:          191
+Identity:           YYSOL355
+Class Indicator:    EXTERNAL
+Voice Frequency:    (134.710,0.000)
+Control Center:     EDYY   ( 5 )
+
+Reference:          192
+Identity:           Z       
+Class Indicator:    INTERNAL
+Voice Frequency:    (134.150,0.000)
+Control Center:     EDMM   ( 2 )
+Operator Position: UUE1A  ( 100 )
+Executive Position: F_3P   ( 23 )
+Planner Position:   F_3P   ( 23 )
+                                
+                                
+                                
+                                
+********************************
+                                
+     WORKING POSITION LIST      
+                                
+********************************
+                                
+
+Reference:         1
+Identity:          A_1E  
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         2
+Identity:          A_1P  
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         3
+Identity:          A_2E  
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         4
+Identity:          A_2P  
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         5
+Identity:          CAS   
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         6
+Identity:          CDS   
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         7
+Identity:          CLS   
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         8
+Identity:          CWSE  
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         9
+Identity:          CWSP  
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         10
+Identity:          CXS   
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         11
+Identity:          D_1E  
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         12
+Identity:          D_1P  
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         13
+Identity:          D_2E  
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         14
+Identity:          D_2P  
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         15
+Identity:          D_3E  
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         16
+Identity:          D_3P  
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         17
+Identity:          EOD   
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         18
+Identity:          F_1E  
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         19
+Identity:          F_1P  
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         20
+Identity:          F_2E  
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         21
+Identity:          F_2P  
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         22
+Identity:          F_3E  
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         23
+Identity:          F_3P  
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         24
+Identity:          F_4E  
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         25
+Identity:          F_4P  
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         26
+Identity:          H_1E  
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         27
+Identity:          H_1P  
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         28
+Identity:          H_2E  
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         29
+Identity:          H_2P  
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         30
+Identity:          IIW1A 
+Class Indicator :  FDO
+Node Number:       0
+
+Reference:         31
+Identity:          IIX1A 
+Class Indicator :  FDO
+Node Number:       0
+
+Reference:         32
+Identity:          IS1E  
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         33
+Identity:          IS1P  
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         34
+Identity:          IS2E  
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         35
+Identity:          IS2P  
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         36
+Identity:          IS3E  
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         37
+Identity:          IS3P  
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         38
+Identity:          IT1E  
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         39
+Identity:          IT1P  
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         40
+Identity:          IT2E  
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         41
+Identity:          IT2P  
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         42
+Identity:          I_1E  
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         43
+Identity:          I_1P  
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         44
+Identity:          I_2E  
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         45
+Identity:          I_2P  
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         46
+Identity:          K_1E  
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         47
+Identity:          K_1P  
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         48
+Identity:          K_2E  
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         49
+Identity:          K_2P  
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         50
+Identity:          L_1E  
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         51
+Identity:          L_1P  
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         52
+Identity:          L_2E  
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         53
+Identity:          L_2P  
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         54
+Identity:          L_3E  
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         55
+Identity:          L_3P  
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         56
+Identity:          N_1E  
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         57
+Identity:          N_1P  
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         58
+Identity:          N_2E  
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         59
+Identity:          N_2P  
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         60
+Identity:          N_3E  
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         61
+Identity:          N_3P  
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         62
+Identity:          N_4E  
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         63
+Identity:          N_4P  
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         64
+Identity:          O_1E  
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         65
+Identity:          O_1P  
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         66
+Identity:          O_2E  
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         67
+Identity:          O_2P  
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         68
+Identity:          P_1E  
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         69
+Identity:          P_1P  
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         70
+Identity:          P_2E  
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         71
+Identity:          P_2P  
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         72
+Identity:          R_1E  
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         73
+Identity:          R_1P  
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         74
+Identity:          R_2E  
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         75
+Identity:          R_2P  
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         76
+Identity:          SPR1  
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         77
+Identity:          SPR2  
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         78
+Identity:          SPR3  
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         79
+Identity:          SPR4  
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         80
+Identity:          SSUE  
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         81
+Identity:          SV_EOD
+Class Indicator :  CMD
+Node Number:       0
+
+Reference:         82
+Identity:          SV_S  
+Class Indicator :  CMD
+Node Number:       0
+
+Reference:         83
+Identity:          SV_SSU
+Class Indicator :  CMD
+Node Number:       0
+
+Reference:         84
+Identity:          SV_WE 
+Class Indicator :  CMD
+Node Number:       0
+
+Reference:         85
+Identity:          SV_X  
+Class Indicator :  CMD
+Node Number:       0
+
+Reference:         86
+Identity:          S_1E  
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         87
+Identity:          S_1P  
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         88
+Identity:          S_2E  
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         89
+Identity:          S_2P  
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         90
+Identity:          S_3E  
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         91
+Identity:          S_3P  
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         92
+Identity:          T_1E  
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         93
+Identity:          T_1P  
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         94
+Identity:          T_2E  
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         95
+Identity:          T_2P  
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         96
+Identity:          UUC1A 
+Class Indicator :  FDO
+Node Number:       0
+
+Reference:         97
+Identity:          UUC2A 
+Class Indicator :  FDO
+Node Number:       0
+
+Reference:         98
+Identity:          UUCAM 
+Class Indicator :  FDO
+Node Number:       0
+
+Reference:         99
+Identity:          UUCM  
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         100
+Identity:          UUE1A 
+Class Indicator :  FDO
+Node Number:       0
+
+Reference:         101
+Identity:          UUS1A 
+Class Indicator :  FDO
+Node Number:       0
+
+Reference:         102
+Identity:          UUW1A 
+Class Indicator :  FDO
+Node Number:       0
+
+Reference:         103
+Identity:          UUX1A 
+Class Indicator :  FDO
+Node Number:       0
+
+Reference:         104
+Identity:          U_1E  
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         105
+Identity:          U_1P  
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         106
+Identity:          U_2E  
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         107
+Identity:          U_2P  
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         108
+Identity:          U_3E  
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         109
+Identity:          U_3P  
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         110
+Identity:          Z_1E  
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         111
+Identity:          Z_1P  
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         112
+Identity:          Z_2E  
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         113
+Identity:          Z_2P  
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         114
+Identity:          Z_3E  
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         115
+Identity:          Z_3P  
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         116
+Identity:          Z_4E  
+Class Indicator :  CWP
+Node Number:       0
+
+Reference:         117
+Identity:          Z_4P  
+Class Indicator :  CWP
+Node Number:       0

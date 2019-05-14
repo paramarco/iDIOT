@@ -1,0 +1,238 @@
+****************************************************
+******************** EVENT RECEIVED ****************
+****************************************************
+LP_STATE_UPDATE EVENT RECEIVED   -----  19.03.28_141703-848953
+
+
+- Event published :: LP CHANGE EVENT
+Flight ID :  8991
+Origin    : E_FBS
+Unlinkage : 
+ - Reason : E_NULL
+ - Time   : -1
+ - Coordinates (x,y) :  0, 0
+ - Level :-9999
+Linkage input error : E_NULL at cwp  0
+Ambiguity indicator 
+ - Reason : E_NULL
+ - Time -1
+ - Coordinates (x,y) :  0, 0
+ - Level -9999
+Linkage failure 
+ - Reason : E_NULL
+ - Time   : -1
+ - Coordinates (x,y) :  0, 0
+ - Level -9999
+****************************************************
+
+
+****************************************************
+******************** EVENT RECEIVED ****************
+****************************************************
+LP_STATE_UPDATE EVENT RECEIVED   -----  19.03.28_141703-849176
+
+
+- Event published :: LP CHANGE EVENT
+Flight ID :  8991
+Origin    : E_RDP
+Unlinkage : 
+ - Reason : E_NULL
+ - Time   : -1
+ - Coordinates (x,y) :  0, 0
+ - Level :-9999
+Linkage input error : E_NULL at cwp  0
+Ambiguity indicator 
+ - Reason : E_NULL
+ - Time -1
+ - Coordinates (x,y) :  0, 0
+ - Level -9999
+Linkage failure 
+ - Reason : E_NULL
+ - Time   : -1
+ - Coordinates (x,y) :  0, 0
+ - Level -9999
+****************************************************
+
+
+****************************************************
+******************** EVENT RECEIVED ****************
+****************************************************
+ATO EVENT RECEIVED   -----  19.03.28_141707-504709
+
+
+ Number  :  8991
+ Session :  0
+TRACK POSITION :   TIME: 141701 LEVEL:  120 GEODESIC: 485537N0131015E
+START POINT :   OCURRENCE:  1 GEODESIC: 485509N0131058E SEGMENT :  1
+FINAL POINT :   OCURRENCE:  1 GEODESIC: 485509N0131058E SEGMENT :  1
+ CONFORMITY :  STATE : UNCONFORM       HORIZ : Conform    VERTI : Unknown    CFL   : Inactive  -999
+ REAL POSITION => 
+ TIME: 141707 LEVEL:  120 GEODESIC: 485537N0131015E
+ PROJECTED POSITION => 
+ TIME: 141707 LEVEL:  120 GEODESIC: 485537N0131015E
+ PREV PROFILE POINT =>  OCCURRENCE NB    :  1 GEODESIC DEGREES : 485509N0131058E
+ LATITUDE :  4.89192393664566E+01
+ LONGITUDE :  1.31826498216747E+01 SEGMENT :  1
+
+****************************************************
+
+
+****************************************************
+******************** EVENT RECEIVED ****************
+****************************************************
+ETO EVENT RECEIVED   -----  19.03.28_141732-503683
+
+
+
+-> ETO event sent : 
+____________________
+
+COMMON_REPORT_DATA: 
+FLIGHT_ID :  8991
+4D_TRACK_POSITION : 
+   TIME  :  14- 17- 32
+   LEVEL :  1.20000000000000E+02
+   R_2D  : 
+         Geodesic degrees latitude  :  4.89543651698046E+01
+         Geodesic degrees longitude :  1.31291912095495E+01
+APPLICATED_PROFILE_POINT : 
+   OCCURRENCE_NB :  1
+   POSITION      : 
+         Geodesic degrees latitude  :  4.89192393664566E+01
+         Geodesic degrees longitude :  1.31826498216747E+01
+   SEGMENT       :  1
+ PROJECTION IN PROFILE :  TIME: 141732 LEVEL:  120 GEODESIC: 485716N0130745E
+ GROUND SPEED :  3.36066624622246E+02
+
+****************************************************
+
+
+****************************************************
+******************** EVENT RECEIVED ****************
+****************************************************
+ATO EVENT RECEIVED   -----  19.03.28_141852-503663
+
+
+ Number  :  8991
+ Session :  0
+TRACK POSITION :   TIME: 141849 LEVEL:  120 GEODESIC: 490231N0125943E
+START POINT :   OCURRENCE:  1 GEODESIC: 490216N0130006E SEGMENT :  1
+FINAL POINT :   OCURRENCE:  1 GEODESIC: 490216N0130006E SEGMENT :  1
+ CONFORMITY :  STATE : CONFORM         HORIZ : Conform    VERTI : Conform    CFL   : Levelled   120
+ REAL POSITION => 
+ TIME: 141852 LEVEL:  120 GEODESIC: 490231N0125943E
+ PROJECTED POSITION => 
+ TIME: 141852 LEVEL:  120 GEODESIC: 490231N0125943E
+ PREV PROFILE POINT =>  OCCURRENCE NB    :  1 GEODESIC DEGREES : 490216N0130006E
+ LATITUDE :  4.90379125265091E+01
+ LONGITUDE :  1.30016257802884E+01 SEGMENT :  1
+CFL tendency : E_LEVEL
+ ROCD:  0.00000000000000E+00HEADING : Mode-S :   3.14121093750000E+02 HSPEED:  3.36066624622246E+02 RELATIVE_LEVEL: E_UNKNOWN
+
+****************************************************
+
+
+****************************************************
+******************** EVENT RECEIVED ****************
+****************************************************
+CONFORMITY EVENT RECEIVED   -----  19.03.28_142123-004653
+
+
+ Number  : 8991
+ Session : 0
+ STATE : CONFORM         HORIZ : Conform    VERTI : Conform    CFL   : Levelled   120
+ REAL POSITION => 
+ TIME: 142123 LEVEL:  120 GEODESIC: 491122N0124340E
+ PROJECTED POSITION => 
+ TIME: 142123 LEVEL:  120 GEODESIC: 491123N0124340E
+ PREV PROFILE POINT =>  OCCURRENCE NB    :  1 GEODESIC DEGREES : 491122N0124423E
+ LATITUDE :  4.91893150565586E+01
+ LONGITUDE :  1.27397179313875E+01 SEGMENT :  1
+CFL tendency : E_LEVEL
+ ROCD:  0.00000000000000E+00HEADING : Mode-S :   2.78085937500000E+02 HSPEED:  3.40359135937277E+02 RELATIVE_LEVEL: E_UNKNOWN
+
+
+****************************************************
+
+
+****************************************************
+******************** EVENT RECEIVED ****************
+****************************************************
+ATO EVENT RECEIVED   -----  19.03.28_142623-003674
+
+
+ Number  :  8991
+ Session :  0
+TRACK POSITION :   TIME: 142623 LEVEL:  120 GEODESIC: 491213N0120101E
+START POINT :   OCURRENCE:  1 GEODESIC: 491213N0120104E SEGMENT :  1
+FINAL POINT :   OCURRENCE:  1 GEODESIC: 491213N0120104E SEGMENT :  1
+ CONFORMITY :  STATE : CONFORM         HORIZ : Conform    VERTI : Conform    CFL   : Levelled   120
+ REAL POSITION => 
+ TIME: 142623 LEVEL:  120 GEODESIC: 491213N0120101E
+ PROJECTED POSITION => 
+ TIME: 142623 LEVEL:  120 GEODESIC: 491214N0120101E
+ PREV PROFILE POINT =>  OCCURRENCE NB    :  1 GEODESIC DEGREES : 491213N0120104E
+ LATITUDE :  4.92037466993964E+01
+ LONGITUDE :  1.20178952981195E+01 SEGMENT :  1
+CFL tendency : E_LEVEL
+ ROCD:  0.00000000000000E+00HEADING : Mode-S :   2.71054687500000E+02 HSPEED:  3.35954171810343E+02 RELATIVE_LEVEL: E_UNKNOWN
+
+****************************************************
+
+
+****************************************************
+******************** EVENT RECEIVED ****************
+****************************************************
+LP_STATE_UPDATE EVENT RECEIVED   -----  19.03.28_142718-002914
+
+
+- Event published :: LP CHANGE EVENT
+Flight ID :  8991
+Origin    : E_RDP
+Unlinkage : 
+ - Reason : E_UNLINKAGE_TRACK_DROP
+ - Time   :  1553783233
+ - Coordinates (x,y) :  4800,-6848
+ - Level :-1
+Linkage input error : E_NULL at cwp  0
+Ambiguity indicator 
+ - Reason : E_NULL
+ - Time -1
+ - Coordinates (x,y) :  0, 0
+ - Level -9999
+Linkage failure 
+ - Reason : E_NULL
+ - Time   : -1
+ - Coordinates (x,y) :  0, 0
+ - Level -9999
+****************************************************
+
+
+****************************************************
+******************** EVENT RECEIVED ****************
+****************************************************
+LP_STATE_UPDATE EVENT RECEIVED   -----  19.03.28_142731-808789
+
+
+- Event published :: LP CHANGE EVENT
+Flight ID :  8991
+Origin    : E_RDP
+Unlinkage : 
+ - Reason : E_UNLINKAGE_TRACK_DROP
+ - Time   :  1553783233
+ - Coordinates (x,y) :  5056,-6848
+ - Level : 120
+Linkage input error : E_NULL at cwp  0
+Ambiguity indicator 
+ - Reason : E_NULL
+ - Time -1
+ - Coordinates (x,y) :  0, 0
+ - Level -9999
+Linkage failure 
+ - Reason : E_LINKAGE_FAILURE
+ - Time   :  1553783233
+ - Coordinates (x,y) :  5056,-6848
+ - Level  120
+****************************************************
+
+

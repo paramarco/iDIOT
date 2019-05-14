@@ -1,8 +1,12 @@
 package iDIOT;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
+import org.rauschig.jarchivelib.Archiver;
+import org.rauschig.jarchivelib.ArchiverFactory;
 
 public class Filewalker {
 	
@@ -10,13 +14,21 @@ public class Filewalker {
 	public List<File> listFileASTERIX62;	
 	public File FileSectorization;
 	public File FileAdaptation;
-
+	public File FileEnvironment;
+	public File FileiTAPCSVs;
+	public String targetPath;
+	public String AdaptationSource;
 	
 	public Filewalker( String path ) {				
 		listFileSDD_DISTRIBUTION  = new ArrayList<File>();
 		listFileASTERIX62 = new ArrayList<File>();
 		FileSectorization = null;
-		FileAdaptation = new File("./lib/adap");
+		FileAdaptation = null;
+		FileEnvironment = null;
+		FileiTAPCSVs = null;
+		targetPath = path;
+		AdaptationSource = null ;
+		
 		this.walk(path);
 	}
 	
@@ -32,7 +44,31 @@ public class Filewalker {
 		return FileSectorization;
 	}
 	public File getFileAdaptation() {
+		
+		if( FileiTAPCSVs != null ) {
+			FileAdaptation = FileiTAPCSVs;
+			AdaptationSource = "iTAP_CSVs";
+		}else if( FileEnvironment != null)  {
+			FileAdaptation = FileEnvironment;
+			AdaptationSource = "environment.tcl";
+		}else {
+			File Filelib= new File("./lib/dataset.tgz");
+			File destination = new File( this.targetPath + "/adap");
+    		Archiver archiver = ArchiverFactory.createArchiver("tar", "gz");
+    		try {
+				archiver.extract( Filelib , destination);
+				File fiTAPCSVs = new File(this.targetPath + "/adap/csv");
+				if ( fiTAPCSVs.exists() ) {  
+					FileAdaptation = fiTAPCSVs;
+					AdaptationSource = "libiTAP_CSVs";
+				}						
+			} catch (IOException e) { e.printStackTrace(); }
+		}
+		
 		return FileAdaptation;
+	}
+	public String getAdaptationSource() {
+		return AdaptationSource;
 	}
 	
     public void walk( String path ) {
@@ -44,10 +80,7 @@ public class Filewalker {
 
         for ( File f : list ) {
             if ( f.isDirectory() ) {
-            	if (f.getName().equals("adap") )
-            		FileAdaptation = f;
-            	else
-            		walk( f.getAbsolutePath() );
+            	walk( f.getAbsolutePath() );
             }
             if ( f.isFile()  ) {
             	
@@ -64,7 +97,28 @@ public class Filewalker {
             	if ( extension.equals(".xml") && fileName.contains("SECTORIZATION_DUMP_") ) {
             		FileSectorization = f;
             	}
-            	
+            	if ( fileName.equals("Builds_Info_For_soda.tgz")) {
+            		File destination = new File(f.getParent());
+            		Archiver archiver = ArchiverFactory.createArchiver("tar", "gz");
+            		try {
+						archiver.extract( f , destination);
+						File fEnvironment = new File(f.getParent() + "/adap/environment.tcl");
+						if ( fEnvironment.exists() ) {  
+							FileEnvironment = fEnvironment; 
+						}						
+					} catch (IOException e) { e.printStackTrace(); }
+            	}
+            	if ( fileName.equals("dataset.tgz")) {
+            		File destination = new File(f.getParent() + "/adap");
+            		Archiver archiver = ArchiverFactory.createArchiver("tar", "gz");
+            		try {
+						archiver.extract( f , destination);
+						File fiTAPCSVs = new File(f.getParent() + "/adap/csv");
+						if ( fiTAPCSVs.exists() ) {  
+							FileiTAPCSVs = fiTAPCSVs; 
+						}						
+					} catch (IOException e) { e.printStackTrace(); }
+            	}
             }
         }
     }

@@ -1,0 +1,112 @@
+****************************************************
+******************** EVENT RECEIVED ****************
+****************************************************
+LP_STATE_UPDATE EVENT RECEIVED   -----  19.03.28_100557-849753
+
+
+- Event published :: LP CHANGE EVENT
+Flight ID :  8991
+Origin    : E_FBS
+Unlinkage : 
+ - Reason : E_NULL
+ - Time   : -1
+ - Coordinates (x,y) :  0, 0
+ - Level :-9999
+Linkage input error : E_NULL at cwp  0
+Ambiguity indicator 
+ - Reason : E_NULL
+ - Time -1
+ - Coordinates (x,y) :  0, 0
+ - Level -9999
+Linkage failure 
+ - Reason : E_NULL
+ - Time   : -1
+ - Coordinates (x,y) :  0, 0
+ - Level -9999
+****************************************************
+
+
+****************************************************
+******************** EVENT RECEIVED ****************
+****************************************************
+LP_STATE_UPDATE EVENT RECEIVED   -----  19.03.28_100557-849931
+
+
+- Event published :: LP CHANGE EVENT
+Flight ID :  8991
+Origin    : E_RDP
+Unlinkage : 
+ - Reason : E_NULL
+ - Time   : -1
+ - Coordinates (x,y) :  0, 0
+ - Level :-9999
+Linkage input error : E_NULL at cwp  0
+Ambiguity indicator 
+ - Reason : E_NULL
+ - Time -1
+ - Coordinates (x,y) :  0, 0
+ - Level -9999
+Linkage failure 
+ - Reason : E_NULL
+ - Time   : -1
+ - Coordinates (x,y) :  0, 0
+ - Level -9999
+****************************************************
+
+
+****************************************************
+******************** EVENT RECEIVED ****************
+****************************************************
+LP_STATE_UPDATE EVENT RECEIVED   -----  19.03.28_102103-481819
+
+
+- Event published :: LP CHANGE EVENT
+Flight ID :  8991
+Origin    : E_RDP
+Unlinkage : 
+ - Reason : E_NULL
+ - Time   : -1
+ - Coordinates (x,y) :  0, 0
+ - Level :-9999
+Linkage input error : E_NULL at cwp  0
+Ambiguity indicator 
+ - Reason : E_NULL
+ - Time -1
+ - Coordinates (x,y) :  0, 0
+ - Level -9999
+Linkage failure 
+ - Reason : E_LINKAGE_FAILURE
+ - Time   :  1553768700
+ - Coordinates (x,y) : -2944,-3584
+ - Level  300
+****************************************************
+
+
+****************************************************
+******************** EVENT RECEIVED ****************
+****************************************************
+LP_STATE_UPDATE EVENT RECEIVED   -----  19.03.28_102103-488423
+
+
+- Event published :: LP CHANGE EVENT
+Flight ID :  8991
+Origin    : E_FBS
+Unlinkage : 
+ - Reason : E_NULL
+ - Time   : -1
+ - Coordinates (x,y) :  0, 0
+ - Level :-9999
+Linkage input error : E_NULL at cwp  0
+Ambiguity indicator 
+ - Reason : E_NULL
+ - Time -1
+ - Coordinates (x,y) :  0, 0
+ - Level -9999
+Linkage failure 
+ - Reason : E_LINKAGE_FAILURE
+ - Time   :  1553768700
+ - Coordinates (x,y) : -2944,-3584
+ - Level  300
+****************************************************
+
+

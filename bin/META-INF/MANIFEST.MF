@@ -5,6 +5,10 @@ Class-Path: . lib/log4j2.properties lib/gdal.jar lib/gluegen-rt.jar lib/jogl-all
  lib/gluegen-rt-natives-windows-i586.jar lib/jogl-all-natives-linux-amd64.jar 
  lib/jogl-all-natives-linux-i586.jar lib/jogl-all-natives-macosx-universal.jar 
  lib/jogl-all-natives-windows-amd64.jar lib/jogl-all-natives-windows-i586.jar
- lib/log4j-core-2.11.2.jar lib/log4j-api-2.11.2.jar
+ lib/log4j-core-2.11.2.jar lib/log4j-api-2.11.2.jar lib/jarchivelib-0.7.1-jar-with-dependencies.jar 
+ lib/tcljava1.4.1/jacl.jar lib/tcljava1.4.1/itcl.jar lib/tcljava1.4.1/itclsrc.jar lib/tcljava1.4.1/jaclsrc.jar
+ lib/tcljava1.4.1/janino.jar lib/tcljava1.4.1/janinosrc.jar lib/tcljava1.4.1/tcljava.jar lib/tcljava1.4.1/tcljavasrc.jar
+ lib/tcljava1.4.1/tjc.jar lib/tcljava1.4.1/tjcsrc.jar
+ 
 Main-Class: iDIOT.iDIOT
 

@@ -4,12 +4,20 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
+import iDIOT.SDD_DISTRIBUTION_Parser.SDD_DISTRIBUTION_Event;
+import iDIOT.TRACKS_Parser.TRACK_event;
+import tcl.lang.*;
 
 public class AdaptationParser  {
-	
+
+	public String AdaptationSource =""; // AdaptationType := iTAP_CSVs | environment.tcl
 	public String fileAdaptationPath;
+	Interp i;
 	File fileAIRSPACE_VOLUMES;
 	File fileAREA_CONTOUR_POINTS;
 	File fileBASIC_SECTORS;
@@ -21,47 +29,103 @@ public class AdaptationParser  {
 	File fileSITUATION_LINE_POINTS;
 	File fileSITUATION_LINES_GUIDE;
 	File fileSITUATION_LINE_CONDITIONS;
-	File fileROUTE_CONDITIONS_GUIDE;  
+	File fileROUTE_CONDITIONS_GUIDE;
+	File fileROUTE_CONDITION_AERODROMES;
 	
-	public AdaptationParser( File fileAdaptation ) {
+	public AdaptationParser( File fileAdaptation, String AdaptationSource ) {
 		
 		this.fileAdaptationPath = fileAdaptation.getAbsolutePath();
-		String pathAIRSPACE_VOLUMES = fileAdaptationPath + "/" + "AIRSPACE_VOLUMES_GUIDE_DATA_TABLE.csv";
-		fileAIRSPACE_VOLUMES  = new File( pathAIRSPACE_VOLUMES );
+		this.AdaptationSource = AdaptationSource;
 		
-		String pathAREA_CONTOUR_POINTS = fileAdaptationPath + "/" +  "AREA_CONTOUR_POINTS_DATA_TABLE.csv";
-		fileAREA_CONTOUR_POINTS  = new File( pathAREA_CONTOUR_POINTS );
-		
-		String pathBASIC_SECTORS = fileAdaptationPath + "/" +  "BASIC_SECTORS_DATA_TABLE.csv";
-		fileBASIC_SECTORS  = new File( pathBASIC_SECTORS );
+		if ( AdaptationSource.equals("environment.tcl") ) {
+			this.i = new Interp();
+			try {
+				 i.evalFile(this.fileAdaptationPath);				 
+			 } catch (TclException e) {
+				 System.out.println("Exception: " + e.getMessage());
+				 int code = e.getCompletionCode();
+		         switch (code) {
+		         	case TCL.ERROR:
+		         		System.err.println(i.getResult().toString());
+		                break;
+		         	case TCL.BREAK:
+		            	System.err.println("invoked \"break\" outside of a loop");
+		            	break;
+		         	case TCL.CONTINUE:
+		         		System.err.println("invoked \"continue\" outside of a loop");
+		         		break;
+		         	default:
+		         		System.err.println("command returned bad error code: " + code);
+		         		break;
+		         }
+            }		
+		}else {
+			
+			String pathAIRSPACE_VOLUMES = fileAdaptationPath + "/" + "AIRSPACE_VOLUMES_GUIDE_DATA_TABLE.CSV";
+			fileAIRSPACE_VOLUMES  = new File( pathAIRSPACE_VOLUMES );
+			
+			String pathAREA_CONTOUR_POINTS = fileAdaptationPath + "/" +  "AREA_CONTOUR_POINTS_DATA_TABLE.CSV";
+			fileAREA_CONTOUR_POINTS  = new File( pathAREA_CONTOUR_POINTS );
+			
+			String pathBASIC_SECTORS = fileAdaptationPath + "/" +  "BASIC_SECTORS_DATA_TABLE.CSV";
+			fileBASIC_SECTORS  = new File( pathBASIC_SECTORS );
 
-		String pathRESPONSIBILITY_VOLUMES = fileAdaptationPath + "/" +  "RESPONSIBILITY_VOLUMES_DATA_TABLE.csv";
-		fileRESPONSIBILITY_VOLUMES  = new File( pathRESPONSIBILITY_VOLUMES );
-		
-		String pathHOLDING_AIRSPACE_VOLUMES = fileAdaptationPath + "/" +  "HOLDING_AIRSPACE_VOLUMES_DATA_TABLE.csv";
-		fileHOLDING_AIRSPACE_VOLUMES  = new File( pathHOLDING_AIRSPACE_VOLUMES );
-		
-		String pathHOLDING_VOLUMES = fileAdaptationPath + "/" +  "HOLDING_VOLUMES_GUIDE_DATA_TABLE.csv";
-		fileHOLDING_VOLUMES  = new File( pathHOLDING_VOLUMES );
+			String pathRESPONSIBILITY_VOLUMES = fileAdaptationPath + "/" +  "RESPONSIBILITY_VOLUMES_DATA_TABLE.CSV";
+			fileRESPONSIBILITY_VOLUMES  = new File( pathRESPONSIBILITY_VOLUMES );
+			
+			String pathHOLDING_AIRSPACE_VOLUMES = fileAdaptationPath + "/" +  "HOLDING_AIRSPACE_VOLUMES_DATA_TABLE.CSV";
+			fileHOLDING_AIRSPACE_VOLUMES  = new File( pathHOLDING_AIRSPACE_VOLUMES );
+			
+			String pathHOLDING_VOLUMES = fileAdaptationPath + "/" +  "HOLDING_VOLUMES_GUIDE_DATA_TABLE.CSV";
+			fileHOLDING_VOLUMES  = new File( pathHOLDING_VOLUMES );
 
-		String pathINTEREST_VOLUMES = fileAdaptationPath + "/" +  "INTEREST_VOLUMES_DATA_TABLE.csv";
-		fileINTEREST_VOLUMES  = new File( pathINTEREST_VOLUMES );
-		
-		String pathSECTOR_VOLUMES = fileAdaptationPath + "/" +  "SECTOR_VOLUMES_DATA_TABLE.csv";
-		fileSECTOR_VOLUMES  = new File( pathSECTOR_VOLUMES );
-		
-		String pathSITUATION_LINE_POINTS = fileAdaptationPath + "/" +  "SITUATION_LINE_POINTS_DATA_TABLE.csv";
-		fileSITUATION_LINE_POINTS  = new File( pathSITUATION_LINE_POINTS );
-		
-		String pathSITUATION_LINES_GUIDE = fileAdaptationPath + "/" +  "SITUATION_LINES_GUIDE_DATA_TABLE.csv";
-		fileSITUATION_LINES_GUIDE  = new File( pathSITUATION_LINES_GUIDE );
-		
-		String pathSITUATION_LINE_CONDITIONS = fileAdaptationPath + "/" +  "SITUATION_LINE_CONDITIONS_DATA_TABLE.csv";
-		fileSITUATION_LINE_CONDITIONS  = new File( pathSITUATION_LINE_CONDITIONS );
+			String pathINTEREST_VOLUMES = fileAdaptationPath + "/" +  "INTEREST_VOLUMES_DATA_TABLE.CSV";
+			fileINTEREST_VOLUMES  = new File( pathINTEREST_VOLUMES );
+			
+			String pathSECTOR_VOLUMES = fileAdaptationPath + "/" +  "SECTOR_VOLUMES_DATA_TABLE.CSV";
+			fileSECTOR_VOLUMES  = new File( pathSECTOR_VOLUMES );
+			
+			String pathSITUATION_LINE_POINTS = fileAdaptationPath + "/" +  "SITUATION_LINE_POINTS_DATA_TABLE.CSV";
+			fileSITUATION_LINE_POINTS  = new File( pathSITUATION_LINE_POINTS );
+			
+			String pathSITUATION_LINES_GUIDE = fileAdaptationPath + "/" +  "SITUATION_LINES_GUIDE_DATA_TABLE.CSV";
+			fileSITUATION_LINES_GUIDE  = new File( pathSITUATION_LINES_GUIDE );
+			
+			String pathSITUATION_LINE_CONDITIONS = fileAdaptationPath + "/" +  "SITUATION_LINE_CONDITIONS_DATA_TABLE.CSV";
+			fileSITUATION_LINE_CONDITIONS  = new File( pathSITUATION_LINE_CONDITIONS );
 
-		String pathROUTE_CONDITIONS_GUIDE = fileAdaptationPath + "/" +  "ROUTE_CONDITIONS_GUIDE_DATA_TABLE.csv";
-		fileROUTE_CONDITIONS_GUIDE  = new File( pathROUTE_CONDITIONS_GUIDE );
+			String pathROUTE_CONDITIONS_GUIDE = fileAdaptationPath + "/" +  "ROUTE_CONDITIONS_GUIDE_DATA_TABLE.CSV";
+			fileROUTE_CONDITIONS_GUIDE  = new File( pathROUTE_CONDITIONS_GUIDE );
+			
+			String pathROUTE_CONDITION_AERODROMES = fileAdaptationPath + "/" +  "ROUTE_CONDITION_AERODROMES_DATA_TABLE.CSV";
+			fileROUTE_CONDITION_AERODROMES  = new File( pathROUTE_CONDITION_AERODROMES );
+		}
+	}
+	
+	//CONDITIONID,TERMINAL_ACTION,AERODROMES_REGION,ACCOUNTING
+	public static class ROUTE_CONDITION_AERODROMES  {
 
+		public String CONDITIONID,TERMINAL_ACTION,AERODROMES_REGION,ACCOUNTING;
+		
+		public ROUTE_CONDITION_AERODROMES () {}
+		
+		public ROUTE_CONDITION_AERODROMES (String line) {
+	
+			String[] attributes = line.split(",");
+
+			this.CONDITIONID = attributes[0].trim();
+			this.TERMINAL_ACTION = attributes[1].trim();			
+			this.AERODROMES_REGION = attributes[2].trim();
+			this.ACCOUNTING = attributes[3].trim();
+		}
+
+		@Override
+		public String toString() {
+			return "[" 
+					+ (TERMINAL_ACTION != null ? "TERMINAL_ACTION=" + TERMINAL_ACTION + ", " : "") 
+					+ (AERODROMES_REGION != null ? "AERODROMES_REGION=" + AERODROMES_REGION  : "") 
+					+ "]";
+		}
 	}
 
 		
@@ -90,7 +154,7 @@ public class AdaptationParser  {
 
 		@Override
 		public String toString() {
-			return " [" + (CONDITIONID != null ? "CONDITIONID=" + CONDITIONID + ", " : "")
+			return "[" + (CONDITIONID != null ? "CONDITIONID=" + CONDITIONID + ", " : "")
 					+ (MINIMUM_RFL != null ? "MINIMUM_RFL=" + MINIMUM_RFL + ", " : "")
 					+ (MAXIMUM_RFL != null ? "MAXIMUM_RFL=" + MAXIMUM_RFL + ", " : "")
 					+ (MINIMUM_SCL != null ? "MINIMUM_SCL=" + MINIMUM_SCL + ", " : "")
@@ -103,7 +167,6 @@ public class AdaptationParser  {
 		}
 	}	
 	
-	
 	//SITUATION_LINEID,ROUTE_CONDITIONID,PRIORITY_NUMBER
 	public static class SITUATION_LINE_CONDITIONS  {
 
@@ -115,7 +178,7 @@ public class AdaptationParser  {
 	
 			String[] attributes = line.split(",");
 			
-			this.SITUATION_LINEID= attributes[0].trim();
+			this.SITUATION_LINEID = attributes[0].trim();
 			this.ROUTE_CONDITIONID = attributes[1].trim();
 			this.PRIORITY_NUMBER = attributes[2].trim();
 									
@@ -123,13 +186,12 @@ public class AdaptationParser  {
 
 		@Override
 		public String toString() {
-			return "SITUATION_LINE_CONDITIONS ["
+			return "["
 					+ (SITUATION_LINEID != null ? "SITUATION_LINEID=" + SITUATION_LINEID + ", " : "")
 					+ (ROUTE_CONDITIONID != null ? "ROUTE_CONDITIONID=" + ROUTE_CONDITIONID + ", " : "")
 					+ (PRIORITY_NUMBER != null ? "PRIORITY_NUMBER=" + PRIORITY_NUMBER : "") + "]";
 		}
-	}	
-	
+	}
 	
 	//SITUATION_LINEID,LONG_DESCRIPTION,AREA_CONTOURID,FIGURE_INDICATOR
 	public static class SITUATION_LINES_GUIDE  {
@@ -184,7 +246,7 @@ public class AdaptationParser  {
 		}
 		
 		public String toString() {
-			return "SITUATION_LINE_POINTS ["
+			return "["
 					+ (SITUATION_LINEID != null ? "SITUATION_LINEID=" + SITUATION_LINEID + ", " : "")
 					+ (LOCATION_FORMAT != null ? "LOCATION_FORMAT=" + LOCATION_FORMAT + ", " : "")
 					+ (POINT_LOCATION != null ? "POINT_LOCATION=" + POINT_LOCATION + ", " : "")
@@ -192,8 +254,6 @@ public class AdaptationParser  {
 					+ (SEGMENT_COURSE != null ? "SEGMENT_COURSE=" + SEGMENT_COURSE + ", " : "")
 					+ (CIRCLE_RADIUS != null ? "CIRCLE_RADIUS=" + CIRCLE_RADIUS : "") + "]";
 		}
-
-
 	}	
 	
 
@@ -371,7 +431,7 @@ public class AdaptationParser  {
 	}
 	
 	//BASIC_SECTORID	TYPE_INDICATOR	PRIORITY_NUMBER	MIN_CROSS_TIME	HAND_OVER_MODE	FORCE_DISTANCE	SECTOR_VOLUMEID	SECTOR_FLAVOURID
-	public static class BASIC_SECTORS  {
+	public static class BASIC_SECTORS  implements Comparable<BASIC_SECTORS> {
 
 		public String BASIC_SECTORID	;
 		public String TYPE_INDICATOR;
@@ -381,6 +441,7 @@ public class AdaptationParser  {
 		public String FORCE_DISTANCE;
 		public String SECTOR_VOLUMEID;
 		public String SECTOR_FLAVOURID;
+		public String reference;
 		
 		public BASIC_SECTORS () {}
 		
@@ -404,6 +465,10 @@ public class AdaptationParser  {
 					+ ", PRIORITY_NUMBER=" + PRIORITY_NUMBER + ", MIN_CROSS_TIME=" + MIN_CROSS_TIME
 					+ ", HAND_OVER_MODE=" + HAND_OVER_MODE + ", FORCE_DISTANCE=" + FORCE_DISTANCE + ", SECTOR_VOLUMEID="
 					+ SECTOR_VOLUMEID + ", SECTOR_FLAVOURID=" + SECTOR_FLAVOURID + "]";
+		}
+		@Override
+		public int compareTo(BASIC_SECTORS other) {
+		    return Integer.compare(Integer.parseInt(this.reference), Integer.parseInt ( other.reference ));
 		}
 	}
 
@@ -455,24 +520,117 @@ public class AdaptationParser  {
 		}
 	}
 	
+	//ROUTE_CONDITION_AERODROMES
+	public List<ROUTE_CONDITION_AERODROMES> getROUTE_CONDITION_AERODROMES() {
+		
+		List<ROUTE_CONDITION_AERODROMES> list = new ArrayList<ROUTE_CONDITION_AERODROMES>();
+		
+		if ( AdaptationSource.equals("environment.tcl") ) {
+			try {
+    			i.eval("array names CST_CONDITION *,arr");
+    			String[] CST_CONDITION_keys = i.getResult().toString().split(" ");
+    			for (int j=0, len=CST_CONDITION_keys.length; j < len; j++ ) {
+    				String[] tokens = CST_CONDITION_keys[j].split(",");
+    				if (tokens.length != 2) continue;
+    				String index = tokens[0];
+    				String[] arrivals = i.getVar("CST_CONDITION", index + "," + "arr", 0).toString().split(" ");;
+        			for (int k=0, size=arrivals.length; k < size; k++ ) {
+        				ROUTE_CONDITION_AERODROMES rca = new ROUTE_CONDITION_AERODROMES();
+        				rca.CONDITIONID = index;
+        				rca.TERMINAL_ACTION = "A";
+        				rca.AERODROMES_REGION = arrivals[k];
+        				list.add(rca);
+        			}
+    			}
+    			i.eval("array names CST_CONDITION *,dep");
+    			CST_CONDITION_keys = i.getResult().toString().split(" ");
+    			for (int j=0, len=CST_CONDITION_keys.length; j < len; j++ ) {
+    				String[] tokens = CST_CONDITION_keys[j].split(",");
+    				if (tokens.length != 2) continue;
+    				String index = tokens[0];
+    				String[] departures = i.getVar("CST_CONDITION", index + "," + "dep", 0).toString().split(" ");;
+        			for (int k=0, size=departures.length; k < size; k++ ) {
+        				ROUTE_CONDITION_AERODROMES rca = new ROUTE_CONDITION_AERODROMES();
+        				rca.CONDITIONID = index;
+        				rca.TERMINAL_ACTION = "D";
+        				rca.AERODROMES_REGION = departures[k];
+        				list.add(rca);
+        			}
+    			}
+			 } catch (TclException e) {
+				 System.out.println("Exception on getROUTE_CONDITION_AERODROMES: " + e.getMessage());
+				 int code = e.getCompletionCode();
+				 System.err.println("command returned bad error code: " + code);		         
+			 }
+		}else {
+			File inputFile = fileROUTE_CONDITION_AERODROMES;		
+	        try {	        	
+	        	List<String> lines = Files.readAllLines( inputFile.toPath() );
+	        	for ( String line : lines.subList( 1, lines.size()) ) {
+	        		ROUTE_CONDITION_AERODROMES asp = new ROUTE_CONDITION_AERODROMES( line );
+	        		list.add( asp );	        		
+	        	}
+	        }			
+			catch (IOException e) {
+				e.printStackTrace();
+			}    
+		}
+		return list;
+	}	
+	
+	
 	
 	//ROUTE_CONDITIONS_GUIDE
 	public List<ROUTE_CONDITIONS_GUIDE> getROUTE_CONDITIONS_GUIDE() {
 		
-		File inputFile = fileROUTE_CONDITIONS_GUIDE;
-		
 		List<ROUTE_CONDITIONS_GUIDE> list = new ArrayList<ROUTE_CONDITIONS_GUIDE>();
-        try {	        	
-        	List<String> lines = Files.readAllLines( inputFile.toPath() );
-        	for ( String line : lines.subList( 1, lines.size()) ) {
-        		ROUTE_CONDITIONS_GUIDE asp = new ROUTE_CONDITIONS_GUIDE( line );
-        		list.add( asp );	        		
-        	}
-        }			
-		catch (IOException e) {
-			e.printStackTrace();
-		}    
-
+		
+		if ( AdaptationSource.equals("environment.tcl") ) {
+			try {
+    			i.eval("array names CST_CONDITION");
+    			String[] CST_CONDITION_keys = i.getResult().toString().split(" ");
+    			Map<String, ROUTE_CONDITIONS_GUIDE> map = new HashMap<>();
+    			for (int j=0, len=CST_CONDITION_keys.length; j < len; j++ ) {
+    				String[] tokens = CST_CONDITION_keys[j].split(",");
+    				if (tokens.length != 2) continue;
+    				String index = tokens[0];
+    				ROUTE_CONDITIONS_GUIDE rcg = map.get(index);
+        			if (rcg == null ) {
+        				rcg = new ROUTE_CONDITIONS_GUIDE();
+        				rcg.CONDITIONID = index;
+        				rcg.MINIMUM_RFL = i.getVar("CST_CONDITION", index + "," + "rflmin", 0).toString();
+        				rcg.MAXIMUM_RFL = i.getVar("CST_CONDITION", index + "," + "rflmax", 0).toString();
+        				rcg.MINIMUM_SCL = i.getVar("CST_CONDITION", index + "," + "sclmin", 0).toString();
+        				rcg.MAXIMUM_SCL = i.getVar("CST_CONDITION", index + "," + "sclmax", 0).toString();    			
+        				rcg.BOUNDARY_SIDE = i.getVar("CST_CONDITION", index + "," + "bside", 0).toString();
+        				rcg.REACHING_MODE = i.getVar("CST_CONDITION", index + "," + "rWay", 0).toString();
+        				rcg.CROSSING_LEVEL = i.getVar("CST_CONDITION", index + "," + "value", 0).toString();
+        				rcg.FORCE_INDICATOR = i.getVar("CST_CONDITION", index + "," + "force", 0).toString();
+        				rcg.MAINTAIN_AFTER = i.getVar("CST_CONDITION", index + "," + "maint", 0).toString();        				
+        				map.put(index, rcg);
+        			}
+    			}
+    			for (ROUTE_CONDITIONS_GUIDE rcg : map.values()) {
+    				list.add(rcg);
+    			}
+			 } catch (TclException e) {
+				 System.out.println("Exception on getROUTE_CONDITIONS_GUIDE: " + e.getMessage());
+				 int code = e.getCompletionCode();
+				 System.err.println("command returned bad error code: " + code);		         
+			 }
+		}else {
+			File inputFile = fileROUTE_CONDITIONS_GUIDE;		
+	        try {	        	
+	        	List<String> lines = Files.readAllLines( inputFile.toPath() );
+	        	for ( String line : lines.subList( 1, lines.size()) ) {
+	        		ROUTE_CONDITIONS_GUIDE asp = new ROUTE_CONDITIONS_GUIDE( line );
+	        		list.add( asp );	        		
+	        	}
+	        }			
+			catch (IOException e) {
+				e.printStackTrace();
+			}    
+		}
 		return list;
 	}
 	
@@ -481,40 +639,84 @@ public class AdaptationParser  {
 	//SITUATION_LINE_CONDITIONS
 	public List<SITUATION_LINE_CONDITIONS> getSITUATION_LINE_CONDITIONS () {
 		
-		File inputFile = fileSITUATION_LINE_CONDITIONS;
-		
 		List<SITUATION_LINE_CONDITIONS> list = new ArrayList<SITUATION_LINE_CONDITIONS>();
-        try {	        	
-        	List<String> lines = Files.readAllLines( inputFile.toPath() );
-        	for ( String line : lines.subList( 1, lines.size()) ) {
-        		SITUATION_LINE_CONDITIONS asp = new SITUATION_LINE_CONDITIONS( line );
-        		list.add( asp );	        		
-        	}
-        }			
-		catch (IOException e) {
-			e.printStackTrace();
-		}    
-
+		
+		if ( AdaptationSource.equals("environment.tcl") ) {
+			try {
+				String[] CST_LINES__ids = i.getVar("CST_LINES(names)", TCL.OK).toString().split(" ");
+    			for (int j = 0, len = CST_LINES__ids.length; j < len; j++) {    				
+    				String[] routeConditionId = i.getVar("CST_LINES", CST_LINES__ids[j], 0).toString().split(" ");
+    				for (int k = 0, size = routeConditionId.length;k < size; k++  ) {
+    					SITUATION_LINE_CONDITIONS slc = new SITUATION_LINE_CONDITIONS();
+        				slc.SITUATION_LINEID = CST_LINES__ids[j];
+        				slc.ROUTE_CONDITIONID = routeConditionId[k];    				
+    					list.add(slc);
+    				}    				    				
+    			}    			
+			 } catch (TclException e) {
+				 System.out.println("Exception on getSITUATION_LINE_CONDITIONS: " + e.getMessage());
+				 int code = e.getCompletionCode();
+		         switch (code) {
+		         	case TCL.ERROR:
+		         		System.err.println(i.getResult().toString());
+		                break;
+		         	case TCL.BREAK:
+		            	System.err.println("invoked \"break\" outside of a loop");
+		            	break;
+		         	case TCL.CONTINUE:
+		         		System.err.println("invoked \"continue\" outside of a loop");
+		         		break;
+		         	default:
+		         		System.err.println("command returned bad error code: " + code);
+		         		break;
+		         }
+			 }
+		}else {
+			File inputFile = fileSITUATION_LINE_CONDITIONS;
+	        try {	        	
+	        	List<String> lines = Files.readAllLines( inputFile.toPath() );
+	        	for ( String line : lines.subList( 1, lines.size()) ) {
+	        		SITUATION_LINE_CONDITIONS asp = new SITUATION_LINE_CONDITIONS( line );
+	        		list.add( asp );	        		
+	        	}
+	        }			
+			catch (IOException e) {
+				e.printStackTrace();
+			}    
+		}
 		return list;
 	}
 	
 	//SITUATION_LINES_GUIDE
 	public List<SITUATION_LINES_GUIDE> getSITUATION_LINES_GUIDEs () {
 		
-		File inputFile = fileSITUATION_LINES_GUIDE;
-		
 		List<SITUATION_LINES_GUIDE> list = new ArrayList<SITUATION_LINES_GUIDE>();
-        try {	        	
-        	List<String> lines = Files.readAllLines( inputFile.toPath() );
-        	for ( String line : lines.subList( 1, lines.size()) ) {
-        		SITUATION_LINES_GUIDE asp = new SITUATION_LINES_GUIDE( line );
-        		list.add( asp );	        		
-        	}
-        }			
-		catch (IOException e) {
-			e.printStackTrace();
-		}    
-
+		
+		if ( AdaptationSource.equals("environment.tcl") ) {
+			try {
+				String[] CST_LINES__ids = i.getVar("CST_LINES(names)", TCL.OK).toString().split(" ");
+    			for (int j = 0, len = CST_LINES__ids.length; j < len; j++) {    				
+    				SITUATION_LINES_GUIDE slg = new SITUATION_LINES_GUIDE();
+    				slg.SITUATION_LINEID = CST_LINES__ids[j];
+    				slg.FIGURE_INDICATOR = i.getVar("CST_LINES", CST_LINES__ids[j] + "," + "figure", 0).toString();    				
+					list.add(slg);    				
+    			}    			
+			 } catch (TclException e) {
+				 System.out.println("Exception: " + e.getMessage());				 
+			 }
+		}else {
+			File inputFile = fileSITUATION_LINES_GUIDE;
+	        try {	        	
+	        	List<String> lines = Files.readAllLines( inputFile.toPath() );
+	        	for ( String line : lines.subList( 1, lines.size()) ) {
+	        		SITUATION_LINES_GUIDE asp = new SITUATION_LINES_GUIDE( line );
+	        		list.add( asp );	        		
+	        	}
+	        }			
+			catch (IOException e) {
+				e.printStackTrace();
+			}    
+		}
 		return list;
 	}
 	
@@ -522,40 +724,75 @@ public class AdaptationParser  {
 	//HOLDING_VOLUME
 	public List<HOLDING_VOLUME> getHOLDING_VOLUMEs () {
 		
-		File inputFile = fileHOLDING_VOLUMES;
-		
 		List<HOLDING_VOLUME> ListHOLDING_VOLUMEs = new ArrayList<HOLDING_VOLUME>();
-        try {	        	
-        	List<String> lines = Files.readAllLines( inputFile.toPath() );
-        	for ( String line : lines.subList( 1, lines.size()) ) {
-        		HOLDING_VOLUME asp = new HOLDING_VOLUME( line );
-        		ListHOLDING_VOLUMEs.add( asp );	        		
-        	}
-        }			
-		catch (IOException e) {
-			e.printStackTrace();
-		}    
 
+		if ( AdaptationSource.equals("environment.tcl") ) {
+			try {
+				String[] HOLD_VOLUMES__ids = i.getVar("HOLD_VOLUMES(ids)", TCL.OK).toString().split(" ");
+    			for (int j = 0, len = HOLD_VOLUMES__ids.length; j < len; j++) {
+    				HOLDING_VOLUME hv = new HOLDING_VOLUME();
+    				hv.HOLDING_VOLUMEID = i.getVar("HOLD_VOLUMES", HOLD_VOLUMES__ids[j] + "," + "sectorvolid", 0).toString();
+    				hv.HOLDING_FIXID =  i.getVar("HOLD_VOLUMES", HOLD_VOLUMES__ids[j] + "," + "fix", 0).toString();
+    				
+    				ListHOLDING_VOLUMEs.add(hv);
+    		    }    			
+			 } catch (TclException e) {
+				 System.out.println("Exception on getHOLDING_VOLUMEs: " + e.getMessage());				 
+			 }
+		}else {		
+			File inputFile = fileHOLDING_VOLUMES;
+			
+	        try {	        	
+	        	List<String> lines = Files.readAllLines( inputFile.toPath() );
+	        	for ( String line : lines.subList( 1, lines.size()) ) {
+	        		HOLDING_VOLUME asp = new HOLDING_VOLUME( line );
+	        		ListHOLDING_VOLUMEs.add( asp );	        		
+	        	}
+	        }			
+			catch (IOException e) {
+				e.printStackTrace();
+			}    
+		}
 		return ListHOLDING_VOLUMEs;
 	}
 	
 
 	public List<SITUATION_LINE_POINTS> getSITUATION_LINE_POINTS() {
 		
-		File inputFile = this.fileSITUATION_LINE_POINTS;
-		
 		List<SITUATION_LINE_POINTS> list = new ArrayList<SITUATION_LINE_POINTS>();
-        try {	        	
-        	List<String> lines = Files.readAllLines( inputFile.toPath() );
-        	for ( String line : lines.subList( 1, lines.size()) ) {
-        		SITUATION_LINE_POINTS entry = new SITUATION_LINE_POINTS( line );
-        		list.add( entry );	        		
-        	}
-        }			
-		catch (IOException e) {
-			e.printStackTrace();
-		}    
-
+		
+		if ( AdaptationSource.equals("environment.tcl") ) {
+			try {
+				String[] CST_LINES__ids = i.getVar("CST_LINES(names)", TCL.OK).toString().split(" ");
+    			for (int j = 0, len = CST_LINES__ids.length; j < len; j++) {    				
+    				String[] geodes = i.getVar("CST_LINES", CST_LINES__ids[j] + "," + "geodes", 0).toString().split(" ");
+    				for (int k = 0, size = geodes.length;k < size; k++  ) {
+    					SITUATION_LINE_POINTS slp = new SITUATION_LINE_POINTS();
+        				slp.SITUATION_LINEID = CST_LINES__ids[j];
+    					slp.LOCATION_FORMAT =  i.getVar("CST_LINES", CST_LINES__ids[j] + "," + "pformat", 0).toString();
+    					slp.POINT_LOCATION = geodes[k];
+    					slp.SEQUENCE_NUMBER = String.valueOf(k+1);
+    					slp.SEGMENT_COURSE = i.getVar("CST_LINES", CST_LINES__ids[j] + "," + "figure", 0).toString();
+    					//slp.CIRCLE_RADIUS = "0";
+    					list.add(slp);
+    				}
+    			}    			
+			 } catch (TclException e) {
+				 System.out.println("Exception on getSITUATION_LINE_POINTS: " + e.getMessage());				 
+			 }
+		}else {
+			File inputFile = this.fileSITUATION_LINE_POINTS;
+	        try {	        	
+	        	List<String> lines = Files.readAllLines( inputFile.toPath() );
+	        	for ( String line : lines.subList( 1, lines.size()) ) {
+	        		SITUATION_LINE_POINTS entry = new SITUATION_LINE_POINTS( line );
+	        		list.add( entry );	        		
+	        	}
+	        }			
+			catch (IOException e) {
+				e.printStackTrace();
+			}    
+		}
 		return list;
 	}
 
@@ -563,19 +800,33 @@ public class AdaptationParser  {
 	
 	public List<HOLDING_AIRSPACE_VOLUME> getHOLDING_AIRSPACE_VOLUMEs () {
 		
-		File inputFile = fileHOLDING_AIRSPACE_VOLUMES;
-		
 		List<HOLDING_AIRSPACE_VOLUME> ListHOLDING_AIRSPACEs = new ArrayList<HOLDING_AIRSPACE_VOLUME>();
-        try {	        	
-        	List<String> lines = Files.readAllLines( inputFile.toPath() );
-        	for ( String line : lines.subList( 1, lines.size()) ) {
-        		HOLDING_AIRSPACE_VOLUME asp = new HOLDING_AIRSPACE_VOLUME( line );
-        		ListHOLDING_AIRSPACEs.add( asp );	        		
-        	}
-        }			
-		catch (IOException e) {
-			e.printStackTrace();
-		}    
+
+		if ( AdaptationSource.equals("environment.tcl") ) {
+			try {
+				String[] HOLD_VOLUMES__ids = i.getVar("HOLD_VOLUMES(ids)", TCL.OK).toString().split(" ");
+    			for (int j = 0, len = HOLD_VOLUMES__ids.length; j < len; j++) {
+    				HOLDING_AIRSPACE_VOLUME hav = new HOLDING_AIRSPACE_VOLUME();
+    				hav.AIRSPACE_VOLUMEID = HOLD_VOLUMES__ids[j];
+    				hav.HOLDING_VOLUMEID = i.getVar("HOLD_VOLUMES", hav.AIRSPACE_VOLUMEID + "," + "sectorvolid", 0).toString();
+    				ListHOLDING_AIRSPACEs.add(hav);
+    		    }    			
+			 } catch (TclException e) {
+				 System.out.println("Exception on getHOLDING_AIRSPACE_VOLUMEs: " + e.getMessage());				 
+			 }
+		}else {		
+			File inputFile = fileHOLDING_AIRSPACE_VOLUMES;			
+	        try {	        	
+	        	List<String> lines = Files.readAllLines( inputFile.toPath() );
+	        	for ( String line : lines.subList( 1, lines.size()) ) {
+	        		HOLDING_AIRSPACE_VOLUME asp = new HOLDING_AIRSPACE_VOLUME( line );
+	        		ListHOLDING_AIRSPACEs.add( asp );	        		
+	        	}
+	        }			
+			catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
 
 		return ListHOLDING_AIRSPACEs;
 	}		
@@ -583,118 +834,304 @@ public class AdaptationParser  {
 	
 	public List<SECTOR_VOLUME> getSECTOR_VOLUMES() {
 		
-		File inputFile = this.fileSECTOR_VOLUMES;
-		
 		List<SECTOR_VOLUME> list = new ArrayList<SECTOR_VOLUME>();
-        try {	        	
-        	List<String> lines = Files.readAllLines( inputFile.toPath() );
-        	for ( String line : lines.subList( 1, lines.size()) ) {
-        		SECTOR_VOLUME entry = new SECTOR_VOLUME( line );
-        		list.add( entry );	        		
-        	}
-        }			
-		catch (IOException e) {
-			e.printStackTrace();
-		}    
 
+		if ( AdaptationSource.equals("environment.tcl") ) {
+			try {
+				i.eval("array names AOR_VOLUMES *assignment");
+    			String[] AOR_VOLUMES_keys = i.getResult().toString().split(" ");
+    			for (int j = 0, len = AOR_VOLUMES_keys.length; j < len; j++) {
+    				String[] tokens = AOR_VOLUMES_keys[j].split(",");
+    				SECTOR_VOLUME sv = new SECTOR_VOLUME();
+    				sv.SECTOR_VOLUMEID = tokens[0];
+    				sv.ASSIGNMENT_MODE = i.getVar("AOR_VOLUMES", tokens[0] + "," + "assignment", 0).toString(); 
+    				list.add(sv);
+    		    }    			
+			 } catch (TclException e) {
+				 System.out.println("Exception on getSECTOR_VOLUMES: " + e.getMessage());	
+			 }
+		}else {		
+			File inputFile = this.fileSECTOR_VOLUMES;
+	        try {	        	
+	        	List<String> lines = Files.readAllLines( inputFile.toPath() );
+	        	for ( String line : lines.subList( 1, lines.size()) ) {
+	        		SECTOR_VOLUME entry = new SECTOR_VOLUME( line );
+	        		list.add( entry );	        		
+	        	}
+	        }			
+			catch (IOException e) {
+				e.printStackTrace();
+			}    
+		}
 		return list;
 	}
 	
 	public List<INTEREST_VOLUMES> getINTEREST_VOLUMES (  ) {
-		
-		File inputFile = this.fileINTEREST_VOLUMES;
-		
-		List<INTEREST_VOLUMES> list = new ArrayList<INTEREST_VOLUMES>();
-        try {	        	
-        	List<String> lines = Files.readAllLines( inputFile.toPath() );
-        	for ( String line : lines.subList( 1, lines.size()) ) {
-        		INTEREST_VOLUMES entry = new INTEREST_VOLUMES( line );
-        		list.add( entry );	        		
-        	}
-        }			
-		catch (IOException e) {
-			e.printStackTrace();
-		}    
 
+		List<INTEREST_VOLUMES> list = new ArrayList<INTEREST_VOLUMES>();
+		
+		if ( AdaptationSource.equals("environment.tcl") ) {
+			try {
+				String[] INT_VOLUMES__ids = i.getVar("INT_VOLUMES(ids)", TCL.OK).toString().split(" ");
+    			for (int j = 0, len = INT_VOLUMES__ids.length; j < len; j++) {
+    				INTEREST_VOLUMES iv = new INTEREST_VOLUMES();
+    				iv.AIRSPACE_VOLUMEID = INT_VOLUMES__ids[j];
+    				iv.SECTOR_VOLUMEID = i.getVar("INT_VOLUMES", iv.AIRSPACE_VOLUMEID + "," + "sectorvolid", 0).toString();    				
+    				list.add(iv);
+    		    }    			
+			 } catch (TclException e) {
+				 System.out.println("Exception on getINTEREST_VOLUMES: " + e.getMessage());				 
+			 }
+		}else {
+			File inputFile = this.fileINTEREST_VOLUMES;
+		    try {	        	
+		    	List<String> lines = Files.readAllLines( inputFile.toPath() );
+		    	for ( String line : lines.subList( 1, lines.size()) ) {
+		    		INTEREST_VOLUMES entry = new INTEREST_VOLUMES( line );
+		    		list.add( entry );	        		
+		    	}
+		    }			
+			catch (IOException e) {
+				e.printStackTrace();
+			}    
+		}
 		return list;
 	}
 
 	
 	
 	public List<RESPONSIBILITY_VOLUMES> getRESPONSIBILITY_VOLUMES (  ) {
-		
-		File inputFile = this.fileRESPONSIBILITY_VOLUMES;
-		
+				
 		List<RESPONSIBILITY_VOLUMES> list = new ArrayList<RESPONSIBILITY_VOLUMES>();
-        try {	        	
-        	List<String> lines = Files.readAllLines( inputFile.toPath() );
-        	for ( String line : lines.subList( 1, lines.size()) ) {
-        		RESPONSIBILITY_VOLUMES entry = new RESPONSIBILITY_VOLUMES( line );
-        		list.add( entry );	        		
-        	}
-        }			
-		catch (IOException e) {
-			e.printStackTrace();
-		}    
+		
+		if ( AdaptationSource.equals("environment.tcl") ) {
+			try {
+				String[] AOR_VOLUMES__ids = i.getVar("AOR_VOLUMES(ids)", TCL.OK).toString().split(" ");
+    			for (int j = 0, len = AOR_VOLUMES__ids.length; j < len; j++) {
+    				RESPONSIBILITY_VOLUMES respVolume = new RESPONSIBILITY_VOLUMES();
+    				respVolume.AIRSPACE_VOLUMEID = AOR_VOLUMES__ids[j];
+    				respVolume.SECTOR_VOLUMEID = i.getVar("AOR_VOLUMES", respVolume.AIRSPACE_VOLUMEID + "," + "sectorvolid", 0).toString();
+    				list.add(respVolume);
+    		    }    			
+			 } catch (TclException e) {
+				 System.out.println("Exception getRESPONSIBILITY_VOLUMES: " + e.getMessage() + "\n");
+				 int code = e.getCompletionCode();
+		         switch (code) {
+		         	case TCL.ERROR:
+		         		System.err.println(i.getResult().toString());
+		                break;
+		         	case TCL.BREAK:
+		            	System.err.println("invoked \"break\" outside of a loop");
+		            	break;
+		         	case TCL.CONTINUE:
+		         		System.err.println("invoked \"continue\" outside of a loop");
+		         		break;
+		         	default:
+		         		System.err.println("command returned bad error code: " + code);
+		         		break;
+		         }
+			 }
+		}else {
+			File inputFile = this.fileRESPONSIBILITY_VOLUMES;
+			try {	        	
+	        	List<String> lines = Files.readAllLines( inputFile.toPath() );
+	        	for ( String line : lines.subList( 1, lines.size()) ) {
+	        		RESPONSIBILITY_VOLUMES entry = new RESPONSIBILITY_VOLUMES( line );
+	        		list.add( entry );	        		
+	        	}
+	        }			
+			catch (IOException e) {
+				e.printStackTrace();
+			}    
+        }
 
 		return list;
 	}
 	
 	public List<AIRSPACE_VOLUME> getAIRSPACE_VOLUMEs () {
-		
-		File inputFile = fileAIRSPACE_VOLUMES;
-		
+			
 		List<AIRSPACE_VOLUME> ListAIRSPACE_VOLUME = new ArrayList<AIRSPACE_VOLUME>();
-        try {	        	
-        	List<String> lines = Files.readAllLines( inputFile.toPath() );
-        	for ( String line : lines.subList( 1, lines.size()) ) {
-        		AIRSPACE_VOLUME airSpaceVolume = new AIRSPACE_VOLUME( line );
-        		ListAIRSPACE_VOLUME.add(airSpaceVolume);	        		
-        	}
-        }			
-		catch (IOException e) {
-			e.printStackTrace();
-		}    
+				
+		if ( AdaptationSource.equals("environment.tcl") ) {
+			try {
+				String[] AOR_VOLUMES__ids = i.getVar("AOR_VOLUMES(ids)", TCL.OK).toString().split(" ");
+    			for (int j = 0, len = AOR_VOLUMES__ids.length; j < len; j++) {
+    				AIRSPACE_VOLUME airSpaceVolume = new AIRSPACE_VOLUME();
+    				airSpaceVolume.AIRSPACE_VOLUMEID = AOR_VOLUMES__ids[j];
+    				airSpaceVolume.AREA_CONTOURID = airSpaceVolume.AIRSPACE_VOLUMEID; // this is a shit ....
+    				airSpaceVolume.LOWER_FACE_LIMIT = i.getVar("AOR_VOLUMES", airSpaceVolume.AIRSPACE_VOLUMEID + "," + "lower", TCL.OK).toString();
+    				airSpaceVolume.UPPER_FACE_LIMIT = i.getVar("AOR_VOLUMES", airSpaceVolume.AIRSPACE_VOLUMEID + "," + "upper", TCL.OK).toString();    				
+    				ListAIRSPACE_VOLUME.add(airSpaceVolume);
+    		    }
+    			String[] INT_VOLUMES__ids = i.getVar("INT_VOLUMES(ids)", TCL.OK).toString().split(" ");
+     			for (int j = 0, len = INT_VOLUMES__ids.length; j < len; j++) {
+     				AIRSPACE_VOLUME airSpaceVolume = new AIRSPACE_VOLUME();
+     				airSpaceVolume.AIRSPACE_VOLUMEID = INT_VOLUMES__ids[j];
+     				airSpaceVolume.AREA_CONTOURID = airSpaceVolume.AIRSPACE_VOLUMEID; // this is a shit ....
+     				airSpaceVolume.LOWER_FACE_LIMIT = i.getVar("INT_VOLUMES", airSpaceVolume.AIRSPACE_VOLUMEID + "," + "lower", TCL.OK).toString();
+     				airSpaceVolume.UPPER_FACE_LIMIT = i.getVar("INT_VOLUMES", airSpaceVolume.AIRSPACE_VOLUMEID + "," + "upper", TCL.OK).toString();    				
+     				ListAIRSPACE_VOLUME.add(airSpaceVolume);
+     		    }    			 
+     			String[] SUA_VOLUMES__ids = i.getVar("SUA_VOLUMES(ids)", TCL.OK).toString().split(" ");
+     			for (int j = 0, len = SUA_VOLUMES__ids.length; j < len; j++) {
+     				AIRSPACE_VOLUME airSpaceVolume = new AIRSPACE_VOLUME();
+     				airSpaceVolume.AIRSPACE_VOLUMEID = SUA_VOLUMES__ids[j];
+     				airSpaceVolume.AREA_CONTOURID = airSpaceVolume.AIRSPACE_VOLUMEID; // this is a shit ....
+     				airSpaceVolume.LOWER_FACE_LIMIT = i.getVar("SUA_VOLUMES", airSpaceVolume.AIRSPACE_VOLUMEID + "," + "lower", TCL.OK).toString();
+     				airSpaceVolume.UPPER_FACE_LIMIT = i.getVar("SUA_VOLUMES", airSpaceVolume.AIRSPACE_VOLUMEID + "," + "upper", TCL.OK).toString();    				
+     				ListAIRSPACE_VOLUME.add(airSpaceVolume);
+     		    }
+     			String[] HOLD_VOLUMES__ids = i.getVar("HOLD_VOLUMES(ids)", TCL.OK).toString().split(" ");
+     			for (int j = 0, len = HOLD_VOLUMES__ids.length; j < len; j++) {
+     				AIRSPACE_VOLUME airSpaceVolume = new AIRSPACE_VOLUME();
+     				airSpaceVolume.AIRSPACE_VOLUMEID = HOLD_VOLUMES__ids[j];
+     				airSpaceVolume.AREA_CONTOURID = airSpaceVolume.AIRSPACE_VOLUMEID; // this is a shit ....
+     				airSpaceVolume.LOWER_FACE_LIMIT = i.getVar("HOLD_VOLUMES", airSpaceVolume.AIRSPACE_VOLUMEID + "," + "lower", TCL.OK).toString();
+     				airSpaceVolume.UPPER_FACE_LIMIT = i.getVar("HOLD_VOLUMES", airSpaceVolume.AIRSPACE_VOLUMEID + "," + "upper", TCL.OK).toString();    				
+     				ListAIRSPACE_VOLUME.add(airSpaceVolume);
+     		    }
+    			
+			 } catch (TclException e) {
+				 System.out.println("Exception: " + e.getMessage());				 
+			 }
+		}else {
+			File inputFile = fileAIRSPACE_VOLUMES;
+			try {	        	
+	        	List<String> lines = Files.readAllLines( inputFile.toPath() );
+	        	for ( String line : lines.subList( 1, lines.size()) ) {
+	        		AIRSPACE_VOLUME airSpaceVolume = new AIRSPACE_VOLUME( line );
+	        		ListAIRSPACE_VOLUME.add(airSpaceVolume);	        		
+	        	}
+	        }			
+			catch (IOException e) {
+				e.printStackTrace();
+			}
+		}   
 
 		return ListAIRSPACE_VOLUME;
 	}
 	
     public List<AREA_CONTOUR_POINT> getAREA_CONTOUR_POINTS (  ) {
     	
-    	File inputFile = this.fileAREA_CONTOUR_POINTS;
-		
 		List<AREA_CONTOUR_POINT> ListAREA_CONTOUR_POINT= new ArrayList<AREA_CONTOUR_POINT>();
-        try {	        	
-        	List<String> lines = Files.readAllLines( inputFile.toPath() );
-        	for ( String line : lines.subList( 1, lines.size()) ) {
-        		AREA_CONTOUR_POINT areaContourPoint = new AREA_CONTOUR_POINT( line );
-        		ListAREA_CONTOUR_POINT.add( areaContourPoint);	        		
-        	}
-        }			
-		catch (IOException e) {
-			e.printStackTrace();
-		}    
 
+		if ( AdaptationSource.equals("environment.tcl") ) {
+    		try {
+                String[] AOR_VOLUMES__ids = i.getVar("AOR_VOLUMES(ids)", TCL.OK).toString().split(" ");
+    			for (int j = 0, len = AOR_VOLUMES__ids.length; j < len; j++) {    				
+    				String[] points = i.getVar("AOR_VOLUMES", AOR_VOLUMES__ids[j] + "," + "geodes", TCL.OK).toString().split(" ");
+    				for (int k = 0, size = points.length;k < size; k++  ) {
+        				AREA_CONTOUR_POINT point = new AREA_CONTOUR_POINT();
+        				point.AREA_CONTOURID = AOR_VOLUMES__ids[j];
+        				point.LOCATION_FORMAT = "G"; 
+        				point.POINT_LOCATION = points[k];
+        				point.SEQUENCE_NUMBER = String.valueOf(k+1);  				
+        				ListAREA_CONTOUR_POINT.add(point);	
+    				}    				
+    		    }
+                String[] INT_VOLUMES__ids = i.getVar("INT_VOLUMES(ids)", TCL.OK).toString().split(" ");
+    			for (int j = 0, len = INT_VOLUMES__ids.length; j < len; j++) {    				
+    				String[] points = i.getVar("INT_VOLUMES", INT_VOLUMES__ids[j] + "," + "geodes", TCL.OK).toString().split(" ");
+    				for (int k = 0, size = points.length;k < size; k++  ) {
+        				AREA_CONTOUR_POINT point = new AREA_CONTOUR_POINT();
+        				point.AREA_CONTOURID = INT_VOLUMES__ids[j];
+        				point.LOCATION_FORMAT = "G"; 
+        				point.POINT_LOCATION = points[k];
+        				point.SEQUENCE_NUMBER = String.valueOf(k+1);  				
+        				ListAREA_CONTOUR_POINT.add(point);	
+    				}    				
+    		    }
+                String[] SUA_VOLUMES__ids = i.getVar("SUA_VOLUMES(ids)", TCL.OK).toString().split(" ");
+    			for (int j = 0, len = SUA_VOLUMES__ids.length; j < len; j++) {    				
+    				String[] points = i.getVar("SUA_VOLUMES", SUA_VOLUMES__ids[j] + "," + "geodes", TCL.OK).toString().split(" ");
+    				for (int k = 0, size = points.length;k < size; k++  ) {
+        				AREA_CONTOUR_POINT point = new AREA_CONTOUR_POINT();
+        				point.AREA_CONTOURID = SUA_VOLUMES__ids[j];
+        				point.LOCATION_FORMAT = "G"; 
+        				point.POINT_LOCATION = points[k];
+        				point.SEQUENCE_NUMBER = String.valueOf(k+1);  				
+        				ListAREA_CONTOUR_POINT.add(point);	
+    				}    				
+    		    }
+                String[] HOLD_VOLUMES__ids = i.getVar("HOLD_VOLUMES(ids)", TCL.OK).toString().split(" ");
+    			for (int j = 0, len = HOLD_VOLUMES__ids.length; j < len; j++) {    				
+    				String[] points = i.getVar("HOLD_VOLUMES", HOLD_VOLUMES__ids[j] + "," + "geodes", TCL.OK).toString().split(" ");
+    				for (int k = 0, size = points.length;k < size; k++  ) {
+        				AREA_CONTOUR_POINT point = new AREA_CONTOUR_POINT();
+        				point.AREA_CONTOURID = HOLD_VOLUMES__ids[j];
+        				point.LOCATION_FORMAT = "G"; 
+        				point.POINT_LOCATION = points[k];
+        				point.SEQUENCE_NUMBER = String.valueOf(k+1);  				
+        				ListAREA_CONTOUR_POINT.add(point);	
+    				}    				
+    		    } 
+			 } catch (TclException e) {
+				 System.out.println("Exception: " + e.getMessage());
+			 }
+    	}else {
+	    	File inputFile = this.fileAREA_CONTOUR_POINTS;			
+	        try {	        	
+	        	List<String> lines = Files.readAllLines( inputFile.toPath() );
+	        	for ( String line : lines.subList( 1, lines.size()) ) {
+	        		AREA_CONTOUR_POINT areaContourPoint = new AREA_CONTOUR_POINT( line );
+	        		ListAREA_CONTOUR_POINT.add( areaContourPoint);	        		
+	        	}
+	        }			
+			catch (IOException e) {
+				e.printStackTrace();
+			}    
+    	}
 		return ListAREA_CONTOUR_POINT;
 	}
     
     public List<BASIC_SECTORS> getBASIC_SECTORS (  ) {
+    
+    	List<BASIC_SECTORS> ListBASIC_SECTORS = new ArrayList<BASIC_SECTORS>();
     	
-    	File inputFile = this.fileBASIC_SECTORS;
-		
-		List<BASIC_SECTORS> ListBASIC_SECTORS= new ArrayList<BASIC_SECTORS>();
-        try {	        	
-        	List<String> lines = Files.readAllLines( inputFile.toPath() );
-        	for ( String line : lines.subList( 1, lines.size()) ) {
-        		BASIC_SECTORS sector = new BASIC_SECTORS( line );
-        		ListBASIC_SECTORS.add( sector);	        		
-        	}
-        }			
-		catch (IOException e) {
-			e.printStackTrace();
-		}    
-
-		return ListBASIC_SECTORS;
+		if ( AdaptationSource.equals("environment.tcl") ) {
+    		try {
+    			i.eval("array names SCR_SECTOR");
+    			String[] SCR_SECTOR_keys = i.getResult().toString().split(" ");
+    			Map<String, BASIC_SECTORS> map = new HashMap<>();
+    			for (int j=0, len=SCR_SECTOR_keys.length; j < len; j++ ) {
+    				String[] tokens = SCR_SECTOR_keys[j].split(",");
+    				if (tokens.length != 3) continue;
+    				String index = tokens[0]+","+tokens[1];
+        			BASIC_SECTORS sector = map.get(index);
+        			if (sector == null ) {
+    					BASIC_SECTORS newsector = new BASIC_SECTORS();
+    					newsector.BASIC_SECTORID = i.getVar("SCR_SECTOR", index + "," + "basic", 0).toString();
+    					newsector.TYPE_INDICATOR = i.getVar("SCR_SECTOR", index + "," + "type", 0).toString();
+    					newsector.PRIORITY_NUMBER = i.getVar("SCR_SECTOR", index + "," + "prio", 0).toString();
+    					newsector.MIN_CROSS_TIME = i.getVar("SCR_SECTOR", index + "," + "cross", 0).toString();
+    					newsector.HAND_OVER_MODE = i.getVar("SCR_SECTOR", index + "," + "hand", 0).toString();
+    					newsector.reference = i.getVar("SCR_SECTOR", index + "," + "reference", 0).toString();
+    					newsector.SECTOR_VOLUMEID = tokens[0];    					
+        				map.put(index, newsector);
+        			}
+    			}
+    			for (BASIC_SECTORS basicsector : map.values()) {
+    				ListBASIC_SECTORS.add(basicsector);
+    			}
+    			Collections.sort(ListBASIC_SECTORS);
+    			                			
+    		} catch (TclException e) {
+    			System.out.println("Exception getBASIC_SECTORS: " + e.getMessage());    			
+           }
+    	}else {
+	    	File inputFile = this.fileBASIC_SECTORS;
+	        try {	        	
+	        	List<String> lines = Files.readAllLines( inputFile.toPath() );
+	        	for ( String line : lines.subList( 1, lines.size()) ) {
+	        		BASIC_SECTORS sector = new BASIC_SECTORS( line );
+	        		ListBASIC_SECTORS.add( sector);	        		
+	        	}
+	        }			
+			catch (IOException e) {
+				e.printStackTrace();
+			}
+    	}
+    	return ListBASIC_SECTORS;
 	}
     
     public List<AREA_CONTOUR_POINT> getAREA_CONTOUR_POINTSofAIRSPACE_VOLUME ( AIRSPACE_VOLUME targetedVolume , List<AREA_CONTOUR_POINT> points ) {
@@ -735,7 +1172,4 @@ public class AdaptationParser  {
 		return mode;		
 	}
 
-
-
-	
 }
