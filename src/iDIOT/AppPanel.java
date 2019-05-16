@@ -33,7 +33,7 @@ public class AppPanel extends JPanel
 
         this.wwd = this.createWorldWindow();
         ((Component) this.wwd).setPreferredSize(canvasSize);
-
+        
         // Create the default model as described in the current worldwind properties.
         Model m = (Model) WorldWind.createConfigurationComponent(AVKey.MODEL_CLASS_NAME);
         this.wwd.setModel(m);

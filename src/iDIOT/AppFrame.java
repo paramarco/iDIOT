@@ -17,6 +17,7 @@ import java.awt.event.KeyEvent;
 import java.io.Console;
 import java.io.File;
 
+import gov.nasa.worldwind.*;
 import gov.nasa.worldwind.WorldWindow;
 import gov.nasa.worldwind.avlist.AVKey;
 import gov.nasa.worldwind.event.RenderingExceptionListener;
@@ -79,6 +80,7 @@ public class AppFrame extends JFrame
         // Create the WorldWindow.
         this.wwjPanel = this.createAppPanel(this.canvasSize, includeStatusBar);
         this.wwjPanel.setPreferredSize(canvasSize);
+        
         
         /*ImageIcon iconOpen = new ImageIcon("src/resources/open.png");
         JMenuItem openMenuItem = new JMenuItem("Open");

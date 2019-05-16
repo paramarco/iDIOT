@@ -6,6 +6,8 @@ import java.net.URISyntaxException;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import gov.nasa.worldwind.Configuration;
+import gov.nasa.worldwind.WorldWind;
+import gov.nasa.worldwind.WorldWindow;
 import gov.nasa.worldwind.avlist.AVKey;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -83,6 +85,18 @@ public class iDIOT {
         Configuration.setValue(AVKey.INITIAL_LONGITUDE, VIEW_LONGITUDE);
         Configuration.setValue(AVKey.INITIAL_ALTITUDE, VIEW_ALTITUDE );
         Configuration.setValue(AVKey.INITIAL_PITCH, VIEW_PITCH);
+        Configuration.setValue(AVKey.OFFLINE_MODE, true);
+        Configuration.setValue(AVKey.DATA_FILE_STORE_CONFIGURATION_FILE_NAME,"./lib/CacheLocationConfiguration.xml");
+
+        for ( File unFile : WorldWind.getDataFileStore().getLocations()) {
+        	logger.info("DataFileStore locations  " + unFile.getAbsolutePath());
+        }        
+        logger.info("CurrentSystemTempDirectory: " + Configuration.getSystemTempDirectory() );
+        logger.info("CurrentUserAppDataDirectory: " + Configuration.getCurrentUserAppDataDirectory() );
+        logger.info("CurrentUserHomeDirectory: " + Configuration.getUserHomeDirectory() );
+        logger.info("CurrentWorkingDirectory: " + Configuration.getCurrentWorkingDirectory());
+        logger.info("isOfflineMode: " + WorldWind.isOfflineMode()); 
+
     }
     
     static Logger logger;
