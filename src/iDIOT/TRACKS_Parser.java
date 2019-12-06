@@ -175,7 +175,7 @@ public class TRACKS_Parser {
 		
 		Pattern r = Pattern.compile("^(\\d{2})(\\d{2})(\\d{2})(N|S)(\\d{3})(\\d{2})(\\d{2})(W|E)");
 		Matcher m = r.matcher( latLonString );
-		while (m.find()) {	    	   
+		if (m.find()) {	    	   
 		  if ( m.group(1) != null) {
 			  degreesLat =  Double.valueOf( m.group(1) ) ;
 			  minutesLat =  Double.valueOf( m.group(2) ) ;
@@ -186,6 +186,8 @@ public class TRACKS_Parser {
 			  if ( m.group(4).contains("S") ) latitudeSign = -1;
 			  if ( m.group(8).contains("W") ) longitudeSign = -1;
 		  }
+		}else {
+			return null;
 		}
 				
 		latitude = ( degreesLat + ( (minutesLat * 60) + secondsLat ) / (60*60) ) * latitudeSign;

@@ -16,19 +16,27 @@ import javax.swing.JOptionPane;
 import gov.nasa.worldwind.WorldWind;
 import gov.nasa.worldwind.WorldWindow;
 import gov.nasa.worldwind.avlist.AVKey;
+import gov.nasa.worldwind.geom.Angle;
 import gov.nasa.worldwind.geom.LatLon;
 import gov.nasa.worldwind.geom.Position;
 import gov.nasa.worldwind.layers.CompassLayer;
 import gov.nasa.worldwind.layers.Layer;
 import gov.nasa.worldwind.layers.LayerList;
+import gov.nasa.worldwind.layers.MarkerLayer;
 import gov.nasa.worldwind.layers.RenderableLayer;
 import gov.nasa.worldwind.layers.placename.PlaceNameLayer;
 import gov.nasa.worldwind.render.Material;
 import gov.nasa.worldwind.render.Path;
+import gov.nasa.worldwind.render.PointPlacemark;
+import gov.nasa.worldwind.render.PointPlacemarkAttributes;
 import gov.nasa.worldwind.render.airspaces.AirspaceAttributes;
 import gov.nasa.worldwind.render.airspaces.BasicAirspaceAttributes;
 import gov.nasa.worldwind.render.airspaces.Polygon;
 import gov.nasa.worldwind.render.airspaces.TrackAirspace;
+import gov.nasa.worldwind.render.markers.BasicMarker;
+import gov.nasa.worldwind.render.markers.BasicMarkerAttributes;
+import gov.nasa.worldwind.render.markers.BasicMarkerShape;
+import gov.nasa.worldwind.render.markers.Marker;
 import gov.nasa.worldwind.util.WWUtil;
 import gov.nasa.worldwind.util.layertree.LayerTreeNode;
 import gov.nasa.worldwindx.examples.util.DirectedPath;
@@ -36,6 +44,7 @@ import gov.nasa.worldwindx.examples.util.RandomShapeAttributes;
 import iDIOT.AdaptationParser.AIRSPACE_VOLUME;
 import iDIOT.AdaptationParser.AREA_CONTOUR_POINT;
 import iDIOT.AdaptationParser.BASIC_SECTORS;
+import iDIOT.AdaptationParser.FIX_POINT;
 import iDIOT.AdaptationParser.HOLDING_AIRSPACE_VOLUME;
 import iDIOT.AdaptationParser.HOLDING_VOLUME;
 import iDIOT.AdaptationParser.INTEREST_VOLUMES;
@@ -80,6 +89,8 @@ public class App implements TimeLineListener{
 	public List<SITUATION_LINE_CONDITIONS>listSITUATION_LINE_CONDITIONS;
 	public List<ROUTE_CONDITIONS_GUIDE>listROUTE_CONDITIONS_GUIDE;
 	public List<ROUTE_CONDITION_AERODROMES>listROUTE_CONDITION_AERODROMES;
+	public static List<FIX_POINT>listFIX_POINTS;
+	
 	
 	
 	public SECTORIZATION sectorization;
@@ -97,6 +108,7 @@ public class App implements TimeLineListener{
 	public LayerTreeNode layerTreeNode4AoIsContingency;
 	public LayerTreeNode layerTreeNode4AoIsExternal;
 	public LayerTreeNode layerTreeNode4CST;
+	public LayerTreeNode layerTreeNode4Fixs;
 	
 	public List<Layer> listLayers;
 		
@@ -184,6 +196,7 @@ public class App implements TimeLineListener{
 		attr.setDrawOutline(true);
 		attr.setEnableAntialiasing(true);
 		attr.setEnableLighting(true);
+		
 
         RenderableLayer layer = new RenderableLayer();
         layer.setName(routeCondition.CONDITIONID);
@@ -198,18 +211,46 @@ public class App implements TimeLineListener{
 			positions.add(new Position( TRACKS_Parser.parseLatLon(point.POINT_LOCATION) , sampleAltitude));	
 		}
 					
-        Path path = new DirectedPath(positions);        
+		DirectedPath path = new DirectedPath(positions);        
         path.setAttributes(attr);
         path.setVisible(true);
         path.setAltitudeMode(WorldWind.ABSOLUTE);
-        path.setPathType(AVKey.GREAT_CIRCLE);
-        path.setShowPositions(true);
         path.setShowPositionsScale(2);
         path.setValue(AVKey.DISPLAY_NAME, displayName);
-        
+        path.setArrowLength(10000);        
+                
         layer.addRenderable(path);
        
     	return layer;    	
+	   	
+    }
+    
+    public  Layer makeLayerforFIX_POINT(FIX_POINT fix)
+    {        
+    	String Name = fix.FIXID ;
+    	String displayName = fix.toString();
+	
+        final RenderableLayer layer = new RenderableLayer();
+
+        String latlon = fix.LATITUDE  +  fix.LONGITUDE;
+
+    	PointPlacemark pp = new PointPlacemark(new Position( TRACKS_Parser.parseLatLon(latlon) , 0));
+        pp.setLabelText(Name);
+        pp.setValue(AVKey.DISPLAY_NAME, displayName);
+        pp.setAltitudeMode(WorldWind.CLAMP_TO_GROUND);
+        
+        PointPlacemarkAttributes attrs = new PointPlacemarkAttributes();
+        attrs.setLabelColor("ffffffff");
+        attrs.setLineColor("ff0000ff");
+        attrs.setUsePointAsDefaultImage(true);
+        attrs.setScale(5d);
+        pp.setAttributes(attrs);
+        
+        layer.addRenderable(pp);  	
+        layer.setName(Name);
+    	
+		
+        return layer;    	
 	   	
     }
 
@@ -374,14 +415,26 @@ public class App implements TimeLineListener{
        
     	return layer;    	
     }
+    public static LatLon getLatLonFromPoint ( String point ) {
+    	 
+    	LatLon latLon = null;
+    	
+    	latLon = TRACKS_Parser.parseLatLon(point);
+    	if (latLon == null) {
+    	 	FIX_POINT fix = listFIX_POINTS.stream().filter(x -> point.equals(x.FIXID)).findAny().orElse(null);    		
+    	 	latLon = fix != null ? TRACKS_Parser.parseLatLon(fix.LATITUDE+fix.LONGITUDE) : null;
+    	}
+    		
+    	return latLon;
+    }
     
     
     public static Layer makeLayerFromAirSpaceVolumes( 	List<AIRSPACE_VOLUME> listVolumes , 
     													List<AREA_CONTOUR_POINT> listAreaPoints, 
     													String label ,
     													String LayerName,
-    													AirspaceAttributes airspaceAttributes)
-    {
+    													AirspaceAttributes airspaceAttributes)  {
+    	
     	RandomShapeAttributes randomAttrs = new RandomShapeAttributes();
         RenderableLayer layer = new RenderableLayer();
         layer.setName(LayerName);
@@ -398,7 +451,8 @@ public class App implements TimeLineListener{
         	
         	List<LatLon> listPoligonLatlon = new ArrayList<LatLon>();
         	for ( AREA_CONTOUR_POINT point : listRelatedPoints) {
-        		listPoligonLatlon.add( TRACKS_Parser.parseLatLon(point.POINT_LOCATION) );    		
+        		
+        		listPoligonLatlon.add( getLatLonFromPoint (point.POINT_LOCATION) );    		
         	}
         	
         	AirspaceAttributes attrs;
@@ -412,9 +466,9 @@ public class App implements TimeLineListener{
     		label2display += "Flight Level: [" + volume.LOWER_FACE_LIMIT + "-" + volume.UPPER_FACE_LIMIT +  "]\n" ;
     		label2display += label;
             		
-        	/*for ( AREA_CONTOUR_POINT point : listRelatedPoints) {
+        	for ( AREA_CONTOUR_POINT point : listRelatedPoints) {
         		label2display += "POINT: " + point.SEQUENCE_NUMBER + ", " + point.POINT_LOCATION + " \n"; 
-        	}*/		
+        	}		
                  		
         	Polygon poly = new Polygon(attrs);
         	poly.setLocations( listPoligonLatlon );
@@ -530,6 +584,7 @@ public class App implements TimeLineListener{
     	listSITUATION_LINE_CONDITIONS = adapParser.getSITUATION_LINE_CONDITIONS();    	
     	listROUTE_CONDITIONS_GUIDE = adapParser.getROUTE_CONDITIONS_GUIDE();
     	listROUTE_CONDITION_AERODROMES = adapParser.getROUTE_CONDITION_AERODROMES();
+    	listFIX_POINTS = adapParser.getFIX_POINTs();
     	    	
     	// HOLDINGs 
      	for ( HOLDING_VOLUME holding : listHoldings) {     		    				
@@ -577,6 +632,7 @@ public class App implements TimeLineListener{
         	myFrame.getWwd().getModel().getLayers().add(myAoILayer);
     	}
 
+     	// CST lines
      	for (  SITUATION_LINE_CONDITIONS situationLine_condition : listSITUATION_LINE_CONDITIONS) {
      		Layer myCSTlayer = makeLayerforCSTLine(situationLine_condition);
      		myCSTlayer.setEnabled(false);
@@ -585,6 +641,19 @@ public class App implements TimeLineListener{
 			layerTreeNode4CST.addChild(layerNode);       		    		      		
         	myFrame.getWwd().getModel().getLayers().add(myCSTlayer);     		
      	}
+     	
+     	//Fix points
+     	Collections.sort(listFIX_POINTS);
+     	
+     	for (  FIX_POINT fix: listFIX_POINTS) {
+     		Layer myFIXslayer = makeLayerforFIX_POINT(fix);
+     		myFIXslayer.setEnabled(false);
+    		LayerTreeNode layerNode = new LayerTreeNode(myFIXslayer) ;
+			layerNode.setImageSource(null);    		
+			layerTreeNode4Fixs.addChild(layerNode);       		    		      		
+        	myFrame.getWwd().getModel().getLayers().add(myFIXslayer); 
+     	}
+     	
 
     }
     
@@ -773,8 +842,16 @@ public class App implements TimeLineListener{
         layerTreeNode4CST.setImageSource(null); 
         
         layerTreeNode_AdaptedAirSpace.addChild(layerTreeNode4CST);  
-	       
         
+        RenderableLayer layer4Fixs = new RenderableLayer();
+        layer4Fixs.setName("Fix points");
+
+        layerTreeNode4Fixs = new LayerTreeNode(layer4Fixs) ;
+        layerTreeNode4Fixs.setImageSource(null); 
+        
+        layerTreeNode_AdaptedAirSpace.addChild(layerTreeNode4Fixs); 
+        
+	               
         myFrame.layerTree.getModel().addLayer(layerTreeNode_flightPlans);
         myFrame.layerTree.getModel().addLayer(layerTreeNode_RadarTracks);
         myFrame.layerTree.getModel().addLayer(layerTreeNode_AdaptedAirSpace);

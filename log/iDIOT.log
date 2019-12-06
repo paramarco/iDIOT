@@ -1,8 +1,0 @@
-2019-05-16 18:30:58,232 INFO i.iDIOT [main] launching application  ...
-2019-05-16 18:30:58,550 INFO i.iDIOT [main] DataFileStore locations  C:\Users\mvereda\git\iDIOT\.\lib\WorldWindDataStore
-2019-05-16 18:30:58,550 INFO i.iDIOT [main] DataFileStore locations  C:\Users\mvereda\git\iDIOT\.\lib\WorldWindData
-2019-05-16 18:30:58,550 INFO i.iDIOT [main] CurrentSystemTempDirectory: C:\Users\mvereda\AppData\Local\Temp\
-2019-05-16 18:30:58,550 INFO i.iDIOT [main] CurrentUserAppDataDirectory: C:\Users\mvereda\Application Data
-2019-05-16 18:30:58,551 INFO i.iDIOT [main] CurrentUserHomeDirectory: C:\Users\mvereda
-2019-05-16 18:30:58,551 INFO i.iDIOT [main] CurrentWorkingDirectory: C:\Users\mvereda\git\iDIOT
-2019-05-16 18:30:58,551 INFO i.iDIOT [main] isOfflineMode: true

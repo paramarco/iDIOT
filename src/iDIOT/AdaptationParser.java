@@ -8,6 +8,8 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import iDIOT.SDD_DISTRIBUTION_Parser.SDD_DISTRIBUTION_Event;
 import iDIOT.TRACKS_Parser.TRACK_event;
@@ -31,6 +33,8 @@ public class AdaptationParser  {
 	File fileSITUATION_LINE_CONDITIONS;
 	File fileROUTE_CONDITIONS_GUIDE;
 	File fileROUTE_CONDITION_AERODROMES;
+	File fileFIX_POINTS;
+
 	
 	public AdaptationParser( File fileAdaptation, String AdaptationSource ) {
 		
@@ -61,44 +65,81 @@ public class AdaptationParser  {
             }		
 		}else {
 			
-			String pathAIRSPACE_VOLUMES = fileAdaptationPath + "/" + "AIRSPACE_VOLUMES_GUIDE_DATA_TABLE.CSV";
+			String pathAIRSPACE_VOLUMES = fileAdaptationPath + "/" + "AIRSPACE_VOLUMES_GUIDE.CSV";
 			fileAIRSPACE_VOLUMES  = new File( pathAIRSPACE_VOLUMES );
 			
-			String pathAREA_CONTOUR_POINTS = fileAdaptationPath + "/" +  "AREA_CONTOUR_POINTS_DATA_TABLE.CSV";
+			String pathAREA_CONTOUR_POINTS = fileAdaptationPath + "/" +  "AREA_CONTOUR_POINTS.CSV";
 			fileAREA_CONTOUR_POINTS  = new File( pathAREA_CONTOUR_POINTS );
 			
-			String pathBASIC_SECTORS = fileAdaptationPath + "/" +  "BASIC_SECTORS_DATA_TABLE.CSV";
+			String pathBASIC_SECTORS = fileAdaptationPath + "/" +  "BASIC_SECTORS.CSV";
 			fileBASIC_SECTORS  = new File( pathBASIC_SECTORS );
 
-			String pathRESPONSIBILITY_VOLUMES = fileAdaptationPath + "/" +  "RESPONSIBILITY_VOLUMES_DATA_TABLE.CSV";
+			String pathRESPONSIBILITY_VOLUMES = fileAdaptationPath + "/" +  "RESPONSIBILITY_VOLUMES.CSV";
 			fileRESPONSIBILITY_VOLUMES  = new File( pathRESPONSIBILITY_VOLUMES );
 			
-			String pathHOLDING_AIRSPACE_VOLUMES = fileAdaptationPath + "/" +  "HOLDING_AIRSPACE_VOLUMES_DATA_TABLE.CSV";
+			String pathHOLDING_AIRSPACE_VOLUMES = fileAdaptationPath + "/" +  "HOLDING_AIRSPACE_VOLUMES.CSV";
 			fileHOLDING_AIRSPACE_VOLUMES  = new File( pathHOLDING_AIRSPACE_VOLUMES );
 			
-			String pathHOLDING_VOLUMES = fileAdaptationPath + "/" +  "HOLDING_VOLUMES_GUIDE_DATA_TABLE.CSV";
+			String pathHOLDING_VOLUMES = fileAdaptationPath + "/" +  "HOLDING_VOLUMES_GUIDE.CSV";
 			fileHOLDING_VOLUMES  = new File( pathHOLDING_VOLUMES );
 
-			String pathINTEREST_VOLUMES = fileAdaptationPath + "/" +  "INTEREST_VOLUMES_DATA_TABLE.CSV";
+			String pathINTEREST_VOLUMES = fileAdaptationPath + "/" +  "INTEREST_VOLUMES.CSV";
 			fileINTEREST_VOLUMES  = new File( pathINTEREST_VOLUMES );
 			
-			String pathSECTOR_VOLUMES = fileAdaptationPath + "/" +  "SECTOR_VOLUMES_DATA_TABLE.CSV";
+			String pathSECTOR_VOLUMES = fileAdaptationPath + "/" +  "SECTOR_VOLUMES.CSV";
 			fileSECTOR_VOLUMES  = new File( pathSECTOR_VOLUMES );
 			
-			String pathSITUATION_LINE_POINTS = fileAdaptationPath + "/" +  "SITUATION_LINE_POINTS_DATA_TABLE.CSV";
+			String pathSITUATION_LINE_POINTS = fileAdaptationPath + "/" +  "SITUATION_LINE_POINTS.CSV";
 			fileSITUATION_LINE_POINTS  = new File( pathSITUATION_LINE_POINTS );
 			
-			String pathSITUATION_LINES_GUIDE = fileAdaptationPath + "/" +  "SITUATION_LINES_GUIDE_DATA_TABLE.CSV";
+			String pathSITUATION_LINES_GUIDE = fileAdaptationPath + "/" +  "SITUATION_LINES_GUIDE.CSV";
 			fileSITUATION_LINES_GUIDE  = new File( pathSITUATION_LINES_GUIDE );
 			
-			String pathSITUATION_LINE_CONDITIONS = fileAdaptationPath + "/" +  "SITUATION_LINE_CONDITIONS_DATA_TABLE.CSV";
+			String pathSITUATION_LINE_CONDITIONS = fileAdaptationPath + "/" +  "SITUATION_LINE_CONDITIONS.CSV";
 			fileSITUATION_LINE_CONDITIONS  = new File( pathSITUATION_LINE_CONDITIONS );
 
-			String pathROUTE_CONDITIONS_GUIDE = fileAdaptationPath + "/" +  "ROUTE_CONDITIONS_GUIDE_DATA_TABLE.CSV";
+			String pathROUTE_CONDITIONS_GUIDE = fileAdaptationPath + "/" +  "ROUTE_CONDITIONS_GUIDE.CSV";
 			fileROUTE_CONDITIONS_GUIDE  = new File( pathROUTE_CONDITIONS_GUIDE );
 			
-			String pathROUTE_CONDITION_AERODROMES = fileAdaptationPath + "/" +  "ROUTE_CONDITION_AERODROMES_DATA_TABLE.CSV";
+			String pathROUTE_CONDITION_AERODROMES = fileAdaptationPath + "/" +  "ROUTE_CONDITION_AERODROMES.CSV";
 			fileROUTE_CONDITION_AERODROMES  = new File( pathROUTE_CONDITION_AERODROMES );
+			
+			String pathFIX_POINTS = fileAdaptationPath + "/" +  "FIXPOINTS_GUIDE.CSV";
+			fileFIX_POINTS  = new File( pathFIX_POINTS );
+		}
+	}
+	
+	
+	//"FIXID","DESCRIPTION","LATITUDE","LONGITUDE","SITUATION"
+	public static class FIX_POINT implements Comparable<FIX_POINT>  {
+
+		public String FIXID,DESCRIPTION,LATITUDE,LONGITUDE,SITUATION;
+		
+		public FIX_POINT () {}
+		
+		public FIX_POINT (String line) {
+	
+			String lineFormatted = line.replaceAll("\"", "");
+			String[] attributes = lineFormatted.split(",");
+
+			this.FIXID = attributes[0].trim();
+			this.DESCRIPTION = attributes[1].trim();			
+			this.LATITUDE = attributes[2].trim();
+			this.LONGITUDE = attributes[3].trim();
+		}
+		@Override
+		public int compareTo(FIX_POINT other) {
+            return this.FIXID.compareTo( other.FIXID );
+        }
+
+		@Override
+		public String toString() {
+			return "[" 
+					+ (FIXID != null ? "FIXID=" + FIXID + ", " : "") 
+					+ (DESCRIPTION != null ? "DESCRIPTION=" + DESCRIPTION  + ", " : "") 
+					+ (LATITUDE != null ? "LATITUDE=" + LATITUDE  + ", " : "") 
+					+ (LONGITUDE != null ? "LONGITUDE=" + LONGITUDE  : "") 
+					+ "]";
 		}
 	}
 	
@@ -111,7 +152,8 @@ public class AdaptationParser  {
 		
 		public ROUTE_CONDITION_AERODROMES (String line) {
 	
-			String[] attributes = line.split(",");
+			String lineFormatted = line.replaceAll("\"", "");
+			String[] attributes = lineFormatted.split(",");
 
 			this.CONDITIONID = attributes[0].trim();
 			this.TERMINAL_ACTION = attributes[1].trim();			
@@ -138,7 +180,8 @@ public class AdaptationParser  {
 		
 		public ROUTE_CONDITIONS_GUIDE (String line) {
 	
-			String[] attributes = line.split(",");
+			String lineFormatted = line.replaceAll("\"", "");
+			String[] attributes = lineFormatted.split(",");
 
 			this.CONDITIONID = attributes[0].trim();
 			this.MINIMUM_RFL = attributes[1].trim();			
@@ -176,7 +219,8 @@ public class AdaptationParser  {
 		
 		public SITUATION_LINE_CONDITIONS (String line) {
 	
-			String[] attributes = line.split(",");
+			String lineFormatted = line.replaceAll("\"", "");
+			String[] attributes = lineFormatted.split(",");
 			
 			this.SITUATION_LINEID = attributes[0].trim();
 			this.ROUTE_CONDITIONID = attributes[1].trim();
@@ -202,7 +246,8 @@ public class AdaptationParser  {
 		
 		public SITUATION_LINES_GUIDE (String line) {
 	
-			String[] attributes = line.split(",");
+			String lineFormatted = line.replaceAll("\"", "");
+			String[] attributes = lineFormatted.split(",");
 			
 			this.SITUATION_LINEID= attributes[0].trim();
 			this.LONG_DESCRIPTION = attributes[1].trim();
@@ -230,7 +275,8 @@ public class AdaptationParser  {
 		
 		public SITUATION_LINE_POINTS (String line) {
 	
-			String[] attributes = line.split(",");
+			String lineFormatted = line.replaceAll("\"", "");
+			String[] attributes = lineFormatted.split(",");
 			
 			this.SITUATION_LINEID= attributes[0].trim();
 			this.LOCATION_FORMAT = attributes[1].trim();
@@ -267,7 +313,8 @@ public class AdaptationParser  {
 		public SECTOR_VOLUME  () {}		
 		public SECTOR_VOLUME(String line) {
 	
-			String[] attributes = line.split(",");
+			String lineFormatted = line.replaceAll("\"", "");
+			String[] attributes = lineFormatted.split(",");
 			
 			this.SECTOR_VOLUMEID = attributes[0].trim();
 			this.LONG_DESCRIPTION = attributes[1].trim();			
@@ -299,7 +346,8 @@ public class AdaptationParser  {
 		
 		public HOLDING_VOLUME(String line) {
 	
-			String[] attributes = line.split(",");
+			String lineFormatted = line.replaceAll("\"", "");
+			String[] attributes = lineFormatted.split(",");
 			
 			this.HOLDING_VOLUMEID = attributes[0].trim();
 			this.LONG_DESCRIPTION = attributes[1].trim();			
@@ -334,7 +382,8 @@ public class AdaptationParser  {
 		
 		public HOLDING_AIRSPACE_VOLUME(String line) {
 	
-			String[] attributes = line.split(",");
+			String lineFormatted = line.replaceAll("\"", "");
+			String[] attributes = lineFormatted.split(",");
 			
 			this.AIRSPACE_VOLUMEID = attributes[0].trim();
 			this.HOLDING_VOLUMEID = attributes[1].trim();			
@@ -365,7 +414,8 @@ public class AdaptationParser  {
 		
 		public AIRSPACE_VOLUME (String line) {
 	
-			String[] attributes = line.split(",");
+			String lineFormatted = line.replaceAll("\"", "");
+			String[] attributes = lineFormatted.split(",");
 			
 			this.AIRSPACE_VOLUMEID = attributes[0].trim();
 			this.LONG_DESCRIPTION = attributes[1].trim();
@@ -402,7 +452,8 @@ public class AdaptationParser  {
 		
 		public AREA_CONTOUR_POINT (String line) {
 	
-			String[] attributes = line.split(",");
+			String lineFormatted = line.replaceAll("\"", "");
+			String[] attributes = lineFormatted.split(",");
 			
 			this.AREA_CONTOURID = attributes[0].trim();
 			this.LOCATION_FORMAT = attributes[1].trim();
@@ -430,7 +481,7 @@ public class AdaptationParser  {
 		}
 	}
 	
-	//BASIC_SECTORID	TYPE_INDICATOR	PRIORITY_NUMBER	MIN_CROSS_TIME	HAND_OVER_MODE	FORCE_DISTANCE	SECTOR_VOLUMEID	SECTOR_FLAVOURID
+	//BASIC_SECTORID	TYPE_INDICATOR	PRIORITY_NUMBER	MIN_CROSS_TIME	HAND_OVER_MODE	FORCE_DISTANCE SECTOR_FLAVOURID SECTOR_VOLUMEID
 	public static class BASIC_SECTORS  implements Comparable<BASIC_SECTORS> {
 
 		public String BASIC_SECTORID	;
@@ -447,16 +498,17 @@ public class AdaptationParser  {
 		
 		public BASIC_SECTORS (String line) {
 	
-			String[] attributes = line.split(",");
+			String lineFormatted = line.replaceAll("\"", "");
+			String[] attributes = lineFormatted.split(",");
 			
 			this.BASIC_SECTORID = attributes[0].trim();
 			this.TYPE_INDICATOR = attributes[1].trim();
 			this.PRIORITY_NUMBER = attributes[2].trim();
 			this.MIN_CROSS_TIME = attributes[3].trim();
 			this.HAND_OVER_MODE = attributes[4].trim();
-			this.FORCE_DISTANCE = attributes[5].trim();
-			this.SECTOR_VOLUMEID = attributes[6].trim();
-			this.SECTOR_FLAVOURID = attributes[7].trim();
+			this.FORCE_DISTANCE = attributes[5].trim();			
+			this.SECTOR_FLAVOURID = attributes[6].trim();
+			this.SECTOR_VOLUMEID = attributes[7].trim();
 		}
 		
 		@Override
@@ -482,7 +534,8 @@ public class AdaptationParser  {
 		
 		public INTEREST_VOLUMES(String line) {
 	
-			String[] attributes = line.split(",");
+			String lineFormatted = line.replaceAll("\"", "");
+			String[] attributes = lineFormatted.split(",");
 			
 			this.AIRSPACE_VOLUMEID = attributes[0].trim();
 			this.SECTOR_VOLUMEID = attributes[1].trim();			
@@ -507,7 +560,8 @@ public class AdaptationParser  {
 		
 		public RESPONSIBILITY_VOLUMES(String line) {
 	
-			String[] attributes = line.split(",");
+			String lineFormatted = line.replaceAll("\"", "");
+			String[] attributes = lineFormatted.split(",");
 			
 			this.AIRSPACE_VOLUMEID = attributes[0].trim();
 			this.SECTOR_VOLUMEID = attributes[1].trim();			
@@ -519,6 +573,48 @@ public class AdaptationParser  {
 					+ SECTOR_VOLUMEID + "]";
 		}
 	}
+	
+	
+	public List<FIX_POINT> getFIX_POINTs() {
+		
+		List<FIX_POINT> list = new ArrayList<FIX_POINT>();
+		
+		if ( AdaptationSource.equals("environment.tcl") ) {
+			try {
+				String[] FIX_POINTS_ids = i.getVar("FIX(names)", TCL.OK).toString().split(" ");
+    			for (int j = 0, len = FIX_POINTS_ids.length; j < len; j++) {    				
+    				FIX_POINT fix = new FIX_POINT();
+    				fix.FIXID = FIX_POINTS_ids[j];
+    				String geodesic = i.getVar("FIX", FIX_POINTS_ids[j] + "," + "geodesic", 0).toString();    				
+    				Pattern r = Pattern.compile("(\\d{2}\\d{2}\\d{2}(N|S))(\\d{3}\\d{2}\\d{2}(W|E))");
+    				Matcher m = r.matcher( geodesic );
+    				while (m.find()) {	    	   
+    					  fix.LATITUDE	=	m.group(1) != null ? m.group(1) : "";
+    					  fix.LONGITUDE =	m.group(3) != null ? m.group(3) : "";
+    				}    				
+					list.add(fix);    				
+    			}    			
+			 } catch (TclException e) {
+				 System.out.println("Exception on getFIX_POINTs: " + e.getMessage());
+				 int code = e.getCompletionCode();
+				 System.err.println("command returned bad error code: " + code);		         
+			 }
+		}else {
+			File inputFile = fileFIX_POINTS;		
+	        try {	        	
+	        	List<String> lines = Files.readAllLines( inputFile.toPath() );
+	        	for ( String line : lines.subList( 1, lines.size()) ) {
+	        		FIX_POINT asp = new FIX_POINT( line );
+	        		list.add( asp );	        		
+	        	}
+	        }			
+			catch (IOException e) {
+				e.printStackTrace();
+			}    
+		}
+		return list;
+	}	
+
 	
 	//ROUTE_CONDITION_AERODROMES
 	public List<ROUTE_CONDITION_AERODROMES> getROUTE_CONDITION_AERODROMES() {

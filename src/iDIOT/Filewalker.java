@@ -105,20 +105,21 @@ public class Filewalker {
 						File fEnvironment = new File(f.getParent() + "/adap/environment.tcl");
 						if ( fEnvironment.exists() ) {  
 							FileEnvironment = fEnvironment; 
-						}						
+						}
+						File fdataset = new File(f.getParent() + "/adap/dataset.tgz");
+						if ( fdataset.exists() ) {
+							destination = new File(f.getParent() + "/adap");
+							archiver.extract( fdataset , destination);
+							File fiTAPCSVs = new File(f.getParent() + "/adap/csv");
+							if ( fiTAPCSVs.exists() ) {  
+								FileiTAPCSVs = fiTAPCSVs; 
+							}						
+
+						}
+						
 					} catch (IOException e) { e.printStackTrace(); }
             	}
-            	if ( fileName.equals("dataset.tgz")) {
-            		File destination = new File(f.getParent() + "/adap");
-            		Archiver archiver = ArchiverFactory.createArchiver("tar", "gz");
-            		try {
-						archiver.extract( f , destination);
-						File fiTAPCSVs = new File(f.getParent() + "/adap/csv");
-						if ( fiTAPCSVs.exists() ) {  
-							FileiTAPCSVs = fiTAPCSVs; 
-						}						
-					} catch (IOException e) { e.printStackTrace(); }
-            	}
+            	
             }
         }
     }
