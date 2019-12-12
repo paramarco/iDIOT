@@ -52,7 +52,10 @@ public class Filewalker {
 			FileAdaptation = FileEnvironment;
 			AdaptationSource = "environment.tcl";
 		}else {
-			File Filelib= new File("./lib/dataset.tgz");
+			FileAdaptation = null;
+			AdaptationSource = "NONE";
+
+			/*File Filelib= new File("./lib/dataset.tgz");
 			File destination = new File( this.targetPath + "/adap");
     		Archiver archiver = ArchiverFactory.createArchiver("tar", "gz");
     		try {
@@ -63,6 +66,7 @@ public class Filewalker {
 					AdaptationSource = "libiTAP_CSVs";
 				}						
 			} catch (IOException e) { e.printStackTrace(); }
+			*/
 		}
 		
 		return FileAdaptation;

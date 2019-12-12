@@ -926,22 +926,22 @@ public class App implements TimeLineListener{
     	
     	List<String> listErrors = new ArrayList();
     	
-    	if ( sectorizationParser.fileSectorization == null ) listErrors.add("ERROR ::: couldn't find any SECTORIZATION_DUMP_*.xml ");
+    	if ( sectorizationParser.fileSectorization == null ) listErrors.add("WARNING ::: couldn't find any SECTORIZATION_DUMP_*.xml ");
     	
     	switch (adapParser.AdaptationSource) {
     		case "iTAP_CSVs": break;
     		case "environment.tcl":
-    			listErrors.add("ERROR ::: couldn't find any dataset.tgz(\"iTAP adaptation\") ");
-        		listErrors.add("WARNING ::: it's loading the legacy environment.tcl located in Builds_Info_For_soda.tgz to load the adaptation");
+    			listErrors.add("WARNING ::: couldn't find any dataset.tgz(\"iTAP adaptation\") ");
+        		listErrors.add("WARNING ::: it's loading the legacy environment.tcl ");
     			break;
-    		case "libiTAP_CSVs": 
+    		case "NONE": 
     			listErrors.add("ERROR ::: couldn't find any dataset.tgz (\"iTAP adaptation\") ");
-    			listErrors.add("ERROR ::: couldn't find any Builds_Info_For_soda.tgz (\"environment.tcl\") ");
-        		listErrors.add("WARNING ::: it's loading the ./lib/dataset.tgz ( R4.2.2-09A VarAv1 )  ");
+    			listErrors.add("ERROR ::: couldn't find any environment.tcl either ");
+        		listErrors.add("ERROR ::: stopping ... no adaptation found, try to choose another SODA directory");
     			break;    		
     	}
     	
-    	if ( mapSSD_DISTRIBUTION.isEmpty() ) listErrors.add("ERROR ::: couldn't load any DISTRIBUTION_*.txt file inside \"lrids\" folder ");
+    	if ( mapSSD_DISTRIBUTION.isEmpty() ) listErrors.add("WARNING ::: couldn't load any DISTRIBUTION_*.txt file inside \"lrids\" folder ");
     	if ( mapSSD_DISTRIBUTION.isEmpty() ) listErrors.add("WARNING ::: couldn't load any TRACKS_*.txt file inside \"lrids\" folder  ");
     	    	
     	String message = "In the specified soda folder, some files are missing: \n";

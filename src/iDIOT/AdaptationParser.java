@@ -38,10 +38,10 @@ public class AdaptationParser  {
 	
 	public AdaptationParser( File fileAdaptation, String AdaptationSource ) {
 		
-		this.fileAdaptationPath = fileAdaptation.getAbsolutePath();
 		this.AdaptationSource = AdaptationSource;
 		
 		if ( AdaptationSource.equals("environment.tcl") ) {
+			this.fileAdaptationPath = fileAdaptation.getAbsolutePath();
 			this.i = new Interp();
 			try {
 				 i.evalFile(this.fileAdaptationPath);				 
@@ -63,7 +63,8 @@ public class AdaptationParser  {
 		         		break;
 		         }
             }		
-		}else {
+		}else if(AdaptationSource.equals("iTAP_CSVs")){
+			this.fileAdaptationPath = fileAdaptation.getAbsolutePath();
 			
 			String pathAIRSPACE_VOLUMES = fileAdaptationPath + "/" + "AIRSPACE_VOLUMES_GUIDE.CSV";
 			fileAIRSPACE_VOLUMES  = new File( pathAIRSPACE_VOLUMES );
@@ -599,7 +600,7 @@ public class AdaptationParser  {
 				 int code = e.getCompletionCode();
 				 System.err.println("command returned bad error code: " + code);		         
 			 }
-		}else {
+		}else if(AdaptationSource.equals("iTAP_CSVs")){
 			File inputFile = fileFIX_POINTS;		
 	        try {	        	
 	        	List<String> lines = Files.readAllLines( inputFile.toPath() );
@@ -658,7 +659,7 @@ public class AdaptationParser  {
 				 int code = e.getCompletionCode();
 				 System.err.println("command returned bad error code: " + code);		         
 			 }
-		}else {
+		}else if(AdaptationSource.equals("iTAP_CSVs")){
 			File inputFile = fileROUTE_CONDITION_AERODROMES;		
 	        try {	        	
 	        	List<String> lines = Files.readAllLines( inputFile.toPath() );
@@ -714,7 +715,7 @@ public class AdaptationParser  {
 				 int code = e.getCompletionCode();
 				 System.err.println("command returned bad error code: " + code);		         
 			 }
-		}else {
+		}else if(AdaptationSource.equals("iTAP_CSVs")){
 			File inputFile = fileROUTE_CONDITIONS_GUIDE;		
 	        try {	        	
 	        	List<String> lines = Files.readAllLines( inputFile.toPath() );
@@ -767,7 +768,7 @@ public class AdaptationParser  {
 		         		break;
 		         }
 			 }
-		}else {
+		}else if(AdaptationSource.equals("iTAP_CSVs")){
 			File inputFile = fileSITUATION_LINE_CONDITIONS;
 	        try {	        	
 	        	List<String> lines = Files.readAllLines( inputFile.toPath() );
@@ -800,7 +801,7 @@ public class AdaptationParser  {
 			 } catch (TclException e) {
 				 System.out.println("Exception: " + e.getMessage());				 
 			 }
-		}else {
+		}else if(AdaptationSource.equals("iTAP_CSVs")){
 			File inputFile = fileSITUATION_LINES_GUIDE;
 	        try {	        	
 	        	List<String> lines = Files.readAllLines( inputFile.toPath() );
@@ -835,7 +836,7 @@ public class AdaptationParser  {
 			 } catch (TclException e) {
 				 System.out.println("Exception on getHOLDING_VOLUMEs: " + e.getMessage());				 
 			 }
-		}else {		
+		}else if(AdaptationSource.equals("iTAP_CSVs")){		
 			File inputFile = fileHOLDING_VOLUMES;
 			
 	        try {	        	
@@ -876,7 +877,7 @@ public class AdaptationParser  {
 			 } catch (TclException e) {
 				 System.out.println("Exception on getSITUATION_LINE_POINTS: " + e.getMessage());				 
 			 }
-		}else {
+		}else if(AdaptationSource.equals("iTAP_CSVs")){
 			File inputFile = this.fileSITUATION_LINE_POINTS;
 	        try {	        	
 	        	List<String> lines = Files.readAllLines( inputFile.toPath() );
@@ -910,7 +911,7 @@ public class AdaptationParser  {
 			 } catch (TclException e) {
 				 System.out.println("Exception on getHOLDING_AIRSPACE_VOLUMEs: " + e.getMessage());				 
 			 }
-		}else {		
+		}else if(AdaptationSource.equals("iTAP_CSVs")){		
 			File inputFile = fileHOLDING_AIRSPACE_VOLUMES;			
 	        try {	        	
 	        	List<String> lines = Files.readAllLines( inputFile.toPath() );
@@ -946,7 +947,7 @@ public class AdaptationParser  {
 			 } catch (TclException e) {
 				 System.out.println("Exception on getSECTOR_VOLUMES: " + e.getMessage());	
 			 }
-		}else {		
+		}else if(AdaptationSource.equals("iTAP_CSVs")){		
 			File inputFile = this.fileSECTOR_VOLUMES;
 	        try {	        	
 	        	List<String> lines = Files.readAllLines( inputFile.toPath() );
@@ -978,7 +979,7 @@ public class AdaptationParser  {
 			 } catch (TclException e) {
 				 System.out.println("Exception on getINTEREST_VOLUMES: " + e.getMessage());				 
 			 }
-		}else {
+		}else if(AdaptationSource.equals("iTAP_CSVs")){
 			File inputFile = this.fileINTEREST_VOLUMES;
 		    try {	        	
 		    	List<String> lines = Files.readAllLines( inputFile.toPath() );
@@ -1027,7 +1028,7 @@ public class AdaptationParser  {
 		         		break;
 		         }
 			 }
-		}else {
+		}else if(AdaptationSource.equals("iTAP_CSVs")){
 			File inputFile = this.fileRESPONSIBILITY_VOLUMES;
 			try {	        	
 	        	List<String> lines = Files.readAllLines( inputFile.toPath() );
@@ -1090,7 +1091,7 @@ public class AdaptationParser  {
 			 } catch (TclException e) {
 				 System.out.println("Exception: " + e.getMessage());				 
 			 }
-		}else {
+		}else if(AdaptationSource.equals("iTAP_CSVs")){
 			File inputFile = fileAIRSPACE_VOLUMES;
 			try {	        	
 	        	List<String> lines = Files.readAllLines( inputFile.toPath() );
@@ -1164,7 +1165,7 @@ public class AdaptationParser  {
 			 } catch (TclException e) {
 				 System.out.println("Exception: " + e.getMessage());
 			 }
-    	}else {
+    	}else if(AdaptationSource.equals("iTAP_CSVs")){
 	    	File inputFile = this.fileAREA_CONTOUR_POINTS;			
 	        try {	        	
 	        	List<String> lines = Files.readAllLines( inputFile.toPath() );
@@ -1214,7 +1215,7 @@ public class AdaptationParser  {
     		} catch (TclException e) {
     			System.out.println("Exception getBASIC_SECTORS: " + e.getMessage());    			
            }
-    	}else {
+    	}else if(AdaptationSource.equals("iTAP_CSVs")){
 	    	File inputFile = this.fileBASIC_SECTORS;
 	        try {	        	
 	        	List<String> lines = Files.readAllLines( inputFile.toPath() );
